@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>🤞 promise day · forever and always</title>
+    <!-- Google Fonts: lovy dovy & elegant -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+      /* -------------------------------
+       PROMISE DAY · 3D · ETERNAL LOVE
+       mobile-first, interactive
+    ------------------------------- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --promise-lavender: #e6d3ff;
+        --promise-soft-lilac: #f1e5ff;
+        --promise-deep: #6a4c9c;
+        --promise-velvet: #4b2e6b;
+        --promise-gold: #d4af37;
+        --promise-rose: #d291bc;
+        --promise-sky: #c1d4ff;
+        --font-love: "Dancing Script", cursive;
+        --font-clean: "Quicksand", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(145deg, #fcf7ff 0%, #f5ebff 100%);
+        font-family: var(--font-clean);
+        color: #382a4a;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .love-font {
+        font-family: var(--font-love);
+        font-weight: 600;
+      }
+
+      /* ----- 3D PROMISE HERO (eternity ring + stars) ----- */
+      .promise-hero {
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(circle at 50% 40%, #ede0ff, #dfccff);
+        border-bottom-left-radius: 100px 50px;
+        border-bottom-right-radius: 100px 50px;
+        box-shadow: 0 20px 35px rgba(90, 60, 130, 0.2);
+      }
+
+      /* floating stars / promise dust */
+      .promise-stars {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .star {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #fff9e6;
+        border-radius: 50%;
+        box-shadow:
+          0 0 20px #e6d3ff,
+          0 0 40px #b8a2ff;
+        opacity: 0.7;
+        animation: starTwinkle 5s infinite alternate;
+      }
+      @keyframes starTwinkle {
+        0% {
+          transform: scale(1);
+          opacity: 0.4;
+        }
+        100% {
+          transform: scale(1.5);
+          opacity: 0.9;
+        }
+      }
+
+      .promise-ring-3d {
+        font-size: 9rem;
+        filter: drop-shadow(0 25px 25px rgba(100, 70, 150, 0.4));
+        animation: promiseFloat 3.8s infinite alternate ease-in-out;
+        z-index: 15;
+        transform: perspective(600px) rotateX(8deg) rotateY(-12deg)
+          rotateZ(2deg);
+        margin-bottom: 0.2rem;
+      }
+      @keyframes promiseFloat {
+        0% {
+          transform: perspective(600px) rotateX(8deg) rotateY(-12deg)
+            rotateZ(2deg) translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(16deg) rotateY(-24deg)
+            rotateZ(4deg) translateY(-25px);
+        }
+      }
+
+      .promise-hero h1 {
+        font-size: 5.5rem;
+        font-family: var(--font-love);
+        color: #4b2e6b;
+        text-shadow:
+          3px 3px 0 #f1e5ff,
+          6px 6px 25px rgba(106, 76, 156, 0.3);
+        z-index: 10;
+        letter-spacing: 4px;
+      }
+      .promise-hero p {
+        font-size: 2.4rem;
+        font-family: var(--font-love);
+        color: #5a3e7a;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        padding: 0.8rem 2.5rem;
+        border-radius: 70px;
+        border: 3px solid white;
+        box-shadow: 0 15px 25px rgba(120, 80, 160, 0.2);
+        z-index: 10;
+        margin-top: 1rem;
+      }
+      .promise-tagline {
+        font-size: 2rem;
+        background: rgba(255, 245, 255, 0.7);
+        padding: 0.7rem 2.2rem;
+        border-radius: 50px;
+        margin-top: 2rem;
+        backdrop-filter: blur(8px);
+        border: 2px solid #dbbfff;
+      }
+
+      /* ----- 3D PROMISE OATHS (interactive cards) ----- */
+      .oath-section {
+        padding: 4rem 0 3rem;
+        background: white;
+        margin-top: -25px;
+        border-radius: 80px 80px 0 0;
+        z-index: 20;
+        position: relative;
+      }
+
+      .section-title {
+        font-size: 3.2rem;
+        font-family: var(--font-love);
+        color: #4b2e6b;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .section-title i {
+        color: #9a7cc2;
+        margin: 0 12px;
+      }
+
+      .oath-grid-3d {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5rem;
+      }
+      .oath-card {
+        width: 240px;
+        background: #fdfaff;
+        border-radius: 50px 12px 50px 12px;
+        padding: 2rem 1.2rem;
+        box-shadow:
+          0 30px 35px -10px rgba(90, 60, 130, 0.15),
+          inset 0 -4px 0 rgba(0, 0, 0, 0.02),
+          0 0 0 3px white,
+          0 0 0 8px #f1e5ff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transform: perspective(600px) rotateX(4deg) rotateY(7deg)
+          translateZ(8px);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+        animation: oathCardFloat 6s infinite alternate;
+      }
+      .oath-card:hover {
+        transform: perspective(600px) rotateX(6deg) rotateY(15deg)
+          translateZ(30px) scale(1.05);
+        box-shadow: 0 45px 50px -10px #a48ac0;
+      }
+      @keyframes oathCardFloat {
+        0% {
+          transform: perspective(600px) rotateX(4deg) rotateY(5deg)
+            translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(8deg) rotateY(15deg)
+            translateY(-20px);
+        }
+      }
+
+      .oath-emoji {
+        font-size: 5rem;
+        filter: drop-shadow(0 15px 12px rgba(100, 70, 140, 0.2));
+        margin-bottom: 0.8rem;
+        animation: oathGlow 3s infinite;
+      }
+      @keyframes oathGlow {
+        0% {
+          transform: scale(1);
+          text-shadow: 0 0 5px #e6d3ff;
+        }
+        50% {
+          transform: scale(1.1);
+          text-shadow: 0 0 25px #c9b0ff;
+        }
+      }
+      .oath-card h3 {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        color: #4b2e6b;
+        margin-bottom: 0.5rem;
+      }
+      .oath-card p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: #5a3e7a;
+      }
+      .btn-oath {
+        background: #d4c2ff;
+        border: none;
+        padding: 0.7rem 2rem;
+        border-radius: 60px;
+        font-weight: 600;
+        color: #382a4a;
+        border: 2px solid white;
+        box-shadow: 0 8px 0 #6a4c9c;
+        transition: 0.07s;
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-family: var(--font-love);
+      }
+      .btn-oath:active {
+        transform: translateY(8px);
+        box-shadow: 0 2px 0 #6a4c9c;
+      }
+
+      /* ----- THE PROMISE BOX (3D sacred) ----- */
+      .promise-box-section {
+        padding: 4rem 0;
+        background: #f3ecff;
+        text-align: center;
+      }
+      .promise-box-3d {
+        width: 260px;
+        height: 260px;
+        background: linear-gradient(145deg, #6a4c9c, #4b2e6b);
+        border-radius: 30% 30% 20% 20% / 40% 40% 30% 30%;
+        margin: 0 auto 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+          0 50px 60px rgba(60, 40, 90, 0.5),
+          inset 0 -15px 20px rgba(0, 0, 0, 0.2);
+        transform: perspective(600px) rotateX(15deg) rotateY(20deg)
+          rotateZ(5deg);
+        animation: promiseBoxFloat 5s infinite alternate;
+        border: 8px solid #d4af37;
+        cursor: pointer;
+        position: relative;
+      }
+      .promise-box-3d i,
+      .promise-box-3d span {
+        font-size: 6rem;
+        color: #ffefc0;
+        text-shadow: 0 15px 25px #2a1a3a;
+      }
+      .promise-box-3d span {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        background: rgba(255, 235, 200, 0.15);
+        padding: 0.3rem 1.5rem;
+        border-radius: 60px;
+        margin-top: 0.8rem;
+        color: #fff2d7;
+      }
+      @keyframes promiseBoxFloat {
+        0% {
+          transform: perspective(600px) rotateX(12deg) rotateY(15deg)
+            rotateZ(3deg) translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(22deg) rotateY(30deg)
+            rotateZ(7deg) translateY(-35px);
+        }
+      }
+
+      /* ----- LOVE LETTER · promise edition ----- */
+      .promise-letter-section {
+        background: #faf5ff;
+        background-image: radial-gradient(
+          circle at 80% 30%,
+          rgba(200, 170, 255, 0.2) 10%,
+          transparent 40%
+        );
+        padding: 4rem 0;
+        border-top: 5px dotted #b8a2ff;
+        border-bottom: 5px dotted #b8a2ff;
+      }
+      .promise-letter-card {
+        max-width: 750px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(15px);
+        padding: 2.8rem 2.5rem;
+        border-radius: 90px 12px 90px 12px;
+        box-shadow: 0 40px 60px rgba(90, 60, 130, 0.2);
+        border: 4px solid white;
+        position: relative;
+        text-align: center;
+      }
+      .promise-letter-card:before {
+        content: "🤞💌";
+        position: absolute;
+        font-size: 3rem;
+        top: -25px;
+        left: -20px;
+        background: white;
+        border-radius: 50%;
+        padding: 12px 15px;
+        box-shadow: 0 10px 0 #d4c2ff;
+      }
+      .promise-letter-title {
+        font-size: 3.2rem;
+        font-family: var(--font-love);
+        color: #4b2e6b;
+        border-bottom: 4px dashed #c9b0ff;
+        padding-bottom: 0.7rem;
+        margin-bottom: 1.5rem;
+      }
+      .promise-letter-content {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        color: #382a4a;
+        line-height: 1.5;
+      }
+      .promise-signature {
+        font-size: 2.2rem;
+        font-family: var(--font-love);
+        text-align: right;
+        margin-top: 2rem;
+        color: #8a6bb3;
+      }
+
+      /* ----- ETERNITY RINGS (3D floating promises) ----- */
+      .eternity-section {
+        padding: 3rem 0 5rem;
+        background: white;
+      }
+      .eternity-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.2rem;
+        margin-top: 2.5rem;
+      }
+      .eternity-ring {
+        width: 160px;
+        height: 160px;
+        background: radial-gradient(circle at 30% 25%, #ffefd5, #f5e0ff);
+        border-radius: 50% 50% 40% 40% / 50% 50% 40% 40%;
+        box-shadow:
+          0 35px 40px rgba(130, 90, 160, 0.3),
+          inset 0 -10px 15px rgba(0, 0, 0, 0.03);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: perspective(600px) rotateX(10deg) rotateY(15deg)
+          rotateZ(5deg);
+        animation: eternityFloat 6s infinite alternate;
+        border: 6px solid #ffefc0;
+        cursor: pointer;
+      }
+      .eternity-ring:hover {
+        transform: perspective(600px) rotateX(15deg) rotateY(25deg)
+          rotateZ(8deg) scale(1.1);
+        box-shadow: 0 50px 55px #a48ac0;
+      }
+      .eternity-ring i,
+      .eternity-ring span {
+        font-size: 4.5rem;
+        color: #6a4c9c;
+        text-shadow: 0 8px 12px #e6d3ff;
+      }
+      .eternity-ring span {
+        font-size: 1.4rem;
+        font-family: var(--font-love);
+        background: rgba(255, 255, 255, 0.6);
+        padding: 0.2rem 1.2rem;
+        border-radius: 40px;
+        margin-top: 0.5rem;
+      }
+      @keyframes eternityFloat {
+        0% {
+          transform: perspective(600px) rotateX(8deg) rotateY(12deg)
+            rotateZ(3deg) translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(16deg) rotateY(24deg)
+            rotateZ(7deg) translateY(-25px);
+        }
+      }
+
+      /* POPUP (promise style) */
+      .popup-card {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        width: 360px;
+        max-width: 85vw;
+        background: #fdfaff;
+        border-radius: 80px 12px 80px 12px;
+        padding: 3rem 2rem;
+        box-shadow:
+          0 70px 90px rgba(70, 40, 100, 0.4),
+          0 0 0 6px white,
+          0 0 0 18px #e6d3ff;
+        text-align: center;
+        z-index: 9999;
+        display: none;
+        opacity: 0;
+        transition:
+          opacity 0.2s,
+          transform 0.25s;
+        border: 4px solid #d4c2ff;
+      }
+      .popup-card.show {
+        display: block;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .popup-close {
+        position: absolute;
+        top: 12px;
+        right: 18px;
+        font-size: 3rem;
+        cursor: pointer;
+        color: #4b2e6b;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        line-height: 1;
+        padding: 0 14px;
+      }
+      .popup-close:hover {
+        background: #f1e5ff;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(50, 30, 70, 0.3);
+        backdrop-filter: blur(6px);
+        z-index: 9998;
+        display: none;
+      }
+      .overlay.show {
+        display: block;
+      }
+
+      /* ----- BACK TO HOMEPAGE ----- */
+      .back-home {
+        text-align: center;
+        padding: 2rem 0 2.5rem;
+      }
+      .back-btn {
+        background: white;
+        padding: 1rem 3rem;
+        border-radius: 80px;
+        text-decoration: none;
+        color: #4b2e6b;
+        font-size: 1.6rem;
+        font-family: var(--font-love);
+        border: 3px solid #d4c2ff;
+        box-shadow: 0 14px 0 #9a7cc2;
+        transition: 0.06s;
+        display: inline-block;
+      }
+      .back-btn:active {
+        transform: translateY(14px);
+        box-shadow: 0 3px 0 #9a7cc2;
+      }
+
+      /* ----- FOOTER (promise) ----- */
+      footer {
+        background: #d4c2ff;
+        padding: 2.5rem 0.5rem;
+        color: #2e1a47;
+        text-align: center;
+        border-top-left-radius: 100px 50px;
+        border-top-right-radius: 100px 50px;
+        font-family: var(--font-love);
+      }
+      .footer-hearts i {
+        color: #4b2e6b;
+        margin: 0 8px;
+        font-size: 2rem;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .promise-hero h1 {
+          font-size: 4.2rem;
+        }
+        .promise-ring-3d {
+          font-size: 7rem;
+        }
+        .oath-card {
+          width: 190px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== PROMISE DAY HERO · 3D ETERNITY RING ===== -->
+    <section class="promise-hero">
+      <div class="promise-stars" id="starContainer"></div>
+      <div class="promise-ring-3d">💍🤞</div>
+      <h1>Promise Day</h1>
+      <p>11th February · words i'll keep forever</p>
+      <div class="promise-tagline love-font">
+        <i class="fas fa-hand-holding-heart"></i> a promise is forever
+        <i class="fas fa-hand-holding-heart"></i>
+      </div>
+    </section>
+
+    <!-- ===== 3D PROMISE OATHS (interactive cards) ===== -->
+    <section class="oath-section">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="fas fa-ring"></i> promises i make to you
+          <i class="fas fa-ring"></i>
+        </h2>
+        <div class="oath-grid-3d">
+          <!-- promise 1: always by your side -->
+          <div class="oath-card">
+            <div class="oath-emoji">🤝💖</div>
+            <h3>always beside you</h3>
+            <p>through every season</p>
+            <button class="btn-oath" data-oath="beside">
+              seal this promise
+            </button>
+          </div>
+          <!-- promise 2: listen & understand -->
+          <div class="oath-card">
+            <div class="oath-emoji">👂💕</div>
+            <h3>listen with heart</h3>
+            <p>your voice, my favorite sound</p>
+            <button class="btn-oath" data-oath="listen">
+              seal this promise
+            </button>
+          </div>
+          <!-- promise 3: choose you, every day -->
+          <div class="oath-card">
+            <div class="oath-emoji">💍✨</div>
+            <h3>choose you</h3>
+            <p>today, tomorrow, always</p>
+            <button class="btn-oath" data-oath="choose">
+              seal this promise
+            </button>
+          </div>
+          <!-- promise 4: grow old together -->
+          <div class="oath-card">
+            <div class="oath-emoji">🌳🤍</div>
+            <h3>grow old with you</h3>
+            <p>every wrinkle tells our story</p>
+            <button class="btn-oath" data-oath="grow">seal this promise</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== THE PROMISE BOX (3D sacred) ===== -->
+    <section class="promise-box-section">
+      <h2
+        style="
+          font-family: var(--font-love);
+          font-size: 3rem;
+          color: #4b2e6b;
+          margin-bottom: 1.5rem;
+        ">
+        🤞 the promise box 🤞
+      </h2>
+      <div class="promise-box-3d" id="promiseBox">
+        <i class="fas fa-lock"></i>
+        <span>open with your heart</span>
+      </div>
+      <p style="font-family: var(--font-love); font-size: 2rem">
+        ✨ sealed with love, opened with trust ✨
+      </p>
+    </section>
+
+    <!-- ===== LOVE LETTER · promise edition ===== -->
+    <section class="promise-letter-section">
+      <div class="container">
+        <div class="promise-letter-card">
+          <div class="promise-letter-title">🤍 my solemn promise 🤍</div>
+          <div class="promise-letter-content">
+            “I promise to be your peace, your joy, your home. <br />
+            To hold your hand when you're strong, <br />
+            and hold you tighter when you're not. <br />
+            This is not just a day — it's my vow.”
+          </div>
+          <div class="promise-signature">
+            — yours, in all ways, <br />
+            [your valentine] 🤞💌
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ETERNITY RINGS (floating promises) ===== -->
+    <section class="eternity-section">
+      <div class="container">
+        <h2
+          style="
+            font-family: var(--font-love);
+            font-size: 3rem;
+            color: #4b2e6b;
+            text-align: center;
+            margin-bottom: 1.5rem;
+          ">
+          <i class="fas fa-infinity"></i> rings of forever
+          <i class="fas fa-infinity"></i>
+        </h2>
+        <div class="eternity-grid">
+          <div class="eternity-ring" data-eternity="trust">
+            <i class="fas fa-hand-holding-heart"></i>
+            <span>trust</span>
+          </div>
+          <div class="eternity-ring" data-eternity="respect">
+            <i class="fas fa-heart"></i>
+            <span>respect</span>
+          </div>
+          <div class="eternity-ring" data-eternity="honesty">
+            <i class="fas fa-star"></i>
+            <span>honesty</span>
+          </div>
+          <div class="eternity-ring" data-eternity="forever">
+            <i class="fas fa-infinity"></i>
+            <span>forever</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BACK TO HOMEPAGE ===== -->
+    <div class="back-home">
+      <a
+        href="#"
+        class="back-btn"
+        onclick="alert('🤞 returning to your love story… (homepage)')"
+        ><i class="fas fa-heart"></i> back to our story
+        <i class="fas fa-heart"></i
+      ></a>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="footer-hearts">
+        <i class="fas fa-heart"></i><i class="fas fa-hand-holding-heart"></i
+        ><i class="fas fa-heart"></i><i class="fas fa-infinity"></i
+        ><i class="fas fa-heart"></i>
+      </div>
+      <div
+        class="footer-quote"
+        style="font-size: 2.2rem; font-family: var(--font-love)">
+        "a promise is a whisper that forever hears"
+      </div>
+      <div style="font-size: 2rem; margin: 0.8rem 0">🤞💍✨</div>
+      <div style="font-family: var(--font-love); font-size: 1.4rem">
+        sealed with my whole heart
+      </div>
+    </footer>
+
+    <!-- GLOBAL POPUP -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup-card" id="popup">
+      <span class="popup-close" id="closePopup">&times;</span>
+      <div style="font-size: 5rem; margin-bottom: 0.5rem" id="popupEmoji">
+        🤞💖
+      </div>
+      <div
+        style="font-size: 2.6rem; font-family: var(--font-love); color: #4b2e6b"
+        id="popupTitle">
+        my promise
+      </div>
+      <div
+        style="
+          font-size: 1.9rem;
+          font-family: var(--font-love);
+          margin-top: 0.8rem;
+          color: #382a4a;
+        "
+        id="popupMsg">
+        i will always choose you.
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // --- floating stars (ambient) ---
+        function createStars() {
+          const starField = document.getElementById("starContainer");
+          if (!starField) return;
+          for (let i = 0; i < 60; i++) {
+            const star = document.createElement("div");
+            star.classList.add("star");
+            star.style.left = Math.random() * 100 + "%";
+            star.style.top = Math.random() * 100 + "%";
+            star.style.animationDelay = Math.random() * 6 + "s";
+            star.style.animationDuration =
+              Math.floor(Math.random() * 6) + 5 + "s";
+            star.style.width = Math.floor(Math.random() * 12) + 5 + "px";
+            star.style.height = star.style.width;
+            star.style.background = [
+              "#fff9e6",
+              "#f5e6ff",
+              "#ffe6f0",
+              "#e6f7ff",
+            ][Math.floor(Math.random() * 4)];
+            starField.appendChild(star);
+          }
+        }
+        createStars();
+
+        // ---------- POPUP SYSTEM ----------
+        const popup = document.getElementById("popup");
+        const overlay = document.getElementById("overlay");
+        const closeBtn = document.getElementById("closePopup");
+        const popupEmoji = document.getElementById("popupEmoji");
+        const popupTitle = document.getElementById("popupTitle");
+        const popupMsg = document.getElementById("popupMsg");
+
+        // oath messages (promise cards)
+        const oathMessages = {
+          beside: {
+            emoji: "🤝💖",
+            title: "always beside you",
+            msg: "I promise to stand by you — in joy, in sorrow, in every ordinary moment.",
+          },
+          listen: {
+            emoji: "👂💕",
+            title: "listen with heart",
+            msg: "I promise to truly hear you — your words, your silence, your soul.",
+          },
+          choose: {
+            emoji: "💍✨",
+            title: "choose you, every day",
+            msg: "I promise to wake up and choose you, again and again, for the rest of my life.",
+          },
+          grow: {
+            emoji: "🌳🤍",
+            title: "grow old together",
+            msg: "I promise to hold your hand when we’re old, and smile at every memory we made.",
+          },
+        };
+
+        // eternity ring messages
+        const eternityMessages = {
+          trust: {
+            emoji: "🤝🔐",
+            title: "trust",
+            msg: "I promise to be someone you can always trust — with your heart, your fears, your dreams.",
+          },
+          respect: {
+            emoji: "💖✨",
+            title: "respect",
+            msg: "I promise to respect you, admire you, and never take you for granted.",
+          },
+          honesty: {
+            emoji: "⭐🤍",
+            title: "honesty",
+            msg: "I promise to always be honest with you, even when it’s hard.",
+          },
+          forever: {
+            emoji: "♾️💍",
+            title: "forever",
+            msg: "I promise you my forever — not just a day, not just a year, but all my tomorrows.",
+          },
+        };
+
+        // promise box secret
+        const boxSecret = {
+          emoji: "🤞💎📜",
+          title: "the sacred promise",
+          msg: "I promise to love you not only today, but always. This box holds my word — and my word is eternal.",
+        };
+
+        function showPopup(emoji, title, msg) {
+          popupEmoji.innerHTML = emoji;
+          popupTitle.textContent = title;
+          popupMsg.textContent = msg;
+          popup.classList.add("show");
+          overlay.classList.add("show");
+        }
+
+        function hidePopup() {
+          popup.classList.remove("show");
+          overlay.classList.remove("show");
+        }
+
+        // oath buttons
+        const oathBtns = document.querySelectorAll(".btn-oath");
+        oathBtns.forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const type = this.dataset.oath;
+            const data = oathMessages[type] || {
+              emoji: "🤞💖",
+              title: "my promise",
+              msg: "i promise you forever.",
+            };
+            showPopup(data.emoji, data.title, data.msg);
+          });
+        });
+
+        // eternity rings
+        const eternityRings = document.querySelectorAll(".eternity-ring");
+        eternityRings.forEach((ring) => {
+          ring.addEventListener("click", function () {
+            const type = this.dataset.eternity;
+            const data = eternityMessages[type] || {
+              emoji: "💍✨",
+              title: "eternity",
+              msg: "my love for you has no end.",
+            };
+            showPopup(data.emoji, data.title, data.msg);
+          });
+        });
+
+        // promise box click
+        const promiseBox = document.getElementById("promiseBox");
+        if (promiseBox) {
+          promiseBox.addEventListener("click", function () {
+            showPopup(boxSecret.emoji, boxSecret.title, boxSecret.msg);
+          });
+        }
+
+        // close popup
+        closeBtn.addEventListener("click", hidePopup);
+        overlay.addEventListener("click", hidePopup);
+        window.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") hidePopup();
+        });
+
+        // back button
+        const backBtn = document.querySelector(".back-btn");
+        if (backBtn) {
+          backBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            alert("🤞 returning to your love story… (homepage link)");
+          });
+        }
+      })();
+    </script>
+
+    <style>
+      /* fallback icons */
+      .fa-hand-holding-heart:before {
+        content: "🤝💖";
+        font-family:
+          "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+      }
+      .fa-ring:before {
+        content: "💍";
+      }
+      .fa-lock:before {
+        content: "🔒";
+      }
+      .fa-infinity:before {
+        content: "♾️";
+      }
+      .fa-star:before {
+        content: "⭐";
+      }
+    </style>
+  </body>
+</html>

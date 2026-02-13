@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>✨ pixel heart · valentine popups ✨</title>
+    <!-- Google Fonts: lovy dovy & clean -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+    <!-- Font Awesome 6 (free icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+      /* -------------------------------
+       MOBILE-FIRST · RESET · VARIABLES
+    ------------------------------- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --blush-pink: #ffd9e8;
+        --deep-rose: #ffb3c6;
+        --romantic-red: #fb6f92;
+        --passion: #ff4d6d;
+        --soft-white: #fff9fb;
+        --velvet: #590d22;
+        --golden: #ffb347;
+        --petal: #ffe5ec;
+        --shadow: rgba(251, 111, 146, 0.2);
+        --font-love: "Dancing Script", cursive;
+        --font-clean: "Quicksand", sans-serif;
+      }
+
+      body {
+        background-color: var(--soft-white);
+        font-family: var(--font-clean);
+        color: #3a0a1f;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .love-font {
+        font-family: var(--font-love);
+        font-weight: 600;
+      }
+
+      /* --- buttons --- */
+      .btn-day {
+        background: white;
+        border: 2px solid var(--romantic-red);
+        color: var(--velvet);
+        padding: 0.6rem 1.4rem;
+        border-radius: 40px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: 0.25s;
+        box-shadow: 0 8px 15px var(--shadow);
+        display: inline-block;
+        text-decoration: none;
+      }
+
+      /* ----- HERO (same unique celebration) ----- */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(145deg, #ffeef4 0%, #ffe2eb 100%);
+        padding: 1.5rem;
+        border-bottom-left-radius: 50px 30px;
+        border-bottom-right-radius: 50px 30px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .confetti-piece {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: #ff97b7;
+        opacity: 0.7;
+        top: -20px;
+        border-radius: 8px 2px 8px 2px;
+        animation: drop 4s infinite ease-in;
+      }
+      @keyframes drop {
+        0% {
+          transform: translateY(-20px) rotate(0deg);
+          opacity: 0.9;
+        }
+        100% {
+          transform: translateY(100vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      .hero h1 {
+        font-size: 3.2rem;
+        font-family: var(--font-love);
+        color: #a4133c;
+        text-shadow: 2px 2px 0 #ffe6ed;
+      }
+      .hero p {
+        font-size: 1.5rem;
+        font-family: var(--font-love);
+        color: #590d22;
+        background: rgba(255, 255, 240, 0.5);
+        padding: 0.8rem 2rem;
+        border-radius: 60px;
+      }
+      .hero-welcome {
+        background: white;
+        padding: 1.8rem;
+        border-radius: 60px 60px 60px 0;
+        max-width: 550px;
+        border: 2px solid white;
+      }
+      .floating-heart {
+        font-size: 3rem;
+        animation: float 3s infinite;
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+
+      /* --- DAYS MENU (horizontal / desktop grid) --- */
+      .days-menu-section {
+        padding: 3rem 0 2rem;
+        background: white;
+      }
+      .section-title {
+        text-align: center;
+        font-size: 2.3rem;
+        font-family: var(--font-love);
+        color: #b23b4c;
+        margin-bottom: 2rem;
+      }
+      .section-title:after {
+        content: "❤️";
+        font-size: 1.8rem;
+        margin-left: 12px;
+      }
+
+      .days-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 1.2rem;
+        overflow-x: auto;
+        padding: 0.5rem 0.2rem 1.8rem;
+        scroll-snap-type: x mandatory;
+      }
+      .day-card {
+        flex: 0 0 180px;
+        background: linear-gradient(145deg, #ffe9f0, #ffdee6);
+        padding: 1.5rem 0.8rem;
+        border-radius: 40px 12px 40px 12px;
+        box-shadow: 0 10px 20px rgba(251, 111, 146, 0.15);
+        scroll-snap-align: start;
+        border: 1px solid white;
+        text-align: center;
+      }
+      .day-card i {
+        font-size: 2.2rem;
+        color: var(--passion);
+        margin-bottom: 0.6rem;
+      }
+      .day-card h3 {
+        font-size: 1.4rem;
+        font-family: var(--font-love);
+        color: #9d1f3c;
+      }
+      .day-link {
+        text-decoration: none;
+        background: white;
+        padding: 0.4rem 1rem;
+        border-radius: 30px;
+        color: var(--passion);
+        font-weight: 600;
+        border: 1px solid var(--deep-rose);
+        display: inline-block;
+        margin-top: 0.6rem;
+      }
+      @media (min-width: 768px) {
+        .days-grid {
+          flex-wrap: wrap;
+          justify-content: center;
+          overflow-x: visible;
+        }
+        .day-card {
+          flex: 0 0 200px;
+        }
+      }
+
+      /* --- LOVE LETTER (unique design) --- */
+      .love-letter-section {
+        background: #fff1f5;
+        background-image: radial-gradient(
+          circle at 10% 30%,
+          rgba(255, 209, 220, 0.3) 4%,
+          transparent 25%
+        );
+        padding: 3rem 0;
+        border-top: 3px dashed #ff8da1;
+        border-bottom: 3px dashed #ff8da1;
+      }
+      .letter-card {
+        max-width: 800px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        padding: 2.2rem 2rem;
+        border-radius: 30px 8px 30px 8px;
+        box-shadow: 0 20px 40px rgba(255, 128, 138, 0.2);
+        border: 2px solid white;
+        position: relative;
+      }
+      .letter-card:before {
+        content: "💌";
+        position: absolute;
+        font-size: 2.4rem;
+        top: -18px;
+        left: -12px;
+        background: white;
+        border-radius: 50%;
+        padding: 8px;
+      }
+      .letter-title {
+        font-size: 2.8rem;
+        font-family: var(--font-love);
+        color: #ad1457;
+        text-align: center;
+        border-bottom: 2px dotted #ffa5b9;
+        padding-bottom: 0.8rem;
+      }
+      .letter-content {
+        font-size: 1.5rem;
+        font-family: var(--font-love);
+        line-height: 1.5;
+        color: #4a1f2c;
+        white-space: pre-line;
+      }
+      .letter-signature {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        text-align: right;
+        margin-top: 1.5rem;
+        color: #b34167;
+      }
+
+      /* ========== 3D PIXEL HEART + FLOATING DAY ICONS ========== */
+      .heart-beat-section {
+        background: #ffe9ef; /* soft background, heart has transparent bg */
+        padding: 2.5rem 0 4rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 750px;
+        overflow: visible !important; /* so popups are visible */
+      }
+
+      /* ------- PIXEL HEART (from Uiverse) ------- */
+      .heart {
+        display: inline-grid;
+        grid-template-columns: repeat(13, 20px);
+        grid-template-rows: repeat(11, 20px);
+        gap: 1px;
+        padding: 20px;
+        animation: heartbeat 2s infinite ease-in-out;
+        background: transparent; /* no background */
+      }
+      .pixel {
+        width: 20px;
+        height: 20px;
+        transition: all 0.3s ease;
+        transform: scale(1);
+      }
+      .pixel.pink {
+        background: #e63946;
+        animation: pinkPulse 2.5s infinite ease-in-out;
+      }
+      .pixel.soft-pink {
+        background: #f1a1b4;
+        animation: softPinkPulse 2.2s infinite ease-in-out;
+      }
+      .pixel.white {
+        background: #ffeaea;
+        animation: whitePulse 2.8s infinite ease-in-out;
+      }
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.02);
+        }
+      }
+      @keyframes pinkPulse {
+        0%,
+        100% {
+          background: #ff6b81;
+          transform: scale(1);
+          box-shadow: 0 0 0 rgba(230, 57, 70, 0);
+        }
+        50% {
+          background: #e63946;
+          transform: scale(1.05);
+          box-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
+        }
+      }
+      @keyframes softPinkPulse {
+        0%,
+        100% {
+          background: #e63946;
+          transform: scale(1);
+          box-shadow: 0 0 0 rgba(241, 161, 180, 0);
+        }
+        50% {
+          background: #f1a1b4;
+          transform: scale(1.05);
+          box-shadow: 0 0 8px rgba(241, 161, 180, 0.6);
+        }
+      }
+      @keyframes whitePulse {
+        0%,
+        100% {
+          background: #ffe3e3;
+          transform: scale(1);
+          box-shadow: 0 0 0 rgba(255, 234, 234, 0);
+        }
+        50% {
+          background: #ffeaea;
+          transform: scale(1.05);
+          box-shadow: 0 0 15px rgba(255, 234, 234, 0.8);
+        }
+      }
+
+      /* ----- 3D FLOATING ICONS around heart (rose, teddy, etc) ----- */
+      .float-icon-3d {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background: white;
+        border-radius: 20px 8px 30px 8px;
+        box-shadow:
+          0 20px 30px rgba(200, 60, 100, 0.25),
+          inset 0 -3px 0 rgba(0, 0, 0, 0.05),
+          0 10px 20px rgba(255, 80, 120, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(2px);
+        /* 3D effect */
+        transform: perspective(600px) rotateX(3deg) rotateY(5deg)
+          translateZ(10px);
+        animation: float3d 5s infinite alternate ease-in-out;
+        z-index: 20;
+      }
+      .float-icon-3d:hover {
+        transform: perspective(600px) rotateX(2deg) rotateY(10deg)
+          translateZ(20px) scale(1.08);
+        box-shadow:
+          0 30px 40px rgba(230, 57, 80, 0.4),
+          inset 0 -5px 0 rgba(0, 0, 0, 0.02);
+      }
+      @keyframes float3d {
+        0% {
+          transform: perspective(600px) rotateX(3deg) rotateY(2deg)
+            translateY(0px) translateZ(8px);
+        }
+        100% {
+          transform: perspective(600px) rotateX(5deg) rotateY(12deg)
+            translateY(-18px) translateZ(15px);
+        }
+      }
+
+      .float-icon-3d i {
+        font-size: 2.8rem;
+        filter: drop-shadow(0 8px 6px rgba(0, 0, 0, 0.1));
+        color: #d6336c;
+      }
+      .float-icon-3d span {
+        font-family: var(--font-love);
+        font-size: 1rem;
+        margin-top: 4px;
+        color: #a4133c;
+        font-weight: 600;
+      }
+
+      /* --- POPUP MODAL (click opens, close with cross) --- */
+      .popup-card {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        width: 280px;
+        max-width: 85vw;
+        background: white;
+        border-radius: 40px 12px 40px 12px;
+        padding: 2rem 1.5rem;
+        box-shadow:
+          0 35px 60px rgba(210, 40, 86, 0.3),
+          0 0 0 4px white,
+          0 0 0 8px #ffccd5;
+        text-align: center;
+        z-index: 9999;
+        display: none;
+        opacity: 0;
+        transition:
+          opacity 0.2s,
+          transform 0.25s;
+        border: 2px solid #ffb3c1;
+      }
+      .popup-card.show {
+        display: block;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .popup-close {
+        position: absolute;
+        top: 12px;
+        right: 18px;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #b23b4c;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        line-height: 1;
+        padding: 0 7px;
+        transition: 0.1s;
+        font-weight: bold;
+      }
+      .popup-close:hover {
+        background: #ffccd5;
+        color: #a01030;
+      }
+      .popup-icon {
+        font-size: 3.5rem;
+        color: #ff4d6d;
+        margin-bottom: 0.5rem;
+      }
+      .popup-title {
+        font-family: var(--font-love);
+        font-size: 2rem;
+        color: #9e1e40;
+      }
+      .popup-message {
+        font-size: 1.3rem;
+        font-family: var(--font-love);
+        color: #590d22;
+        margin: 0.8rem 0;
+      }
+      /* overlay */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(30, 0, 10, 0.3);
+        backdrop-filter: blur(4px);
+        z-index: 9998;
+        display: none;
+      }
+      .overlay.show {
+        display: block;
+      }
+
+      /* adjust positions for 3d floating icons */
+      .float1 {
+        top: 12%;
+        left: 3%;
+        animation-delay: 0s;
+      }
+      .float2 {
+        top: 20%;
+        right: 2%;
+        animation-delay: 1.2s;
+      }
+      .float3 {
+        bottom: 25%;
+        left: 8%;
+        animation-delay: 0.6s;
+      }
+      .float4 {
+        bottom: 15%;
+        right: 7%;
+        animation-delay: 2s;
+      }
+      .float5 {
+        top: 40%;
+        left: 15%;
+        animation-delay: 0.3s;
+      }
+      .float6 {
+        top: 60%;
+        right: 12%;
+        animation-delay: 1.5s;
+      }
+      .float7 {
+        bottom: 5%;
+        left: 20%;
+        animation-delay: 0.8s;
+      }
+      .float8 {
+        bottom: 45%;
+        right: 18%;
+        animation-delay: 1.9s;
+      }
+
+      @media (max-width: 600px) {
+        .float-icon-3d {
+          width: 70px;
+          height: 70px;
+        }
+        .float-icon-3d i {
+          font-size: 2.2rem;
+        }
+        .float1 {
+          top: 5%;
+          left: 1%;
+        }
+        .float2 {
+          top: 15%;
+          right: 0%;
+        }
+        .float3 {
+          bottom: 30%;
+          left: 2%;
+        }
+        .float4 {
+          bottom: 20%;
+          right: 2%;
+        }
+        .float5 {
+          top: 45%;
+          left: 2%;
+        }
+        .float6 {
+          top: 70%;
+          right: 1%;
+        }
+        .float7 {
+          bottom: 2%;
+          left: 5%;
+        }
+        .float8 {
+          bottom: 55%;
+          right: 3%;
+        }
+      }
+
+      /* ----- FOOTER (same romantic) ----- */
+      footer {
+        background: #ffccd5;
+        background: linear-gradient(45deg, #ffc2c9, #ffb3c1);
+        padding: 2rem 0.5rem;
+        margin-top: 2rem;
+        color: #5e1b34;
+        text-align: center;
+        border-top-left-radius: 60px 30px;
+        border-top-right-radius: 60px 30px;
+        font-family: var(--font-love);
+      }
+      .footer-hearts i {
+        color: #a4133c;
+        margin: 0 7px;
+        font-size: 1.6rem;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+      .footer-quote {
+        font-size: 1.7rem;
+        font-weight: 600;
+      }
+
+      /* fallback emoji icons */
+      .fa-bear:before {
+        content: "🧸";
+        font-family:
+          "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+      }
+      .fa-rose:before {
+        content: "🌹";
+      }
+      .fa-candy-cane:before {
+        content: "🍫";
+      }
+      .fa-ring:before {
+        content: "💍";
+      }
+      .fa-hand-holding-heart:before {
+        content: "💖";
+      }
+      .fa-people-arrows:before {
+        content: "🤗";
+      }
+      .fa-lips:before {
+        content: "💋";
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HERO (same) -->
+    <section class="hero">
+      <div class="confetti" id="confettiContainer"></div>
+      <div class="hero-welcome">
+        <h1 class="love-font">my love,</h1>
+        <span class="floating-heart">❤️🧸❤️</span>
+        <p class="love-font" style="font-size: 2.2rem">you are my forever</p>
+        <div style="font-size: 1.8rem; margin: 1rem 0; letter-spacing: 8px">
+          <i class="fas fa-heart" style="color: #fb6f92"></i>
+          <i class="fas fa-heart" style="color: #ff8c9e"></i>
+          <i class="fas fa-heart" style="color: #ff4d6d"></i>
+        </div>
+        <p
+          style="
+            font-size: 1.5rem;
+            font-family: var(--font-love);
+            background: white;
+            padding: 0.5rem 1.8rem;
+            border-radius: 50px;
+          ">
+          Happy Valentine’s 💘
+        </p>
+      </div>
+    </section>
+
+    <!-- DAYS MENU (each day of valentine) -->
+    <div class="container days-menu-section">
+      <h2 class="section-title love-font">🌸 days of love 🌸</h2>
+      <div class="days-grid">
+        <div class="day-card">
+          <i class="fas fa-rose"></i>
+          <h3>Rose Day</h3>
+          <p>7 Feb</p>
+          <a href="assets/rose.html" class="day-link" data-page="rose"
+            ><i class="fas fa-flower"></i> open</a
+          >
+        </div>
+        <div class="day-card">
+          <i class="fas fa-ring"></i>
+          <h3>Propose Day</h3>
+          <p>8 Feb</p>
+          <a href="assets/propose.html" class="day-link" data-page="propose"
+            ><i class="fas fa-heart"></i> open</a
+          >
+        </div>
+        <div class="day-card">
+          <i class="fas fa-candy-cane"></i>
+          <h3>Chocolate Day</h3>
+          <p>9 Feb</p>
+          <a href="assets/chock.html" class="day-link" data-page="chocolate"
+            ><i class="fas fa-cookie"></i> open</a
+          >
+        </div>
+        <div class="day-card">
+          <i class="fas fa-bear"></i>
+          <h3>Teddy Day</h3>
+          <p>10 Feb</p>
+          <a href="assets/teddy.html" class="day-link" data-page="teddy"
+            ><i class="fas fa-gift"></i> open</a
+          >
+        </div>
+        <div class="day-card">
+          <i class="fas fa-hand-holding-heart"></i>
+          <h3>Promise Day</h3>
+          <p>11 Feb</p>
+          <a href="assets/promise.html" class="day-link" data-page="promise"
+            ><i class="fas fa-lock"></i> open</a
+          >
+        </div>
+        <div class="day-card">
+          <i class="fas fa-people-arrows"></i>
+          <h3>Hug Day</h3>
+          <p>12 Feb</p>
+          <a href="assets/hug.html" class="day-link" data-page="hug"
+            ><i class="fas fa-hand-peace"></i> open</a
+          >
+        </div>
+        <div class="day-card">
+          <i class="fas fa-lips"></i>
+          <h3>Kiss Day</h3>
+          <p>13 Feb</p>
+          <a href="assets/kiss.html" class="day-link" data-page="kiss"
+            ><i class="fas fa-heart"></i> open</a
+          >
+        </div>
+        <div class="day-card">
+          <i class="fas fa-heart"></i>
+          <h3>Valentine's Day</h3>
+          <p>14 Feb</p>
+          <a href="assets/valen.html" class="day-link" data-page="valentine"
+            ><i class="fas fa-champagne-glasses"></i> open</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- LOVE LETTER (you write manually) -->
+    <section class="love-letter-section">
+      <div class="container">
+        <div class="letter-card">
+          <div class="letter-title">💖 My Dearest Love 💖</div>
+          <div class="letter-content">
+            From the moment you came into my life, <br />
+            every day has been Valentine's. <br />
+            You are the poetry my heart always wanted to speak. <br />
+            <span style="font-size: 2rem">🌹</span>
+          </div>
+          <div class="letter-signature">
+            forever yours, <br />
+            [Your name] 🕊️
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3D PIXEL HEART + FLOATING ICONS (popup on click, close with cross) ===== -->
+    <section class="heart-beat-section">
+      <h2
+        style="
+          font-family: var(--font-love);
+          font-size: 2.2rem;
+          color: #800f2f;
+          margin-bottom: 1.5rem;
+        ">
+        <i class="fas fa-heart" style="color: #ff4d6d"></i> beat of my heart
+        <i class="fas fa-heart" style="color: #ff4d6d"></i>
+      </h2>
+
+      <!-- PIXEL HEART (exact from your code, transparent bg) -->
+      <div class="heart">
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel white"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel white"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel soft-pink"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel pink"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+      </div>
+
+      <p
+        style="
+          font-family: var(--font-love);
+          font-size: 1.4rem;
+          margin-top: 0.5rem;
+          color: #a4133c;
+        ">
+        ✨ tap a symbol to open a love note ✨
+      </p>
+
+      <!-- 3D FLOATING ICONS (each day around heart) - click opens popup -->
+      <div class="float-icon-3d float1" data-day="rose">
+        <i class="fas fa-rose"></i><span>Rose Day</span>
+      </div>
+      <div class="float-icon-3d float2" data-day="propose">
+        <i class="fas fa-ring"></i><span>Propose</span>
+      </div>
+      <div class="float-icon-3d float3" data-day="chocolate">
+        <i class="fas fa-candy-cane"></i><span>Chocolate</span>
+      </div>
+      <div class="float-icon-3d float4" data-day="teddy">
+        <i class="fas fa-bear"></i><span>Teddy Day</span>
+      </div>
+      <div class="float-icon-3d float5" data-day="promise">
+        <i class="fas fa-hand-holding-heart"></i><span>Promise</span>
+      </div>
+      <div class="float-icon-3d float6" data-day="hug">
+        <i class="fas fa-people-arrows"></i><span>Hug Day</span>
+      </div>
+      <div class="float-icon-3d float7" data-day="kiss">
+        <i class="fas fa-lips"></i><span>Kiss Day</span>
+      </div>
+      <div class="float-icon-3d float8" data-day="valentine">
+        <i class="fas fa-heart"></i><span>V-Day</span>
+      </div>
+    </section>
+
+    <!-- GLOBAL POPUP & OVERLAY -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup-card" id="popup">
+      <span class="popup-close" id="closePopup">&times;</span>
+      <div class="popup-icon" id="popupIcon">🌹</div>
+      <div class="popup-title" id="popupTitle">Rose Day</div>
+      <div class="popup-message" id="popupMsg">
+        Every rose reminds me of your beauty. 🌹✨
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-hearts">
+          <i class="fas fa-heart"></i><i class="fas fa-heart"></i
+          ><i class="fas fa-heart"></i><i class="fas fa-heart"></i>
+        </div>
+        <div class="footer-quote love-font">
+          "you are my today and all of my tomorrows"
+        </div>
+        <div style="font-size: 1.8rem">💞🧁💞</div>
+        <div class="footer-small">
+          made with infinite love, for my valentine. · every day is rose day
+          with you 🌹
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // --- confetti ---
+        function createConfetti() {
+          const container = document.getElementById("confettiContainer");
+          if (!container) return;
+          for (let i = 0; i < 45; i++) {
+            const conf = document.createElement("div");
+            conf.classList.add("confetti-piece");
+            const size = Math.floor(Math.random() * 14) + 8;
+            conf.style.width = size + "px";
+            conf.style.height = size * 0.7 + "px";
+            conf.style.left = Math.random() * 100 + "%";
+            conf.style.animationDelay = Math.random() * 5 + "s";
+            conf.style.animationDuration =
+              Math.floor(Math.random() * 5 + 4) + "s";
+            const colors = [
+              "#ffb3c6",
+              "#ff8c9e",
+              "#fb6f92",
+              "#ff97b7",
+              "#ffc2d1",
+            ];
+            conf.style.background =
+              colors[Math.floor(Math.random() * colors.length)];
+            container.appendChild(conf);
+          }
+        }
+        createConfetti();
+
+        // --- DAY MENU links (alert) ---
+        // const dayLinks = document.querySelectorAll(".day-link");
+        // dayLinks.forEach((link) => {
+        //   link.addEventListener("click", function (e) {
+        //     e.preventDefault();
+        //     alert(`🌸 ${this.dataset.page} page — built with love! 🌸`);
+        //   });
+        // });
+
+        // ---------- POPUP SYSTEM for 3D FLOATING ICONS ----------
+        const popup = document.getElementById("popup");
+        const overlay = document.getElementById("overlay");
+        const closeBtn = document.getElementById("closePopup");
+        const popupIcon = document.getElementById("popupIcon");
+        const popupTitle = document.getElementById("popupTitle");
+        const popupMsg = document.getElementById("popupMsg");
+
+        // data for each day - custom messages
+        const dayData = {
+          rose: {
+            icon: "🌹",
+            title: "Rose Day",
+            msg: "You are the most beautiful rose in my garden. 🌹",
+          },
+          propose: {
+            icon: "💍",
+            title: "Propose Day",
+            msg: "Every day I’d choose you. Forever yes. 💍✨",
+          },
+          chocolate: {
+            icon: "🍫",
+            title: "Chocolate Day",
+            msg: "Sweet as chocolate, but you’re much sweeter. 🍫💕",
+          },
+          teddy: {
+            icon: "🧸",
+            title: "Teddy Day",
+            msg: "Wanna cuddle? You’re my favorite teddy bear. 🧸🤍",
+          },
+          promise: {
+            icon: "💖",
+            title: "Promise Day",
+            msg: "I promise to love you, today & always. 💖🤞",
+          },
+          hug: {
+            icon: "🤗",
+            title: "Hug Day",
+            msg: "Sending you the warmest hug across the screen. 🫂",
+          },
+          kiss: {
+            icon: "💋",
+            title: "Kiss Day",
+            msg: "A thousand kisses, and I’d still want more. 💋",
+          },
+          valentine: {
+            icon: "❤️",
+            title: "Valentine’s Day",
+            msg: "You + me = infinite love. Happy Valentine’s! ❤️",
+          },
+        };
+
+        function showPopup(dayKey) {
+          const data = dayData[dayKey] || {
+            icon: "❤️",
+            title: "Love",
+            msg: "You are my forever.",
+          };
+          popupIcon.innerHTML = data.icon;
+          popupTitle.textContent = data.title;
+          popupMsg.textContent = data.msg;
+          popup.classList.add("show");
+          overlay.classList.add("show");
+        }
+
+        function hidePopup() {
+          popup.classList.remove("show");
+          overlay.classList.remove("show");
+        }
+
+        // attach click to each 3d float icon
+        const floatIcons = document.querySelectorAll(".float-icon-3d");
+        floatIcons.forEach((icon) => {
+          icon.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const day = this.dataset.day;
+            showPopup(day);
+          });
+        });
+
+        // close popup via close button or overlay
+        closeBtn.addEventListener("click", hidePopup);
+        overlay.addEventListener("click", hidePopup);
+
+        // also close on escape key
+        window.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") hidePopup();
+        });
+      })();
+    </script>
+
+    <!-- emoji fallback style -->
+    <style>
+      .popup-icon {
+        font-size: 3.5rem;
+        line-height: 1;
+      }
+      .pixel {
+        background: transparent;
+      } /* default transparent, only colored classes get bg */
+      .heart {
+        background: transparent;
+      }
+    </style>
+  </body>
+</html>

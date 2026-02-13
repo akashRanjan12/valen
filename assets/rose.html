@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>🌹 rose day · forever yours</title>
+    <!-- Google Fonts: lovy dovy & romantic -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+      /* -------------------------------
+       ROSE DAY · PURE ROMANCE
+       mobile-first, 3D, interactive
+    ------------------------------- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --rose-red: #e33054;
+        --rose-petal: #ffb7c5;
+        --rose-soft: #ffe4e9;
+        --rose-deep: #a4133c;
+        --rose-gold: #ffb347;
+        --velvet: #590d22;
+        --font-love: "Dancing Script", cursive;
+        --font-clean: "Quicksand", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(145deg, #fff6f8 0%, #ffe9ef 100%);
+        font-family: var(--font-clean);
+        color: #3a0a1f;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .love-font {
+        font-family: var(--font-love);
+        font-weight: 600;
+      }
+
+      /* ----- 3D ROSE GARDEN HERO ----- */
+      .rose-hero {
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(circle at 50% 30%, #ffe9f0, #ffdae5);
+        border-bottom-left-radius: 80px 40px;
+        border-bottom-right-radius: 80px 40px;
+        box-shadow: 0 20px 30px rgba(200, 50, 80, 0.1);
+      }
+
+      /* floating rose petals (animation) */
+      .petal-field {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .petal {
+        position: absolute;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffb7c5"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+        background-size: contain;
+        width: 30px;
+        height: 30px;
+        opacity: 0.6;
+        animation: petalFall 10s linear infinite;
+      }
+      @keyframes petalFall {
+        0% {
+          transform: translateY(-10vh) rotate(0deg);
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateY(110vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      .rose-hero h1 {
+        font-size: 5rem;
+        font-family: var(--font-love);
+        color: var(--rose-deep);
+        text-shadow:
+          4px 4px 0 #ffe6ed,
+          8px 8px 20px rgba(227, 48, 84, 0.3);
+        z-index: 10;
+        margin-bottom: 0.5rem;
+        animation: fadeIn 1.4s;
+      }
+      .rose-hero p {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        color: #9e1e40;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        padding: 0.8rem 2.2rem;
+        border-radius: 60px;
+        border: 2px solid white;
+        box-shadow: 0 15px 25px rgba(255, 108, 138, 0.2);
+        z-index: 10;
+      }
+      .rose-3d {
+        font-size: 7rem;
+        margin: 0.5rem 0;
+        filter: drop-shadow(0 20px 15px rgba(180, 40, 70, 0.2));
+        animation: floatRose 4s infinite alternate ease-in-out;
+        z-index: 15;
+      }
+      @keyframes floatRose {
+        0% {
+          transform: perspective(500px) rotateX(5deg) rotateY(5deg)
+            translateY(0);
+        }
+        100% {
+          transform: perspective(500px) rotateX(8deg) rotateY(15deg)
+            translateY(-18px);
+        }
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* ----- 3D ROSE GALLERY (floating roses) ----- */
+      .rose-gallery-section {
+        padding: 3rem 0 4rem;
+        position: relative;
+        background: white;
+        margin-top: -20px;
+        border-radius: 60px 60px 0 0;
+        z-index: 20;
+      }
+
+      .section-title {
+        font-size: 2.8rem;
+        font-family: var(--font-love);
+        color: #b23b4c;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .section-title i {
+        color: #e33054;
+        margin: 0 10px;
+      }
+
+      /* 3D rose cards */
+      .rose-grid-3d {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5rem;
+      }
+      .rose-card-3d {
+        width: 220px;
+        background: white;
+        border-radius: 40px 12px 40px 12px;
+        padding: 2rem 1rem;
+        box-shadow:
+          0 30px 35px -15px rgba(200, 70, 100, 0.2),
+          inset 0 -3px 0 rgba(0, 0, 0, 0.02),
+          0 0 0 2px white,
+          0 0 0 5px #ffe9ef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transform: perspective(600px) rotateX(2deg) rotateY(6deg)
+          translateZ(5px);
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        animation: cardFloat 5s infinite alternate;
+      }
+      .rose-card-3d:hover {
+        transform: perspective(600px) rotateX(4deg) rotateY(14deg)
+          translateZ(25px) scale(1.03);
+        box-shadow: 0 40px 50px -10px #e66780;
+      }
+      @keyframes cardFloat {
+        0% {
+          transform: perspective(600px) rotateX(2deg) rotateY(2deg)
+            translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(6deg) rotateY(12deg)
+            translateY(-15px);
+        }
+      }
+
+      .rose-emoji-3d {
+        font-size: 4.8rem;
+        filter: drop-shadow(0 15px 10px rgba(190, 50, 70, 0.2));
+        margin-bottom: 0.5rem;
+        animation: rosePulse 3s infinite;
+      }
+      @keyframes rosePulse {
+        0% {
+          transform: scale(1);
+          text-shadow: 0 0 5px #ffb7c5;
+        }
+        50% {
+          transform: scale(1.08);
+          text-shadow: 0 0 20px #ff8da1;
+        }
+      }
+      .rose-card-3d h3 {
+        font-size: 1.8rem;
+        font-family: var(--font-love);
+        color: #a4133c;
+        margin-bottom: 0.5rem;
+      }
+      .rose-card-3d p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        color: #800f2f;
+      }
+      .btn-rose {
+        background: #ffccd5;
+        border: none;
+        padding: 0.7rem 1.6rem;
+        border-radius: 40px;
+        font-weight: 600;
+        color: #9d1f3c;
+        border: 1px solid white;
+        box-shadow: 0 6px 0 #c9718d;
+        transition: 0.08s;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      .btn-rose:active {
+        transform: translateY(6px);
+        box-shadow: 0 1px 0 #c9718d;
+      }
+
+      /* ----- LOVE LETTER (rose edition) ----- */
+      .rose-letter-section {
+        background: #fff1f5;
+        background-image: radial-gradient(
+          circle at 10% 20%,
+          rgba(255, 183, 197, 0.3) 8%,
+          transparent 30%
+        );
+        padding: 3.5rem 0;
+        border-top: 4px dotted #ff9aae;
+        border-bottom: 4px dotted #ff9aae;
+      }
+      .rose-letter-card {
+        max-width: 750px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        padding: 2.5rem 2.2rem;
+        border-radius: 50px 12px 50px 12px;
+        box-shadow: 0 30px 50px rgba(200, 80, 110, 0.2);
+        border: 3px solid white;
+        position: relative;
+      }
+      .rose-letter-card:before {
+        content: "🌹🌹";
+        position: absolute;
+        font-size: 2.5rem;
+        top: -20px;
+        left: -15px;
+        background: white;
+        border-radius: 50%;
+        padding: 10px 12px;
+        box-shadow: 0 8px 0 #ffb3c1;
+      }
+      .rose-letter-title {
+        font-size: 3rem;
+        font-family: var(--font-love);
+        color: #b23b4c;
+        text-align: center;
+        border-bottom: 3px dashed #ffa5b9;
+        padding-bottom: 0.5rem;
+      }
+      .rose-letter-content {
+        font-size: 1.8rem;
+        font-family: var(--font-love);
+        line-height: 1.5;
+        color: #4a1f2c;
+        white-space: pre-line;
+        text-align: center;
+      }
+      .rose-signature {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        text-align: right;
+        margin-top: 1.8rem;
+        color: #b34167;
+      }
+
+      /* ----- INTERACTIVE ROSE GARDEN (popup surprise) ----- */
+      .rose-interactive {
+        padding: 4rem 0;
+        background: #ffe3e8;
+        text-align: center;
+      }
+      .interactive-rose-bed {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5rem;
+        margin: 3rem 0;
+      }
+      .rose-bud {
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle at 30% 20%, #ffb7c5, #ff8c9e);
+        border-radius: 60% 40% 50% 50% / 40% 50% 60% 50%;
+        box-shadow:
+          0 25px 30px #e66780,
+          inset 0 -10px 20px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: perspective(600px) rotateX(5deg) rotateY(10deg);
+        animation: budFloat 4s infinite alternate;
+        border: 5px solid white;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .rose-bud:hover {
+        transform: perspective(600px) rotateX(3deg) rotateY(20deg) scale(1.1);
+        box-shadow: 0 35px 45px #c4556b;
+      }
+      .rose-bud i,
+      .rose-bud span {
+        font-size: 3.8rem;
+        color: white;
+        text-shadow: 0 5px 10px #a01030;
+      }
+      .rose-bud span {
+        font-size: 1.2rem;
+        font-family: var(--font-love);
+        background: rgba(255, 255, 255, 0.4);
+        padding: 0.2rem 1rem;
+        border-radius: 30px;
+        margin-top: 5px;
+      }
+      @keyframes budFloat {
+        0% {
+          transform: perspective(600px) rotateX(5deg) rotateY(5deg)
+            translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(10deg) rotateY(18deg)
+            translateY(-20px);
+        }
+      }
+
+      /* POPUP (same style as homepage) */
+      .popup-card {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        width: 300px;
+        max-width: 85vw;
+        background: white;
+        border-radius: 50px 12px 50px 12px;
+        padding: 2.2rem 1.8rem;
+        box-shadow:
+          0 40px 65px rgba(180, 40, 70, 0.4),
+          0 0 0 4px white,
+          0 0 0 10px #ffccd5;
+        text-align: center;
+        z-index: 9999;
+        display: none;
+        opacity: 0;
+        transition:
+          opacity 0.2s,
+          transform 0.25s;
+        border: 3px solid #ffb3c1;
+      }
+      .popup-card.show {
+        display: block;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .popup-close {
+        position: absolute;
+        top: 10px;
+        right: 16px;
+        font-size: 2.5rem;
+        cursor: pointer;
+        color: #b23b4c;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        line-height: 1;
+        padding: 0 9px;
+      }
+      .popup-close:hover {
+        background: #ffccd5;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(60, 10, 20, 0.3);
+        backdrop-filter: blur(5px);
+        z-index: 9998;
+        display: none;
+      }
+      .overlay.show {
+        display: block;
+      }
+
+      /* ----- BACK TO LOVE HOMEPAGE ----- */
+      .back-home {
+        text-align: center;
+        padding: 1.5rem 0 2.5rem;
+      }
+      .back-btn {
+        background: white;
+        padding: 0.9rem 2.5rem;
+        border-radius: 60px;
+        text-decoration: none;
+        color: #a4133c;
+        font-size: 1.3rem;
+        font-family: var(--font-love);
+        border: 3px solid #ffb3c1;
+        box-shadow: 0 10px 0 #c45a6a;
+        transition: 0.06s;
+        display: inline-block;
+      }
+      .back-btn:active {
+        transform: translateY(10px);
+        box-shadow: 0 2px 0 #c45a6a;
+      }
+
+      /* ----- FOOTER (rose touch) ----- */
+      footer {
+        background: #ffccd5;
+        padding: 2.2rem 0.5rem;
+        color: #5e1b34;
+        text-align: center;
+        border-top-left-radius: 80px 40px;
+        border-top-right-radius: 80px 40px;
+        font-family: var(--font-love);
+      }
+      .footer-hearts i {
+        color: #a4133c;
+        margin: 0 7px;
+        font-size: 1.8rem;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+
+      /* responsiveness */
+      @media (max-width: 600px) {
+        .rose-hero h1 {
+          font-size: 3.8rem;
+        }
+        .rose-3d {
+          font-size: 5rem;
+        }
+        .rose-card-3d {
+          width: 180px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== ROSE DAY HERO · 3D floating rose ===== -->
+    <section class="rose-hero">
+      <div class="petal-field" id="petalContainer"></div>
+      <div class="rose-3d">🌹</div>
+      <h1>Rose Day</h1>
+      <p>7th February · for my one and only rose</p>
+      <div
+        style="
+          margin-top: 2rem;
+          font-size: 2rem;
+          color: #b34167;
+          background: rgba(255, 255, 255, 0.5);
+          padding: 0.5rem 1.8rem;
+          border-radius: 60px;
+          backdrop-filter: blur(5px);
+        ">
+        <i class="fas fa-heart"></i> every rose remembers you
+        <i class="fas fa-heart"></i>
+      </div>
+    </section>
+
+    <!-- ===== 3D ROSE GALLERY ===== -->
+    <section class="rose-gallery-section">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="fas fa-rose"></i> roses for my rose
+          <i class="fas fa-rose"></i>
+        </h2>
+        <div class="rose-grid-3d">
+          <!-- red rose 3d card -->
+          <div class="rose-card-3d">
+            <div class="rose-emoji-3d">🌹</div>
+            <h3>red rose</h3>
+            <p>passion & love</p>
+            <button class="btn-rose" data-rose="red">
+              <i class="fas fa-heart"></i> feel it
+            </button>
+          </div>
+          <!-- pink rose -->
+          <div class="rose-card-3d">
+            <div class="rose-emoji-3d">🌹🌸</div>
+            <h3>pink rose</h3>
+            <p>grace & sweetness</p>
+            <button class="btn-rose" data-rose="pink">
+              <i class="fas fa-heart"></i> feel it
+            </button>
+          </div>
+          <!-- white rose -->
+          <div class="rose-card-3d">
+            <div class="rose-emoji-3d">🌹🤍</div>
+            <h3>white rose</h3>
+            <p>eternal love</p>
+            <button class="btn-rose" data-rose="white">
+              <i class="fas fa-heart"></i> feel it
+            </button>
+          </div>
+          <!-- yellow rose -->
+          <div class="rose-card-3d">
+            <div class="rose-emoji-3d">🌹💛</div>
+            <h3>yellow rose</h3>
+            <p>friendship & joy</p>
+            <button class="btn-rose" data-rose="yellow">
+              <i class="fas fa-heart"></i> feel it
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LOVE LETTER · rose edition ===== -->
+    <section class="rose-letter-section">
+      <div class="container">
+        <div class="rose-letter-card">
+          <div class="rose-letter-title">🌹 to my rose 🌹</div>
+          <div class="rose-letter-content">
+            “Every rose has its thorn, <br />
+            but you turned every thorn into a petal. <br />
+            You are the most beautiful flower in my garden.”
+          </div>
+          <div class="rose-signature">
+            — forever yours, <br />
+            [your valentine] 🕊️
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INTERACTIVE ROSE GARDEN (click to open popup) ===== -->
+    <section class="rose-interactive">
+      <h2
+        style="
+          font-family: var(--font-love);
+          font-size: 2.6rem;
+          color: #800f2f;
+        ">
+        🌷 pick a rose, read a secret 🌷
+      </h2>
+      <div class="interactive-rose-bed">
+        <div class="rose-bud" data-secret="memory">
+          <i class="fas fa-rose"></i>
+          <span>first rose</span>
+        </div>
+        <div class="rose-bud" data-secret="promise">
+          <i class="fas fa-rose"></i>
+          <span>eternal</span>
+        </div>
+        <div class="rose-bud" data-secret="love">
+          <i class="fas fa-rose"></i>
+          <span>my heart</span>
+        </div>
+        <div class="rose-bud" data-secret="dream">
+          <i class="fas fa-rose"></i>
+          <span>you & me</span>
+        </div>
+      </div>
+      <p
+        style="
+          font-family: var(--font-love);
+          font-size: 1.8rem;
+          margin-top: 1rem;
+        ">
+        ✨ tap a rose, feel the love ✨
+      </p>
+    </section>
+
+    <!-- ===== BACK TO HOMEPAGE ===== -->
+    <div class="back-home">
+      <a
+        href="#"
+        class="back-btn"
+        onclick="alert('🌸 return to homepage (your love story) 🌸')"
+        ><i class="fas fa-heart"></i> back to our story
+        <i class="fas fa-heart"></i
+      ></a>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="footer-hearts">
+        <i class="fas fa-heart"></i><i class="fas fa-heart"></i
+        ><i class="fas fa-heart"></i><i class="fas fa-rose"></i
+        ><i class="fas fa-heart"></i>
+      </div>
+      <div
+        class="footer-quote"
+        style="font-size: 1.8rem; font-family: var(--font-love)">
+        "a rose remembers, and so do i"
+      </div>
+      <div style="font-size: 1.5rem; margin: 0.8rem 0">🌹🌹🌹</div>
+      <div style="font-family: var(--font-love); font-size: 1.2rem">
+        made with rose petals & infinite love
+      </div>
+    </footer>
+
+    <!-- GLOBAL POPUP (rose secrets) -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup-card" id="popup">
+      <span class="popup-close" id="closePopup">&times;</span>
+      <div style="font-size: 4rem; margin-bottom: 0.2rem" id="popupEmoji">
+        🌹
+      </div>
+      <div
+        style="font-size: 2.2rem; font-family: var(--font-love); color: #a4133c"
+        id="popupTitle">
+        rose memory
+      </div>
+      <div
+        style="
+          font-size: 1.5rem;
+          font-family: var(--font-love);
+          margin-top: 0.7rem;
+          color: #590d22;
+        "
+        id="popupMsg">
+        you are my first rose.
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // --- floating rose petals (ambient) ---
+        function createPetals() {
+          const petalField = document.getElementById("petalContainer");
+          if (!petalField) return;
+          for (let i = 0; i < 35; i++) {
+            const petal = document.createElement("div");
+            petal.classList.add("petal");
+            petal.style.left = Math.random() * 100 + "%";
+            petal.style.animationDelay = Math.random() * 8 + "s";
+            petal.style.animationDuration =
+              Math.floor(Math.random() * 8) + 8 + "s";
+            petal.style.width = Math.floor(Math.random() * 25) + 18 + "px";
+            petal.style.height = petal.style.width;
+            petal.style.opacity = Math.random() * 0.5 + 0.2;
+            petalField.appendChild(petal);
+          }
+        }
+        createPetals();
+
+        // ---------- POPUP SYSTEM for rose day ----------
+        const popup = document.getElementById("popup");
+        const overlay = document.getElementById("overlay");
+        const closeBtn = document.getElementById("closePopup");
+        const popupEmoji = document.getElementById("popupEmoji");
+        const popupTitle = document.getElementById("popupTitle");
+        const popupMsg = document.getElementById("popupMsg");
+
+        // data for rose cards (3D gallery buttons)
+        const roseMessages = {
+          red: {
+            emoji: "🌹❤️",
+            title: "Red Rose",
+            msg: "You set my heart on fire. Passion eternal.",
+          },
+          pink: {
+            emoji: "🌸🌹",
+            title: "Pink Rose",
+            msg: "Your sweetness blooms in my soul.",
+          },
+          white: {
+            emoji: "🤍🌹",
+            title: "White Rose",
+            msg: "Pure, eternal love — that’s you.",
+          },
+          yellow: {
+            emoji: "💛🌹",
+            title: "Yellow Rose",
+            msg: "You bring sunshine and joy to my days.",
+          },
+        };
+
+        // secrets for interactive rose buds
+        const secretMessages = {
+          memory: {
+            emoji: "🌹✨",
+            title: "first rose",
+            msg: "I still remember the first rose I ever gave you. You smiled brighter than all the flowers.",
+          },
+          promise: {
+            emoji: "🌹💖",
+            title: "eternal promise",
+            msg: "I promise to love you, petal by petal, forever.",
+          },
+          love: {
+            emoji: "🌹🥀",
+            title: "my heart",
+            msg: "You hold my heart like a rose — gently, beautifully.",
+          },
+          dream: {
+            emoji: "🌹💭",
+            title: "you & me",
+            msg: "In every dream, we walk through a garden of roses.",
+          },
+        };
+
+        function showPopup(emoji, title, msg) {
+          popupEmoji.innerHTML = emoji;
+          popupTitle.textContent = title;
+          popupMsg.textContent = msg;
+          popup.classList.add("show");
+          overlay.classList.add("show");
+        }
+
+        function hidePopup() {
+          popup.classList.remove("show");
+          overlay.classList.remove("show");
+        }
+
+        // attach event to all .btn-rose (3d gallery)
+        const roseBtns = document.querySelectorAll(".btn-rose");
+        roseBtns.forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const type = this.dataset.rose;
+            const data = roseMessages[type] || {
+              emoji: "🌹",
+              title: "Rose",
+              msg: "You are my forever flower.",
+            };
+            showPopup(data.emoji, data.title, data.msg);
+          });
+        });
+
+        // interactive rose buds (secrets)
+        const roseBuds = document.querySelectorAll(".rose-bud");
+        roseBuds.forEach((bud) => {
+          bud.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const secret = this.dataset.secret;
+            const data = secretMessages[secret] || {
+              emoji: "🌹",
+              title: "rose secret",
+              msg: "you are loved.",
+            };
+            showPopup(data.emoji, data.title, data.msg);
+          });
+        });
+
+        // close popup
+        closeBtn.addEventListener("click", hidePopup);
+        overlay.addEventListener("click", hidePopup);
+        window.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") hidePopup();
+        });
+
+        // back button - just for demonstration (you can link to homepage)
+        const backBtn = document.querySelector(".back-btn");
+        if (backBtn) {
+          backBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            alert("🌹 returning to your love story… (homepage link)");
+            // In real implementation: window.location.href = 'index.html';
+          });
+        }
+      })();
+    </script>
+
+    <!-- style fallback -->
+    <style>
+      .pixel {
+        background: transparent;
+      }
+      .fa-rose:before {
+        content: "🌹";
+        font-family:
+          "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+      }
+    </style>
+  </body>
+</html>

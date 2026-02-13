@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>💋 kiss day · sweetest moment</title>
+    <!-- Google Fonts: lovy dovy & romantic -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+      /* -------------------------------
+       KISS DAY · 3D · SWEET STOLEN MOMENTS
+       mobile-first, interactive, romantic
+    ------------------------------- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --kiss-red: #ff6b8b;
+        --kiss-deep-rose: #e84a6a;
+        --kiss-soft-pink: #ffd9e2;
+        --kiss-blush: #ffeef2;
+        --kiss-gold: #ffb3c6;
+        --kiss-velvet: #b34167;
+        --kiss-lips: #ff4d6d;
+        --font-love: "Dancing Script", cursive;
+        --font-clean: "Quicksand", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(145deg, #fff6f9 0%, #ffecf0 100%);
+        font-family: var(--font-clean);
+        color: #4a2e38;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .love-font {
+        font-family: var(--font-love);
+        font-weight: 600;
+      }
+
+      /* ----- 3D KISS HERO (lips & sparkle) ----- */
+      .kiss-hero {
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(circle at 50% 40%, #ffe9ef, #ffdae3);
+        border-bottom-left-radius: 100px 50px;
+        border-bottom-right-radius: 100px 50px;
+        box-shadow: 0 20px 35px rgba(200, 80, 100, 0.2);
+      }
+
+      /* floating kisses / sparkles */
+      .kiss-floaties {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .float-kiss {
+        position: absolute;
+        font-size: 2rem;
+        opacity: 0.5;
+        animation: kissFloat 10s infinite linear;
+      }
+      @keyframes kissFloat {
+        0% {
+          transform: translateY(110vh) rotate(0deg);
+          opacity: 0.2;
+        }
+        100% {
+          transform: translateY(-10vh) rotate(360deg);
+          opacity: 0.6;
+        }
+      }
+
+      .kiss-3d {
+        font-size: 10rem;
+        filter: drop-shadow(0 30px 35px rgba(210, 70, 100, 0.4));
+        animation: kissFloat3d 4s infinite alternate ease-in-out;
+        z-index: 15;
+        transform: perspective(600px) rotateX(12deg) rotateY(-10deg)
+          rotateZ(5deg);
+        margin-bottom: 0.2rem;
+      }
+      @keyframes kissFloat3d {
+        0% {
+          transform: perspective(600px) rotateX(12deg) rotateY(-10deg)
+            rotateZ(5deg) translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(20deg) rotateY(-22deg)
+            rotateZ(10deg) translateY(-30px) scale(1.05);
+        }
+      }
+
+      .kiss-hero h1 {
+        font-size: 5.5rem;
+        font-family: var(--font-love);
+        color: #b34167;
+        text-shadow:
+          3px 3px 0 #ffe6ed,
+          6px 6px 25px rgba(232, 74, 106, 0.3);
+        z-index: 10;
+        letter-spacing: 4px;
+      }
+      .kiss-hero p {
+        font-size: 2.4rem;
+        font-family: var(--font-love);
+        color: #9e3d5a;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        padding: 0.8rem 2.5rem;
+        border-radius: 70px;
+        border: 3px solid white;
+        box-shadow: 0 15px 25px rgba(200, 90, 110, 0.2);
+        z-index: 10;
+        margin-top: 1rem;
+      }
+      .kiss-tagline {
+        font-size: 2rem;
+        background: rgba(255, 240, 245, 0.7);
+        padding: 0.7rem 2.2rem;
+        border-radius: 50px;
+        margin-top: 2rem;
+        backdrop-filter: blur(8px);
+        border: 2px solid #ffb3c6;
+      }
+
+      /* ----- 3D KISS COLLECTION (types of kisses) ----- */
+      .kiss-collection {
+        padding: 4rem 0 3rem;
+        background: white;
+        margin-top: -25px;
+        border-radius: 80px 80px 0 0;
+        z-index: 20;
+        position: relative;
+      }
+
+      .section-title {
+        font-size: 3.2rem;
+        font-family: var(--font-love);
+        color: #b34167;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .section-title i {
+        color: #e84a6a;
+        margin: 0 12px;
+      }
+
+      .kiss-grid-3d {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5rem;
+      }
+      .kiss-card {
+        width: 230px;
+        background: #fff9fb;
+        border-radius: 60px 12px 60px 12px;
+        padding: 2rem 1.2rem;
+        box-shadow:
+          0 35px 40px -10px rgba(180, 70, 90, 0.15),
+          inset 0 -4px 0 rgba(0, 0, 0, 0.02),
+          0 0 0 3px white,
+          0 0 0 8px #ffe9f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transform: perspective(600px) rotateX(4deg) rotateY(6deg)
+          translateZ(8px);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+        animation: kissCardFloat 6s infinite alternate;
+      }
+      .kiss-card:hover {
+        transform: perspective(600px) rotateX(7deg) rotateY(16deg)
+          translateZ(35px) scale(1.05);
+        box-shadow: 0 55px 60px -10px #d48a9a;
+      }
+      @keyframes kissCardFloat {
+        0% {
+          transform: perspective(600px) rotateX(4deg) rotateY(4deg)
+            translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(9deg) rotateY(16deg)
+            translateY(-22px);
+        }
+      }
+
+      .kiss-emoji {
+        font-size: 5rem;
+        filter: drop-shadow(0 18px 15px rgba(200, 80, 100, 0.2));
+        margin-bottom: 0.8rem;
+        animation: kissGlow 3s infinite;
+      }
+      @keyframes kissGlow {
+        0% {
+          transform: scale(1);
+          text-shadow: 0 0 5px #ffc0d0;
+        }
+        50% {
+          transform: scale(1.1);
+          text-shadow: 0 0 25px #ff8da1;
+        }
+      }
+      .kiss-card h3 {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        color: #b34167;
+        margin-bottom: 0.5rem;
+      }
+      .kiss-card p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: #764a55;
+      }
+      .btn-kiss {
+        background: #ffd9e2;
+        border: none;
+        padding: 0.7rem 2rem;
+        border-radius: 60px;
+        font-weight: 600;
+        color: #972b4f;
+        border: 2px solid white;
+        box-shadow: 0 8px 0 #e84a6a;
+        transition: 0.07s;
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-family: var(--font-love);
+      }
+      .btn-kiss:active {
+        transform: translateY(8px);
+        box-shadow: 0 2px 0 #e84a6a;
+      }
+
+      /* ----- SECRET LOVE LETTER (envelope) ----- */
+      .envelope-section {
+        padding: 4rem 0;
+        background: #fff1f5;
+        text-align: center;
+      }
+      .envelope-3d {
+        width: 240px;
+        height: 240px;
+        background: linear-gradient(145deg, #ffb3c6, #ff8c9e);
+        border-radius: 30% 30% 20% 20% / 40% 40% 30% 30%;
+        margin: 0 auto 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+          0 50px 60px rgba(170, 70, 90, 0.4),
+          inset 0 -15px 20px rgba(0, 0, 0, 0.1);
+        transform: perspective(600px) rotateX(15deg) rotateY(20deg)
+          rotateZ(5deg);
+        animation: envelopeFloat 5s infinite alternate;
+        border: 10px solid #ffeef2;
+        cursor: pointer;
+        position: relative;
+      }
+      .envelope-3d i,
+      .envelope-3d span {
+        font-size: 6rem;
+        color: white;
+        text-shadow: 0 15px 25px #682c3b;
+      }
+      .envelope-3d span {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.3rem 1.5rem;
+        border-radius: 60px;
+        margin-top: 0.8rem;
+      }
+      @keyframes envelopeFloat {
+        0% {
+          transform: perspective(600px) rotateX(12deg) rotateY(15deg)
+            rotateZ(3deg) translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(22deg) rotateY(30deg)
+            rotateZ(8deg) translateY(-35px);
+        }
+      }
+
+      /* ----- LOVE LETTER · kiss edition ----- */
+      .kiss-letter-section {
+        background: #ffe9ef;
+        background-image: radial-gradient(
+          circle at 80% 30%,
+          rgba(255, 140, 170, 0.15) 10%,
+          transparent 40%
+        );
+        padding: 4rem 0;
+        border-top: 5px dotted #ff9aae;
+        border-bottom: 5px dotted #ff9aae;
+      }
+      .kiss-letter-card {
+        max-width: 750px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(15px);
+        padding: 2.8rem 2.5rem;
+        border-radius: 90px 12px 90px 12px;
+        box-shadow: 0 40px 60px rgba(180, 70, 90, 0.2);
+        border: 4px solid white;
+        position: relative;
+        text-align: center;
+      }
+      .kiss-letter-card:before {
+        content: "💋💌";
+        position: absolute;
+        font-size: 3rem;
+        top: -25px;
+        left: -20px;
+        background: white;
+        border-radius: 50%;
+        padding: 12px 15px;
+        box-shadow: 0 10px 0 #ffb3c6;
+      }
+      .kiss-letter-title {
+        font-size: 3.2rem;
+        font-family: var(--font-love);
+        color: #b34167;
+        border-bottom: 4px dashed #ffa5b9;
+        padding-bottom: 0.7rem;
+        margin-bottom: 1.5rem;
+      }
+      .kiss-letter-content {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        color: #5e3a44;
+        line-height: 1.5;
+      }
+      .kiss-signature {
+        font-size: 2.2rem;
+        font-family: var(--font-love);
+        text-align: right;
+        margin-top: 2rem;
+        color: #c45a6a;
+      }
+
+      /* ----- FLOATING KISS MEMORIES (3D) ----- */
+      .kiss-memories {
+        padding: 3rem 0 5rem;
+        background: white;
+      }
+      .memories-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.2rem;
+        margin-top: 2rem;
+      }
+      .memory-kiss {
+        width: 160px;
+        height: 160px;
+        background: radial-gradient(circle at 30% 25%, #ffe3e8, #ffd4dc);
+        border-radius: 60% 40% 50% 50% / 50% 50% 60% 40%;
+        box-shadow:
+          0 40px 45px rgba(180, 70, 90, 0.25),
+          inset 0 -12px 15px rgba(0, 0, 0, 0.03);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: perspective(600px) rotateX(10deg) rotateY(12deg)
+          rotateZ(5deg);
+        animation: memoryKissFloat 6s infinite alternate;
+        border: 8px solid white;
+        cursor: pointer;
+      }
+      .memory-kiss:hover {
+        transform: perspective(600px) rotateX(16deg) rotateY(24deg)
+          rotateZ(8deg) scale(1.1);
+        box-shadow: 0 60px 65px #c47a8a;
+      }
+      .memory-kiss i,
+      .memory-kiss span {
+        font-size: 4.5rem;
+        color: #b34167;
+        text-shadow: 0 10px 15px #ffd9e2;
+      }
+      .memory-kiss span {
+        font-size: 1.4rem;
+        font-family: var(--font-love);
+        background: rgba(255, 255, 255, 0.7);
+        padding: 0.2rem 1.2rem;
+        border-radius: 40px;
+        margin-top: 0.5rem;
+      }
+      @keyframes memoryKissFloat {
+        0% {
+          transform: perspective(600px) rotateX(8deg) rotateY(10deg)
+            rotateZ(3deg) translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(18deg) rotateY(24deg)
+            rotateZ(8deg) translateY(-30px);
+        }
+      }
+
+      /* POPUP (kiss style) */
+      .popup-card {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        width: 360px;
+        max-width: 85vw;
+        background: #fff9fb;
+        border-radius: 90px 12px 90px 12px;
+        padding: 3rem 2rem;
+        box-shadow:
+          0 80px 100px rgba(160, 50, 70, 0.4),
+          0 0 0 6px white,
+          0 0 0 18px #ffd9e2;
+        text-align: center;
+        z-index: 9999;
+        display: none;
+        opacity: 0;
+        transition:
+          opacity 0.2s,
+          transform 0.25s;
+        border: 4px solid #ffb3c6;
+      }
+      .popup-card.show {
+        display: block;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .popup-close {
+        position: absolute;
+        top: 12px;
+        right: 18px;
+        font-size: 3rem;
+        cursor: pointer;
+        color: #b34167;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        line-height: 1;
+        padding: 0 14px;
+      }
+      .popup-close:hover {
+        background: #ffe9f0;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(100, 40, 50, 0.25);
+        backdrop-filter: blur(6px);
+        z-index: 9998;
+        display: none;
+      }
+      .overlay.show {
+        display: block;
+      }
+
+      /* ----- BACK TO HOMEPAGE ----- */
+      .back-home {
+        text-align: center;
+        padding: 2rem 0 2.5rem;
+      }
+      .back-btn {
+        background: white;
+        padding: 1rem 3rem;
+        border-radius: 80px;
+        text-decoration: none;
+        color: #b34167;
+        font-size: 1.6rem;
+        font-family: var(--font-love);
+        border: 3px solid #ffb3c6;
+        box-shadow: 0 14px 0 #e84a6a;
+        transition: 0.06s;
+        display: inline-block;
+      }
+      .back-btn:active {
+        transform: translateY(14px);
+        box-shadow: 0 3px 0 #e84a6a;
+      }
+
+      /* ----- FOOTER (romantic) ----- */
+      footer {
+        background: #ffd9e2;
+        padding: 2.5rem 0.5rem;
+        color: #5e3843;
+        text-align: center;
+        border-top-left-radius: 100px 50px;
+        border-top-right-radius: 100px 50px;
+        font-family: var(--font-love);
+      }
+      .footer-hearts i {
+        color: #b34167;
+        margin: 0 8px;
+        font-size: 2rem;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .kiss-hero h1 {
+          font-size: 4.2rem;
+        }
+        .kiss-3d {
+          font-size: 7rem;
+        }
+        .kiss-card {
+          width: 190px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== KISS DAY HERO · 3D LIPS ===== -->
+    <section class="kiss-hero">
+      <div class="kiss-floaties" id="kissFloaties"></div>
+      <div class="kiss-3d">💋💕</div>
+      <h1>Kiss Day</h1>
+      <p>13th February · a thousand kisses</p>
+      <div class="kiss-tagline love-font">
+        <i class="fas fa-heart"></i> a kiss is a secret told to the lips
+        <i class="fas fa-heart"></i>
+      </div>
+    </section>
+
+    <!-- ===== 3D KISS COLLECTION (types of kisses) ===== -->
+    <section class="kiss-collection">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="fas fa-lips"></i> kisses for every feeling
+          <i class="fas fa-lips"></i>
+        </h2>
+        <div class="kiss-grid-3d">
+          <!-- first kiss -->
+          <div class="kiss-card">
+            <div class="kiss-emoji">💋✨</div>
+            <h3>first kiss</h3>
+            <p>nervous, soft, unforgettable</p>
+            <button class="btn-kiss" data-kiss="first">receive</button>
+          </div>
+          <!-- forehead kiss -->
+          <div class="kiss-card">
+            <div class="kiss-emoji">👩‍❤️‍💋‍👨</div>
+            <h3>forehead kiss</h3>
+            <p>i cherish you</p>
+            <button class="btn-kiss" data-kiss="forehead">receive</button>
+          </div>
+          <!-- cheek kiss -->
+          <div class="kiss-card">
+            <div class="kiss-emoji">😘💕</div>
+            <h3>cheek kiss</h3>
+            <p>sweet & playful</p>
+            <button class="btn-kiss" data-kiss="cheek">receive</button>
+          </div>
+          <!-- goodbye kiss -->
+          <div class="kiss-card">
+            <div class="kiss-emoji">💋🥺</div>
+            <h3>goodbye kiss</h3>
+            <p>see you soon, my love</p>
+            <button class="btn-kiss" data-kiss="goodbye">receive</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECRET LOVE LETTER ENVELOPE (3D) ===== -->
+    <section class="envelope-section">
+      <h2
+        style="
+          font-family: var(--font-love);
+          font-size: 3rem;
+          color: #b34167;
+          margin-bottom: 1.5rem;
+        ">
+        💌 a kiss sealed in an envelope 💌
+      </h2>
+      <div class="envelope-3d" id="envelope">
+        <i class="fas fa-envelope"></i>
+        <span>open my heart</span>
+      </div>
+      <p style="font-family: var(--font-love); font-size: 2rem">
+        ✨ inside: a kiss for you ✨
+      </p>
+    </section>
+
+    <!-- ===== LOVE LETTER · kiss edition ===== -->
+    <section class="kiss-letter-section">
+      <div class="container">
+        <div class="kiss-letter-card">
+          <div class="kiss-letter-title">💋 the sweetest letter 💋</div>
+          <div class="kiss-letter-content">
+            “A kiss is a lovely trick designed by nature <br />
+            to stop speech when words become superfluous. <br />
+            So here's my silence, filled with all the love <br />
+            I cannot say out loud.”
+          </div>
+          <div class="kiss-signature">
+            — kissing you, in my thoughts, <br />
+            [your valentine] 💋💌
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FLOATING KISS MEMORIES (3D) ===== -->
+    <section class="kiss-memories">
+      <div class="container">
+        <h2
+          style="
+            font-family: var(--font-love);
+            font-size: 3rem;
+            color: #b34167;
+            text-align: center;
+            margin-bottom: 1.5rem;
+          ">
+          <i class="fas fa-star"></i> stolen kisses <i class="fas fa-star"></i>
+        </h2>
+        <div class="memories-grid">
+          <div class="memory-kiss" data-memory="first">
+            <i class="fas fa-kiss"></i>
+            <span>first kiss</span>
+          </div>
+          <div class="memory-kiss" data-memory="rain">
+            <i class="fas fa-cloud-rain"></i>
+            <span>kiss in rain</span>
+          </div>
+          <div class="memory-kiss" data-memory="midnight">
+            <i class="fas fa-moon"></i>
+            <span>midnight kiss</span>
+          </div>
+          <div class="memory-kiss" data-memory="surprise">
+            <i class="fas fa-gift"></i>
+            <span>surprise kiss</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BACK TO HOMEPAGE ===== -->
+    <div class="back-home">
+      <a
+        href="#"
+        class="back-btn"
+        onclick="alert('💋 returning to your love story… (homepage)')"
+        ><i class="fas fa-heart"></i> back to our story
+        <i class="fas fa-heart"></i
+      ></a>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="footer-hearts">
+        <i class="fas fa-heart"></i><i class="fas fa-lips"></i
+        ><i class="fas fa-heart"></i><i class="fas fa-kiss"></i
+        ><i class="fas fa-heart"></i>
+      </div>
+      <div
+        class="footer-quote"
+        style="font-size: 2.2rem; font-family: var(--font-love)">
+        "a kiss is a message that needs no translation"
+      </div>
+      <div style="font-size: 2rem; margin: 0.8rem 0">💋✨💕</div>
+      <div style="font-family: var(--font-love); font-size: 1.4rem">
+        sending you a thousand kisses
+      </div>
+    </footer>
+
+    <!-- GLOBAL POPUP -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup-card" id="popup">
+      <span class="popup-close" id="closePopup">&times;</span>
+      <div style="font-size: 5rem; margin-bottom: 0.5rem" id="popupEmoji">
+        💋💖
+      </div>
+      <div
+        style="font-size: 2.6rem; font-family: var(--font-love); color: #b34167"
+        id="popupTitle">
+        a sweet kiss
+      </div>
+      <div
+        style="
+          font-size: 1.9rem;
+          font-family: var(--font-love);
+          margin-top: 0.8rem;
+          color: #5e3a44;
+        "
+        id="popupMsg">
+        this kiss is just for you.
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // --- floating kisses (ambient) ---
+        function createKissFloaties() {
+          const container = document.getElementById("kissFloaties");
+          if (!container) return;
+          for (let i = 0; i < 35; i++) {
+            const kiss = document.createElement("div");
+            kiss.classList.add("float-kiss");
+            kiss.innerHTML = ["💋", "💕", "😘", "💌", "✨", "💖"][
+              Math.floor(Math.random() * 6)
+            ];
+            kiss.style.left = Math.random() * 100 + "%";
+            kiss.style.animationDelay = Math.random() * 6 + "s";
+            kiss.style.animationDuration =
+              Math.floor(Math.random() * 12) + 10 + "s";
+            kiss.style.fontSize = Math.floor(Math.random() * 35) + 25 + "px";
+            kiss.style.opacity = 0.4;
+            container.appendChild(kiss);
+          }
+        }
+        createKissFloaties();
+
+        // ---------- POPUP SYSTEM ----------
+        const popup = document.getElementById("popup");
+        const overlay = document.getElementById("overlay");
+        const closeBtn = document.getElementById("closePopup");
+        const popupEmoji = document.getElementById("popupEmoji");
+        const popupTitle = document.getElementById("popupTitle");
+        const popupMsg = document.getElementById("popupMsg");
+
+        // kiss type messages
+        const kissMessages = {
+          first: {
+            emoji: "💋✨",
+            title: "first kiss",
+            msg: "Soft, shy, magical. The moment the world stopped and it was just us.",
+          },
+          forehead: {
+            emoji: "👩‍❤️‍💋‍👨",
+            title: "forehead kiss",
+            msg: 'A kiss that says "you are precious, and I will protect you always."',
+          },
+          cheek: {
+            emoji: "😘💕",
+            title: "cheek kiss",
+            msg: "Playful, sweet, and full of affection — just because I love you.",
+          },
+          goodbye: {
+            emoji: "💋🥺",
+            title: "goodbye kiss",
+            msg: 'The hardest kiss, but it promises "I’ll come back to you."',
+          },
+        };
+
+        // kiss memory messages
+        const memoryMessages = {
+          first: {
+            emoji: "💋✨",
+            title: "our first kiss",
+            msg: "I still remember how soft it was — and how my heart raced.",
+          },
+          rain: {
+            emoji: "☔💋",
+            title: "kiss in the rain",
+            msg: "Rain on our skin, warmth on our lips. Perfect chaos.",
+          },
+          midnight: {
+            emoji: "🌙💋",
+            title: "midnight kiss",
+            msg: "The clock struck twelve, and you kissed me like it was our last day.",
+          },
+          surprise: {
+            emoji: "🎁💋",
+            title: "surprise kiss",
+            msg: "Out of nowhere, you kissed me — and it became my favorite memory.",
+          },
+        };
+
+        // envelope secret message
+        const envelopeMessage = {
+          emoji: "💌💋✨",
+          title: "a kiss sealed with love",
+          msg: "I folded this kiss into an envelope months ago. It’s still warm, still yours.",
+        };
+
+        function showPopup(emoji, title, msg) {
+          popupEmoji.innerHTML = emoji;
+          popupTitle.textContent = title;
+          popupMsg.textContent = msg;
+          popup.classList.add("show");
+          overlay.classList.add("show");
+        }
+
+        function hidePopup() {
+          popup.classList.remove("show");
+          overlay.classList.remove("show");
+        }
+
+        // kiss buttons (types of kisses)
+        const kissBtns = document.querySelectorAll(".btn-kiss");
+        kissBtns.forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const type = this.dataset.kiss;
+            const data = kissMessages[type] || {
+              emoji: "💋💕",
+              title: "a sweet kiss",
+              msg: "this kiss is just for you.",
+            };
+            showPopup(data.emoji, data.title, data.msg);
+          });
+        });
+
+        // memory kisses
+        const memoryKisses = document.querySelectorAll(".memory-kiss");
+        memoryKisses.forEach((memory) => {
+          memory.addEventListener("click", function () {
+            const type = this.dataset.memory;
+            const data = memoryMessages[type] || {
+              emoji: "💋✨",
+              title: "stolen kiss",
+              msg: "a kiss that belongs only to us.",
+            };
+            showPopup(data.emoji, data.title, data.msg);
+          });
+        });
+
+        // envelope click
+        const envelope = document.getElementById("envelope");
+        if (envelope) {
+          envelope.addEventListener("click", function () {
+            showPopup(
+              envelopeMessage.emoji,
+              envelopeMessage.title,
+              envelopeMessage.msg,
+            );
+          });
+        }
+
+        // close popup
+        closeBtn.addEventListener("click", hidePopup);
+        overlay.addEventListener("click", hidePopup);
+        window.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") hidePopup();
+        });
+
+        // back button
+        const backBtn = document.querySelector(".back-btn");
+        if (backBtn) {
+          backBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            alert("💋 returning to your love story… (homepage link)");
+          });
+        }
+      })();
+    </script>
+
+    <style>
+      /* fallback icons */
+      .fa-lips:before {
+        content: "💋";
+        font-family:
+          "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+      }
+      .fa-kiss:before {
+        content: "😘";
+      }
+      .fa-envelope:before {
+        content: "💌";
+      }
+      .fa-cloud-rain:before {
+        content: "☔";
+      }
+      .fa-moon:before {
+        content: "🌙";
+      }
+      .fa-gift:before {
+        content: "🎁";
+      }
+      .fa-star:before {
+        content: "✨";
+      }
+    </style>
+  </body>
+</html>

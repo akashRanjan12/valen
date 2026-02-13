@@ -1,0 +1,929 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>🤗 hug day · wrap you in love</title>
+    <!-- Google Fonts: lovy dovy & soft -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+      /* -------------------------------
+       HUG DAY · 3D · WARM EMBRACE
+       mobile-first, interactive
+    ------------------------------- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --hug-coral: #ffb6a8;
+        --hug-soft-pink: #ffd9d4;
+        --hug-warm: #ffaa9e;
+        --hug-deep: #c97c6e;
+        --hug-cozy: #a75d54;
+        --hug-cream: #fff3f0;
+        --hug-golden: #ffcfb0;
+        --font-love: "Dancing Script", cursive;
+        --font-clean: "Quicksand", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(145deg, #fff7f5 0%, #ffedea 100%);
+        font-family: var(--font-clean);
+        color: #4a3a35;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .love-font {
+        font-family: var(--font-love);
+        font-weight: 600;
+      }
+
+      /* ----- 3D HUG HERO (warm embrace) ----- */
+      .hug-hero {
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(circle at 50% 40%, #ffe3dd, #ffd3cc);
+        border-bottom-left-radius: 100px 50px;
+        border-bottom-right-radius: 100px 50px;
+        box-shadow: 0 20px 35px rgba(190, 100, 80, 0.2);
+      }
+
+      /* floating hearts and clouds */
+      .hug-floaties {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .float-heart {
+        position: absolute;
+        font-size: 2rem;
+        opacity: 0.5;
+        animation: heartFloat 8s infinite linear;
+      }
+      @keyframes heartFloat {
+        0% {
+          transform: translateY(110vh) scale(0.8);
+          opacity: 0.3;
+        }
+        100% {
+          transform: translateY(-10vh) scale(1.2);
+          opacity: 0.7;
+        }
+      }
+
+      .hug-3d {
+        font-size: 9rem;
+        filter: drop-shadow(0 30px 30px rgba(180, 90, 70, 0.3));
+        animation: hugFloat 4s infinite alternate ease-in-out;
+        z-index: 15;
+        transform: perspective(600px) rotateX(10deg) rotateY(-5deg)
+          rotateZ(2deg);
+        margin-bottom: 0.2rem;
+      }
+      @keyframes hugFloat {
+        0% {
+          transform: perspective(600px) rotateX(10deg) rotateY(-5deg)
+            rotateZ(2deg) translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(18deg) rotateY(-15deg)
+            rotateZ(5deg) translateY(-25px) scale(1.05);
+        }
+      }
+
+      .hug-hero h1 {
+        font-size: 5.5rem;
+        font-family: var(--font-love);
+        color: #a75d54;
+        text-shadow:
+          3px 3px 0 #ffe3dd,
+          6px 6px 25px rgba(201, 124, 110, 0.3);
+        z-index: 10;
+        letter-spacing: 4px;
+      }
+      .hug-hero p {
+        font-size: 2.4rem;
+        font-family: var(--font-love);
+        color: #8a5a52;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        padding: 0.8rem 2.5rem;
+        border-radius: 70px;
+        border: 3px solid white;
+        box-shadow: 0 15px 25px rgba(200, 110, 90, 0.2);
+        z-index: 10;
+        margin-top: 1rem;
+      }
+      .hug-tagline {
+        font-size: 2rem;
+        background: rgba(255, 245, 240, 0.7);
+        padding: 0.7rem 2.2rem;
+        border-radius: 50px;
+        margin-top: 2rem;
+        backdrop-filter: blur(8px);
+        border: 2px solid #ffc4b4;
+      }
+
+      /* ----- VIRTUAL HUG BUTTON (3D) ----- */
+      .virtual-hug-section {
+        padding: 4rem 0 3rem;
+        background: white;
+        margin-top: -25px;
+        border-radius: 80px 80px 0 0;
+        z-index: 20;
+        position: relative;
+        text-align: center;
+      }
+      .hug-button-3d {
+        width: 220px;
+        height: 220px;
+        background: radial-gradient(circle at 30% 30%, #ffb6a8, #ff9e8f);
+        border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+        margin: 1.5rem auto 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+          0 50px 60px rgba(190, 90, 70, 0.4),
+          inset 0 -20px 25px rgba(0, 0, 0, 0.1);
+        transform: perspective(600px) rotateX(15deg) rotateY(15deg)
+          rotateZ(5deg);
+        animation: hugButtonFloat 5s infinite alternate;
+        border: 10px solid #fff9f5;
+        cursor: pointer;
+        transition: 0.1s;
+      }
+      .hug-button-3d:hover {
+        transform: perspective(600px) rotateX(20deg) rotateY(25deg)
+          rotateZ(8deg) scale(1.08);
+        box-shadow: 0 70px 70px #c97c6e;
+      }
+      .hug-button-3d i,
+      .hug-button-3d span {
+        font-size: 6rem;
+        color: white;
+        text-shadow: 0 15px 25px #5e3c36;
+      }
+      .hug-button-3d span {
+        font-size: 2.2rem;
+        font-family: var(--font-love);
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.3rem 1.5rem;
+        border-radius: 60px;
+        margin-top: 0.8rem;
+        color: #fff8f0;
+      }
+      @keyframes hugButtonFloat {
+        0% {
+          transform: perspective(600px) rotateX(12deg) rotateY(12deg)
+            rotateZ(3deg) translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(22deg) rotateY(28deg)
+            rotateZ(8deg) translateY(-30px);
+        }
+      }
+
+      /* ----- 3D HUG COLLECTION (types of hugs) ----- */
+      .hug-collection {
+        padding: 3rem 0 4rem;
+        background: #fff9f7;
+      }
+      .section-title {
+        font-size: 3.2rem;
+        font-family: var(--font-love);
+        color: #a75d54;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .section-title i {
+        color: #c97c6e;
+        margin: 0 12px;
+      }
+
+      .hug-grid-3d {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5rem;
+      }
+      .hug-card {
+        width: 230px;
+        background: #fffaf8;
+        border-radius: 60px 12px 60px 12px;
+        padding: 2rem 1.2rem;
+        box-shadow:
+          0 35px 40px -10px rgba(160, 90, 70, 0.15),
+          inset 0 -4px 0 rgba(0, 0, 0, 0.02),
+          0 0 0 3px white,
+          0 0 0 8px #ffe7e2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transform: perspective(600px) rotateX(4deg) rotateY(6deg)
+          translateZ(8px);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+        animation: hugCardFloat 6s infinite alternate;
+      }
+      .hug-card:hover {
+        transform: perspective(600px) rotateX(7deg) rotateY(16deg)
+          translateZ(30px) scale(1.05);
+        box-shadow: 0 55px 60px -10px #c28b7a;
+      }
+      @keyframes hugCardFloat {
+        0% {
+          transform: perspective(600px) rotateX(4deg) rotateY(4deg)
+            translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(9deg) rotateY(16deg)
+            translateY(-22px);
+        }
+      }
+
+      .hug-emoji {
+        font-size: 5rem;
+        filter: drop-shadow(0 18px 15px rgba(170, 90, 70, 0.2));
+        margin-bottom: 0.8rem;
+        animation: hugGlow 3s infinite;
+      }
+      @keyframes hugGlow {
+        0% {
+          transform: scale(1);
+          text-shadow: 0 0 5px #ffcfc0;
+        }
+        50% {
+          transform: scale(1.1);
+          text-shadow: 0 0 25px #ffa89c;
+        }
+      }
+      .hug-card h3 {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        color: #a75d54;
+        margin-bottom: 0.5rem;
+      }
+      .hug-card p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: #6e4e48;
+      }
+      .btn-hug {
+        background: #ffcfc0;
+        border: none;
+        padding: 0.7rem 2rem;
+        border-radius: 60px;
+        font-weight: 600;
+        color: #6b4139;
+        border: 2px solid white;
+        box-shadow: 0 8px 0 #c97c6e;
+        transition: 0.07s;
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-family: var(--font-love);
+      }
+      .btn-hug:active {
+        transform: translateY(8px);
+        box-shadow: 0 2px 0 #c97c6e;
+      }
+
+      /* ----- COZY PLUSHIES (3D floating) ----- */
+      .plushie-section {
+        padding: 3rem 0 5rem;
+        background: #fff3f0;
+      }
+      .plushie-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.2rem;
+        margin-top: 2rem;
+      }
+      .plushie-3d {
+        width: 160px;
+        height: 160px;
+        background: radial-gradient(circle at 30% 25%, #ffdad2, #ffc4bc);
+        border-radius: 60% 40% 50% 50% / 50% 50% 60% 40%;
+        box-shadow:
+          0 40px 45px rgba(170, 90, 70, 0.25),
+          inset 0 -12px 15px rgba(0, 0, 0, 0.03);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: perspective(600px) rotateX(10deg) rotateY(12deg)
+          rotateZ(3deg);
+        animation: plushieFloat 6s infinite alternate;
+        border: 8px solid white;
+        cursor: pointer;
+      }
+      .plushie-3d:hover {
+        transform: perspective(600px) rotateX(16deg) rotateY(24deg)
+          rotateZ(6deg) scale(1.1);
+        box-shadow: 0 60px 65px #b98b7e;
+      }
+      .plushie-3d i,
+      .plushie-3d span {
+        font-size: 4.5rem;
+        color: #8a5a52;
+        text-shadow: 0 10px 15px #ffe3dd;
+      }
+      .plushie-3d span {
+        font-size: 1.4rem;
+        font-family: var(--font-love);
+        background: rgba(255, 255, 255, 0.7);
+        padding: 0.2rem 1.2rem;
+        border-radius: 40px;
+        margin-top: 0.5rem;
+      }
+      @keyframes plushieFloat {
+        0% {
+          transform: perspective(600px) rotateX(8deg) rotateY(10deg)
+            rotateZ(2deg) translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(18deg) rotateY(24deg)
+            rotateZ(6deg) translateY(-30px);
+        }
+      }
+
+      /* ----- LOVE LETTER · hug edition ----- */
+      .hug-letter-section {
+        background: #ffeae5;
+        background-image: radial-gradient(
+          circle at 20% 50%,
+          rgba(255, 190, 170, 0.2) 10%,
+          transparent 40%
+        );
+        padding: 4rem 0;
+        border-top: 5px dotted #ffb6a8;
+        border-bottom: 5px dotted #ffb6a8;
+      }
+      .hug-letter-card {
+        max-width: 750px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(15px);
+        padding: 2.8rem 2.5rem;
+        border-radius: 90px 12px 90px 12px;
+        box-shadow: 0 40px 60px rgba(170, 90, 70, 0.2);
+        border: 4px solid white;
+        position: relative;
+        text-align: center;
+      }
+      .hug-letter-card:before {
+        content: "🤗💌";
+        position: absolute;
+        font-size: 3rem;
+        top: -25px;
+        left: -20px;
+        background: white;
+        border-radius: 50%;
+        padding: 12px 15px;
+        box-shadow: 0 10px 0 #ffcfc0;
+      }
+      .hug-letter-title {
+        font-size: 3.2rem;
+        font-family: var(--font-love);
+        color: #a75d54;
+        border-bottom: 4px dashed #ffb6a8;
+        padding-bottom: 0.7rem;
+        margin-bottom: 1.5rem;
+      }
+      .hug-letter-content {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        color: #5e403a;
+        line-height: 1.5;
+      }
+      .hug-signature {
+        font-size: 2.2rem;
+        font-family: var(--font-love);
+        text-align: right;
+        margin-top: 2rem;
+        color: #b86b5c;
+      }
+
+      /* POPUP (hug style) */
+      .popup-card {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        width: 360px;
+        max-width: 85vw;
+        background: #fffaf8;
+        border-radius: 90px 12px 90px 12px;
+        padding: 3rem 2rem;
+        box-shadow:
+          0 80px 100px rgba(140, 70, 50, 0.4),
+          0 0 0 6px white,
+          0 0 0 18px #ffd9d4;
+        text-align: center;
+        z-index: 9999;
+        display: none;
+        opacity: 0;
+        transition:
+          opacity 0.2s,
+          transform 0.25s;
+        border: 4px solid #ffb6a8;
+      }
+      .popup-card.show {
+        display: block;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .popup-close {
+        position: absolute;
+        top: 12px;
+        right: 18px;
+        font-size: 3rem;
+        cursor: pointer;
+        color: #a75d54;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        line-height: 1;
+        padding: 0 14px;
+      }
+      .popup-close:hover {
+        background: #ffe3dd;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(90, 50, 40, 0.25);
+        backdrop-filter: blur(6px);
+        z-index: 9998;
+        display: none;
+      }
+      .overlay.show {
+        display: block;
+      }
+
+      /* ----- BACK TO HOMEPAGE ----- */
+      .back-home {
+        text-align: center;
+        padding: 2rem 0 2.5rem;
+      }
+      .back-btn {
+        background: white;
+        padding: 1rem 3rem;
+        border-radius: 80px;
+        text-decoration: none;
+        color: #a75d54;
+        font-size: 1.6rem;
+        font-family: var(--font-love);
+        border: 3px solid #ffb6a8;
+        box-shadow: 0 14px 0 #c97c6e;
+        transition: 0.06s;
+        display: inline-block;
+      }
+      .back-btn:active {
+        transform: translateY(14px);
+        box-shadow: 0 3px 0 #c97c6e;
+      }
+
+      /* ----- FOOTER (cozy) ----- */
+      footer {
+        background: #ffcfc0;
+        padding: 2.5rem 0.5rem;
+        color: #4d3530;
+        text-align: center;
+        border-top-left-radius: 100px 50px;
+        border-top-right-radius: 100px 50px;
+        font-family: var(--font-love);
+      }
+      .footer-hearts i {
+        color: #a75d54;
+        margin: 0 8px;
+        font-size: 2rem;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .hug-hero h1 {
+          font-size: 4.2rem;
+        }
+        .hug-3d {
+          font-size: 7rem;
+        }
+        .hug-card {
+          width: 190px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== HUG DAY HERO · 3D WARM EMBRACE ===== -->
+    <section class="hug-hero">
+      <div class="hug-floaties" id="floatiesContainer"></div>
+      <div class="hug-3d">🤗🧸</div>
+      <h1>Hug Day</h1>
+      <p>12th February · wrapping you in love</p>
+      <div class="hug-tagline love-font">
+        <i class="fas fa-heart"></i> a hug is a silent "i love you"
+        <i class="fas fa-heart"></i>
+      </div>
+    </section>
+
+    <!-- ===== VIRTUAL HUG BUTTON (3D) ===== -->
+    <section class="virtual-hug-section">
+      <div class="container">
+        <h2
+          style="
+            font-family: var(--font-love);
+            font-size: 3rem;
+            color: #a75d54;
+            margin-bottom: 0.5rem;
+          ">
+          🤗 send a virtual hug 🤗
+        </h2>
+        <div class="hug-button-3d" id="hugButton">
+          <i class="fas fa-heart"></i>
+          <span>hug me</span>
+        </div>
+        <p
+          style="
+            font-family: var(--font-love);
+            font-size: 1.8rem;
+            color: #8a5a52;
+          ">
+          one click = one warm embrace
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 3D HUG COLLECTION (types of hugs) ===== -->
+    <section class="hug-collection">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="fas fa-heart"></i> hugs for every moment
+          <i class="fas fa-heart"></i>
+        </h2>
+        <div class="hug-grid-3d">
+          <!-- bear hug -->
+          <div class="hug-card">
+            <div class="hug-emoji">🧸🤗</div>
+            <h3>bear hug</h3>
+            <p>tight, warm, never let go</p>
+            <button class="btn-hug" data-hug="bear">receive</button>
+          </div>
+          <!-- back hug -->
+          <div class="hug-card">
+            <div class="hug-emoji">🤗💕</div>
+            <h3>back hug</h3>
+            <p>sneaking up to say i'm here</p>
+            <button class="btn-hug" data-hug="back">receive</button>
+          </div>
+          <!-- long hug -->
+          <div class="hug-card">
+            <div class="hug-emoji">⏳🤗</div>
+            <h3>long hug</h3>
+            <p>holding on a little longer</p>
+            <button class="btn-hug" data-hug="long">receive</button>
+          </div>
+          <!-- comfort hug -->
+          <div class="hug-card">
+            <div class="hug-emoji">🕊️🤗</div>
+            <h3>comfort hug</h3>
+            <p>for when words aren't enough</p>
+            <button class="btn-hug" data-hug="comfort">receive</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COZY PLUSHIES (3D floating) ===== -->
+    <section class="plushie-section">
+      <div class="container">
+        <h2
+          style="
+            font-family: var(--font-love);
+            font-size: 3rem;
+            color: #a75d54;
+            text-align: center;
+            margin-bottom: 1.5rem;
+          ">
+          <i class="fas fa-gift"></i> plushies to hug
+          <i class="fas fa-gift"></i>
+        </h2>
+        <div class="plushie-grid">
+          <div class="plushie-3d" data-plushie="bear">
+            <i class="fas fa-bear"></i>
+            <span>teddy bear</span>
+          </div>
+          <div class="plushie-3d" data-plushie="bunny">
+            <i class="fas fa-rabbit"></i>
+            <span>cozy bunny</span>
+          </div>
+          <div class="plushie-3d" data-plushie="panda">
+            <i class="fas fa-panda"></i>
+            <span>panda</span>
+          </div>
+          <div class="plushie-3d" data-plushie="heart">
+            <i class="fas fa-heart"></i>
+            <span>heart plush</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LOVE LETTER · hug edition ===== -->
+    <section class="hug-letter-section">
+      <div class="container">
+        <div class="hug-letter-card">
+          <div class="hug-letter-title">🤍 the warmest letter 🤍</div>
+          <div class="hug-letter-content">
+            “Sometimes words aren't enough. <br />
+            So here's a hug that says everything — <br />
+            I'm here, I care, I'm not letting go. <br />
+            You are my safe place.”
+          </div>
+          <div class="hug-signature">
+            — wrapping you in love, <br />
+            [your valentine] 🤗💌
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BACK TO HOMEPAGE ===== -->
+    <div class="back-home">
+      <a
+        href="#"
+        class="back-btn"
+        onclick="alert('🤗 returning to your love story… (homepage)')"
+        ><i class="fas fa-heart"></i> back to our story
+        <i class="fas fa-heart"></i
+      ></a>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="footer-hearts">
+        <i class="fas fa-heart"></i><i class="fas fa-bear"></i
+        ><i class="fas fa-heart"></i><i class="fas fa-rabbit"></i
+        ><i class="fas fa-heart"></i>
+      </div>
+      <div
+        class="footer-quote"
+        style="font-size: 2.2rem; font-family: var(--font-love)">
+        "a hug is the shortest distance between two hearts"
+      </div>
+      <div style="font-size: 2rem; margin: 0.8rem 0">🤗🧸💕</div>
+      <div style="font-family: var(--font-love); font-size: 1.4rem">
+        sending you the warmest hug today
+      </div>
+    </footer>
+
+    <!-- GLOBAL POPUP -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup-card" id="popup">
+      <span class="popup-close" id="closePopup">&times;</span>
+      <div style="font-size: 5rem; margin-bottom: 0.5rem" id="popupEmoji">
+        🤗💖
+      </div>
+      <div
+        style="font-size: 2.6rem; font-family: var(--font-love); color: #a75d54"
+        id="popupTitle">
+        a warm hug
+      </div>
+      <div
+        style="
+          font-size: 1.9rem;
+          font-family: var(--font-love);
+          margin-top: 0.8rem;
+          color: #5e403a;
+        "
+        id="popupMsg">
+        you are wrapped in love.
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // --- floating hearts & hugs (ambient) ---
+        function createFloaties() {
+          const container = document.getElementById("floatiesContainer");
+          if (!container) return;
+          for (let i = 0; i < 30; i++) {
+            const heart = document.createElement("div");
+            heart.classList.add("float-heart");
+            heart.innerHTML = ["🤗", "🧸", "💕", "🤍", "🫂", "💖"][
+              Math.floor(Math.random() * 6)
+            ];
+            heart.style.left = Math.random() * 100 + "%";
+            heart.style.animationDelay = Math.random() * 5 + "s";
+            heart.style.animationDuration =
+              Math.floor(Math.random() * 10) + 8 + "s";
+            heart.style.fontSize = Math.floor(Math.random() * 30) + 25 + "px";
+            heart.style.opacity = 0.4;
+            container.appendChild(heart);
+          }
+        }
+        createFloaties();
+
+        // ---------- POPUP SYSTEM ----------
+        const popup = document.getElementById("popup");
+        const overlay = document.getElementById("overlay");
+        const closeBtn = document.getElementById("closePopup");
+        const popupEmoji = document.getElementById("popupEmoji");
+        const popupTitle = document.getElementById("popupTitle");
+        const popupMsg = document.getElementById("popupMsg");
+
+        // hug type messages
+        const hugMessages = {
+          bear: {
+            emoji: "🧸🤗",
+            title: "bear hug",
+            msg: 'A tight, warm bear hug — the kind that says "I’ve got you, always."',
+          },
+          back: {
+            emoji: "🤗💕",
+            title: "back hug",
+            msg: "Sneaking up just to hold you. You’re my favorite surprise.",
+          },
+          long: {
+            emoji: "⏳🤗",
+            title: "long hug",
+            msg: "Holding on a little longer, because letting go is never easy.",
+          },
+          comfort: {
+            emoji: "🕊️🤗",
+            title: "comfort hug",
+            msg: "When words fail, a hug speaks. I’m here, and I’m not leaving.",
+          },
+        };
+
+        // plushie messages
+        const plushieMessages = {
+          bear: {
+            emoji: "🧸🤎",
+            title: "teddy bear",
+            msg: "Soft, warm, always ready for a hug — just like me for you.",
+          },
+          bunny: {
+            emoji: "🐇🤍",
+            title: "cozy bunny",
+            msg: "Hop into my arms anytime. This bunny loves cuddles.",
+          },
+          panda: {
+            emoji: "🐼🖤",
+            title: "panda",
+            msg: "Rare, gentle, and absolutely huggable. That’s you.",
+          },
+          heart: {
+            emoji: "❤️🧸",
+            title: "heart plush",
+            msg: "A plush heart that beats only for you. Squeeze it and feel my love.",
+          },
+        };
+
+        // virtual hug button secret
+        const virtualHugMessage = {
+          emoji: "🤗💖✨",
+          title: "virtual hug delivered!",
+          msg: "You’ve just received the warmest, tightest, most heartfelt hug. Save it for a rainy day.",
+        };
+
+        function showPopup(emoji, title, msg) {
+          popupEmoji.innerHTML = emoji;
+          popupTitle.textContent = title;
+          popupMsg.textContent = msg;
+          popup.classList.add("show");
+          overlay.classList.add("show");
+        }
+
+        function hidePopup() {
+          popup.classList.remove("show");
+          overlay.classList.remove("show");
+        }
+
+        // hug buttons (types of hugs)
+        const hugBtns = document.querySelectorAll(".btn-hug");
+        hugBtns.forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const type = this.dataset.hug;
+            const data = hugMessages[type] || {
+              emoji: "🤗💕",
+              title: "a warm hug",
+              msg: "you are wrapped in love.",
+            };
+            showPopup(data.emoji, data.title, data.msg);
+          });
+        });
+
+        // plushie clicks
+        const plushies = document.querySelectorAll(".plushie-3d");
+        plushies.forEach((plushie) => {
+          plushie.addEventListener("click", function () {
+            const type = this.dataset.plushie;
+            const data = plushieMessages[type] || {
+              emoji: "🧸✨",
+              title: "cozy plush",
+              msg: "hugs are better with plushies — and you.",
+            };
+            showPopup(data.emoji, data.title, data.msg);
+          });
+        });
+
+        // virtual hug button
+        const hugButton = document.getElementById("hugButton");
+        if (hugButton) {
+          hugButton.addEventListener("click", function () {
+            showPopup(
+              virtualHugMessage.emoji,
+              virtualHugMessage.title,
+              virtualHugMessage.msg,
+            );
+          });
+        }
+
+        // close popup
+        closeBtn.addEventListener("click", hidePopup);
+        overlay.addEventListener("click", hidePopup);
+        window.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") hidePopup();
+        });
+
+        // back button
+        const backBtn = document.querySelector(".back-btn");
+        if (backBtn) {
+          backBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            alert("🤗 returning to your love story… (homepage link)");
+          });
+        }
+      })();
+    </script>
+
+    <style>
+      /* fallback icons */
+      .fa-bear:before {
+        content: "🧸";
+        font-family:
+          "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+      }
+      .fa-rabbit:before {
+        content: "🐇";
+      }
+      .fa-panda:before {
+        content: "🐼";
+      }
+      .fa-heart:before {
+        content: "❤️";
+      }
+      .fa-gift:before {
+        content: "🎁";
+      }
+    </style>
+  </body>
+</html>

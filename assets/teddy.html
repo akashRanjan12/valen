@@ -1,0 +1,1030 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>🧸 teddy day · my cuddly bear</title>
+    <!-- Google Fonts: lovy dovy & soft -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+      /* -------------------------------
+       TEDDY DAY · 3D · SOFT & CUDDLY
+       mobile-first, interactive, warm
+    ------------------------------- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --teddy-brown: #8b5a4b;
+        --teddy-light-brown: #b78c7a;
+        --teddy-cream: #f5e6d3;
+        --teddy-warm: #d9b8a6;
+        --teddy-soft-pink: #ffded5;
+        --teddy-blush: #fff1ed;
+        --teddy-chocolate: #6b4b3e;
+        --teddy-gold: #e6b89c;
+        --font-love: "Dancing Script", cursive;
+        --font-clean: "Quicksand", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(145deg, #fff7f0 0%, #ffefe8 100%);
+        font-family: var(--font-clean);
+        color: #4a3733;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .love-font {
+        font-family: var(--font-love);
+        font-weight: 600;
+      }
+
+      /* ----- 3D TEDDY HERO (fluffy bear) ----- */
+      .teddy-hero {
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(circle at 50% 40%, #ffded5, #ffd2c6);
+        border-bottom-left-radius: 100px 50px;
+        border-bottom-right-radius: 100px 50px;
+        box-shadow: 0 20px 35px rgba(150, 90, 70, 0.2);
+      }
+
+      /* floating hearts and teddy icons */
+      .teddy-floaties {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .float-teddy {
+        position: absolute;
+        font-size: 2.2rem;
+        opacity: 0.4;
+        animation: teddyFloat 12s infinite linear;
+      }
+      @keyframes teddyFloat {
+        0% {
+          transform: translateY(110vh) rotate(0deg);
+          opacity: 0.2;
+        }
+        100% {
+          transform: translateY(-10vh) rotate(360deg);
+          opacity: 0.6;
+        }
+      }
+
+      .teddy-3d {
+        font-size: 10rem;
+        filter: drop-shadow(0 35px 35px rgba(139, 90, 75, 0.4));
+        animation: teddyFloat3d 4s infinite alternate ease-in-out;
+        z-index: 15;
+        transform: perspective(600px) rotateX(12deg) rotateY(-8deg)
+          rotateZ(4deg);
+        margin-bottom: 0.2rem;
+      }
+      @keyframes teddyFloat3d {
+        0% {
+          transform: perspective(600px) rotateX(12deg) rotateY(-8deg)
+            rotateZ(4deg) translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(20deg) rotateY(-18deg)
+            rotateZ(8deg) translateY(-30px) scale(1.05);
+        }
+      }
+
+      .teddy-hero h1 {
+        font-size: 5.5rem;
+        font-family: var(--font-love);
+        color: #8b5a4b;
+        text-shadow:
+          3px 3px 0 #ffede3,
+          6px 6px 25px rgba(139, 90, 75, 0.3);
+        z-index: 10;
+        letter-spacing: 4px;
+      }
+      .teddy-hero p {
+        font-size: 2.4rem;
+        font-family: var(--font-love);
+        color: #6b4b3e;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        padding: 0.8rem 2.5rem;
+        border-radius: 70px;
+        border: 3px solid white;
+        box-shadow: 0 15px 25px rgba(180, 100, 80, 0.2);
+        z-index: 10;
+        margin-top: 1rem;
+      }
+      .teddy-tagline {
+        font-size: 2rem;
+        background: rgba(255, 240, 235, 0.7);
+        padding: 0.7rem 2.2rem;
+        border-radius: 50px;
+        margin-top: 2rem;
+        backdrop-filter: blur(8px);
+        border: 2px solid #e6b89c;
+      }
+
+      /* ----- VIRTUAL TEDDY BEAR (3D plushie) ----- */
+      .virtual-teddy-section {
+        padding: 4rem 0 3rem;
+        background: white;
+        margin-top: -25px;
+        border-radius: 80px 80px 0 0;
+        z-index: 20;
+        position: relative;
+        text-align: center;
+      }
+      .teddy-plush-3d {
+        width: 250px;
+        height: 250px;
+        background: radial-gradient(circle at 30% 30%, #d9b8a6, #b78c7a);
+        border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+        margin: 1.5rem auto 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+          0 60px 70px rgba(139, 90, 75, 0.4),
+          inset 0 -20px 25px rgba(0, 0, 0, 0.1);
+        transform: perspective(600px) rotateX(15deg) rotateY(15deg)
+          rotateZ(5deg);
+        animation: teddyPlushFloat 5s infinite alternate;
+        border: 10px solid #ffefe8;
+        cursor: pointer;
+        transition: 0.1s;
+      }
+      .teddy-plush-3d:hover {
+        transform: perspective(600px) rotateX(20deg) rotateY(25deg)
+          rotateZ(8deg) scale(1.08);
+        box-shadow: 0 80px 80px #9c7a6b;
+      }
+      .teddy-plush-3d i,
+      .teddy-plush-3d span {
+        font-size: 6rem;
+        color: #fff9f0;
+        text-shadow: 0 15px 25px #4e362c;
+      }
+      .teddy-plush-3d span {
+        font-size: 2.2rem;
+        font-family: var(--font-love);
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.3rem 1.5rem;
+        border-radius: 60px;
+        margin-top: 0.8rem;
+      }
+      @keyframes teddyPlushFloat {
+        0% {
+          transform: perspective(600px) rotateX(12deg) rotateY(12deg)
+            rotateZ(3deg) translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(24deg) rotateY(28deg)
+            rotateZ(8deg) translateY(-40px);
+        }
+      }
+
+      /* ----- 3D TEDDY COLLECTION (types of teddy hugs) ----- */
+      .teddy-collection {
+        padding: 3rem 0 4rem;
+        background: #fff9f5;
+      }
+      .section-title {
+        font-size: 3.2rem;
+        font-family: var(--font-love);
+        color: #8b5a4b;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .section-title i {
+        color: #b78c7a;
+        margin: 0 12px;
+      }
+
+      .teddy-grid-3d {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5rem;
+      }
+      .teddy-card {
+        width: 230px;
+        background: #fffaf7;
+        border-radius: 60px 12px 60px 12px;
+        padding: 2rem 1.2rem;
+        box-shadow:
+          0 35px 40px -10px rgba(139, 90, 75, 0.15),
+          inset 0 -4px 0 rgba(0, 0, 0, 0.02),
+          0 0 0 3px white,
+          0 0 0 8px #ffede3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transform: perspective(600px) rotateX(4deg) rotateY(6deg)
+          translateZ(8px);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+        animation: teddyCardFloat 6s infinite alternate;
+      }
+      .teddy-card:hover {
+        transform: perspective(600px) rotateX(7deg) rotateY(16deg)
+          translateZ(35px) scale(1.05);
+        box-shadow: 0 55px 60px -10px #b78c7a;
+      }
+      @keyframes teddyCardFloat {
+        0% {
+          transform: perspective(600px) rotateX(4deg) rotateY(4deg)
+            translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(9deg) rotateY(16deg)
+            translateY(-22px);
+        }
+      }
+
+      .teddy-emoji {
+        font-size: 5rem;
+        filter: drop-shadow(0 18px 15px rgba(139, 90, 75, 0.2));
+        margin-bottom: 0.8rem;
+        animation: teddyGlow 3s infinite;
+      }
+      @keyframes teddyGlow {
+        0% {
+          transform: scale(1);
+          text-shadow: 0 0 5px #e6b89c;
+        }
+        50% {
+          transform: scale(1.1);
+          text-shadow: 0 0 25px #d9b8a6;
+        }
+      }
+      .teddy-card h3 {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        color: #8b5a4b;
+        margin-bottom: 0.5rem;
+      }
+      .teddy-card p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: #6b4b3e;
+      }
+      .btn-teddy {
+        background: #e6b89c;
+        border: none;
+        padding: 0.7rem 2rem;
+        border-radius: 60px;
+        font-weight: 600;
+        color: #4a2e28;
+        border: 2px solid white;
+        box-shadow: 0 8px 0 #8b5a4b;
+        transition: 0.07s;
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-family: var(--font-love);
+      }
+      .btn-teddy:active {
+        transform: translateY(8px);
+        box-shadow: 0 2px 0 #8b5a4b;
+      }
+
+      /* ----- TEDDY BEAR LOVE LETTER ----- */
+      .teddy-letter-section {
+        background: #ffede3;
+        background-image: radial-gradient(
+          circle at 80% 30%,
+          rgba(230, 184, 156, 0.2) 10%,
+          transparent 40%
+        );
+        padding: 4rem 0;
+        border-top: 5px dotted #d9b8a6;
+        border-bottom: 5px dotted #d9b8a6;
+      }
+      .teddy-letter-card {
+        max-width: 750px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(15px);
+        padding: 2.8rem 2.5rem;
+        border-radius: 90px 12px 90px 12px;
+        box-shadow: 0 40px 60px rgba(139, 90, 75, 0.2);
+        border: 4px solid white;
+        position: relative;
+        text-align: center;
+      }
+      .teddy-letter-card:before {
+        content: "🧸💌";
+        position: absolute;
+        font-size: 3rem;
+        top: -25px;
+        left: -20px;
+        background: white;
+        border-radius: 50%;
+        padding: 12px 15px;
+        box-shadow: 0 10px 0 #e6b89c;
+      }
+      .teddy-letter-title {
+        font-size: 3.2rem;
+        font-family: var(--font-love);
+        color: #8b5a4b;
+        border-bottom: 4px dashed #d9b8a6;
+        padding-bottom: 0.7rem;
+        margin-bottom: 1.5rem;
+      }
+      .teddy-letter-content {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        color: #5e403a;
+        line-height: 1.5;
+      }
+      .teddy-signature {
+        font-size: 2.2rem;
+        font-family: var(--font-love);
+        text-align: right;
+        margin-top: 2rem;
+        color: #b78c7a;
+      }
+
+      /* ----- TEDDY BEAR MEMORIES (3D floating) ----- */
+      .teddy-memories {
+        padding: 3rem 0 5rem;
+        background: white;
+      }
+      .teddy-memories-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.2rem;
+        margin-top: 2rem;
+      }
+      .teddy-memory-3d {
+        width: 160px;
+        height: 160px;
+        background: radial-gradient(circle at 30% 25%, #ffded5, #f5d1c2);
+        border-radius: 60% 40% 50% 50% / 50% 50% 60% 40%;
+        box-shadow:
+          0 45px 50px rgba(139, 90, 75, 0.25),
+          inset 0 -15px 20px rgba(0, 0, 0, 0.02);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: perspective(600px) rotateX(12deg) rotateY(15deg)
+          rotateZ(5deg);
+        animation: teddyMemoryFloat 7s infinite alternate;
+        border: 8px solid white;
+        cursor: pointer;
+      }
+      .teddy-memory-3d:hover {
+        transform: perspective(600px) rotateX(18deg) rotateY(28deg)
+          rotateZ(8deg) scale(1.1);
+        box-shadow: 0 70px 75px #b38d7c;
+      }
+      .teddy-memory-3d i,
+      .teddy-memory-3d span {
+        font-size: 4.5rem;
+        color: #8b5a4b;
+        text-shadow: 0 12px 18px #ffe3d6;
+      }
+      .teddy-memory-3d span {
+        font-size: 1.4rem;
+        font-family: var(--font-love);
+        background: rgba(255, 255, 255, 0.7);
+        padding: 0.2rem 1.2rem;
+        border-radius: 40px;
+        margin-top: 0.5rem;
+      }
+      @keyframes teddyMemoryFloat {
+        0% {
+          transform: perspective(600px) rotateX(10deg) rotateY(12deg)
+            rotateZ(3deg) translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(22deg) rotateY(28deg)
+            rotateZ(8deg) translateY(-35px);
+        }
+      }
+
+      /* ----- TEDDY BEAR PICNIC (extra cozy) ----- */
+      .teddy-picnic {
+        background: #fff1eb;
+        padding: 3rem 0;
+        text-align: center;
+      }
+      .picnic-blanket {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      .picnic-item {
+        width: 140px;
+        height: 140px;
+        background: #f5e1d6;
+        border-radius: 40% 40% 20% 20% / 50% 50% 30% 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 30px 35px rgba(100, 70, 60, 0.2);
+        border: 8px solid #ffefd2;
+        transform: perspective(600px) rotateX(8deg) rotateY(10deg);
+        animation: picnicFloat 6s infinite alternate;
+      }
+      .picnic-item i {
+        font-size: 4rem;
+        color: #8b5a4b;
+      }
+      .picnic-item span {
+        font-family: var(--font-love);
+        font-size: 1.3rem;
+        color: #6b4b3e;
+        margin-top: 0.5rem;
+      }
+      @keyframes picnicFloat {
+        0% {
+          transform: perspective(600px) rotateX(6deg) rotateY(8deg)
+            translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(14deg) rotateY(18deg)
+            translateY(-20px);
+        }
+      }
+
+      /* POPUP (teddy style) */
+      .popup-card {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        width: 380px;
+        max-width: 85vw;
+        background: #fffaf5;
+        border-radius: 90px 12px 90px 12px;
+        padding: 3rem 2.2rem;
+        box-shadow:
+          0 90px 110px rgba(100, 60, 50, 0.4),
+          0 0 0 6px white,
+          0 0 0 20px #ffded5;
+        text-align: center;
+        z-index: 9999;
+        display: none;
+        opacity: 0;
+        transition:
+          opacity 0.2s,
+          transform 0.25s;
+        border: 5px solid #e6b89c;
+      }
+      .popup-card.show {
+        display: block;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .popup-close {
+        position: absolute;
+        top: 12px;
+        right: 20px;
+        font-size: 3.2rem;
+        cursor: pointer;
+        color: #8b5a4b;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        line-height: 1;
+        padding: 0 16px;
+      }
+      .popup-close:hover {
+        background: #ffede3;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(70, 50, 40, 0.25);
+        backdrop-filter: blur(6px);
+        z-index: 9998;
+        display: none;
+      }
+      .overlay.show {
+        display: block;
+      }
+
+      /* ----- BACK TO HOMEPAGE ----- */
+      .back-home {
+        text-align: center;
+        padding: 2rem 0 2.5rem;
+        background: white;
+      }
+      .back-btn {
+        background: white;
+        padding: 1rem 3rem;
+        border-radius: 80px;
+        text-decoration: none;
+        color: #8b5a4b;
+        font-size: 1.6rem;
+        font-family: var(--font-love);
+        border: 3px solid #e6b89c;
+        box-shadow: 0 14px 0 #b78c7a;
+        transition: 0.06s;
+        display: inline-block;
+      }
+      .back-btn:active {
+        transform: translateY(14px);
+        box-shadow: 0 3px 0 #b78c7a;
+      }
+
+      /* ----- FOOTER (cozy teddy) ----- */
+      footer {
+        background: #e6b89c;
+        padding: 2.5rem 0.5rem;
+        color: #4a3530;
+        text-align: center;
+        border-top-left-radius: 100px 50px;
+        border-top-right-radius: 100px 50px;
+        font-family: var(--font-love);
+      }
+      .footer-hearts i {
+        color: #6b4b3e;
+        margin: 0 8px;
+        font-size: 2rem;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .teddy-hero h1 {
+          font-size: 4.2rem;
+        }
+        .teddy-3d {
+          font-size: 7rem;
+        }
+        .teddy-card {
+          width: 190px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== TEDDY DAY HERO · 3D FLUFFY BEAR ===== -->
+    <section class="teddy-hero">
+      <div class="teddy-floaties" id="teddyFloaties"></div>
+      <div class="teddy-3d">🧸💕</div>
+      <h1>Teddy Day</h1>
+      <p>10th February · cuddles & warmth</p>
+      <div class="teddy-tagline love-font">
+        <i class="fas fa-heart"></i> you're my favorite teddy bear
+        <i class="fas fa-heart"></i>
+      </div>
+    </section>
+
+    <!-- ===== VIRTUAL TEDDY BEAR (3D plushie to hug) ===== -->
+    <section class="virtual-teddy-section">
+      <div class="container">
+        <h2
+          style="
+            font-family: var(--font-love);
+            font-size: 3rem;
+            color: #8b5a4b;
+            margin-bottom: 0.5rem;
+          ">
+          🧸 hug this teddy 🧸
+        </h2>
+        <div class="teddy-plush-3d" id="teddyPlush">
+          <i class="fas fa-bear"></i>
+          <span>hug me</span>
+        </div>
+        <p
+          style="
+            font-family: var(--font-love);
+            font-size: 1.8rem;
+            color: #6b4b3e;
+          ">
+          squeeze tight — i'll always be here
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 3D TEDDY COLLECTION (types of teddy hugs) ===== -->
+    <section class="teddy-collection">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="fas fa-heart"></i> teddy bear hugs
+          <i class="fas fa-heart"></i>
+        </h2>
+        <div class="teddy-grid-3d">
+          <!-- classic teddy -->
+          <div class="teddy-card">
+            <div class="teddy-emoji">🧸🤎</div>
+            <h3>classic teddy</h3>
+            <p>soft, warm, always there</p>
+            <button class="btn-teddy" data-teddy="classic">hug</button>
+          </div>
+          <!-- panda bear -->
+          <div class="teddy-card">
+            <div class="teddy-emoji">🐼🖤</div>
+            <h3>panda bear</h3>
+            <p>cuddly & cute</p>
+            <button class="btn-teddy" data-teddy="panda">hug</button>
+          </div>
+          <!-- polar bear -->
+          <div class="teddy-card">
+            <div class="teddy-emoji">🐻‍❄️🤍</div>
+            <h3>polar bear</h3>
+            <p>chill until you hug</p>
+            <button class="btn-teddy" data-teddy="polar">hug</button>
+          </div>
+          <!-- brown bear -->
+          <div class="teddy-card">
+            <div class="teddy-emoji">🐻💕</div>
+            <h3>brown bear</h3>
+            <p>big hugs, big love</p>
+            <button class="btn-teddy" data-teddy="brown">hug</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEDDY BEAR LOVE LETTER ===== -->
+    <section class="teddy-letter-section">
+      <div class="container">
+        <div class="teddy-letter-card">
+          <div class="teddy-letter-title">🧸 my teddy bear 🧸</div>
+          <div class="teddy-letter-content">
+            “You are the teddy bear I never had as a child — <br />
+            except you're real, and you hug back. <br />
+            You make me feel safe, warm, and loved. <br />
+            Thank you for being my comfort.”
+          </div>
+          <div class="teddy-signature">
+            — cuddling you forever, <br />
+            [your valentine] 🧸💌
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEDDY BEAR MEMORIES (3D floating) ===== -->
+    <section class="teddy-memories">
+      <div class="container">
+        <h2
+          style="
+            font-family: var(--font-love);
+            font-size: 3rem;
+            color: #8b5a4b;
+            text-align: center;
+            margin-bottom: 1.5rem;
+          ">
+          <i class="fas fa-star"></i> teddy memories <i class="fas fa-star"></i>
+        </h2>
+        <div class="teddy-memories-grid">
+          <div class="teddy-memory-3d" data-memory="first">
+            <i class="fas fa-gift"></i>
+            <span>first teddy</span>
+          </div>
+          <div class="teddy-memory-3d" data-memory="sleep">
+            <i class="fas fa-moon"></i>
+            <span>sleepy hugs</span>
+          </div>
+          <div class="teddy-memory-3d" data-memory="picnic">
+            <i class="fas fa-tree"></i>
+            <span>teddy picnic</span>
+          </div>
+          <div class="teddy-memory-3d" data-memory="forever">
+            <i class="fas fa-infinity"></i>
+            <span>forever bear</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEDDY BEAR PICNIC (extra cozy) ===== -->
+    <section class="teddy-picnic">
+      <div class="container">
+        <h2
+          style="
+            font-family: var(--font-love);
+            font-size: 2.8rem;
+            color: #8b5a4b;
+            margin-bottom: 1rem;
+          ">
+          🧺 teddy bear picnic 🧺
+        </h2>
+        <div class="picnic-blanket">
+          <div class="picnic-item">
+            <i class="fas fa-cookie"></i>
+            <span>honey cookies</span>
+          </div>
+          <div class="picnic-item">
+            <i class="fas fa-mug-hot"></i>
+            <span>warm cocoa</span>
+          </div>
+          <div class="picnic-item">
+            <i class="fas fa-apple-alt"></i>
+            <span>bear's snack</span>
+          </div>
+          <div class="picnic-item">
+            <i class="fas fa-heart"></i>
+            <span>love notes</span>
+          </div>
+        </div>
+        <p
+          style="
+            font-family: var(--font-love);
+            font-size: 1.6rem;
+            margin-top: 2rem;
+            color: #6b4b3e;
+          ">
+          you're invited to our cozy picnic 🧸🍯
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== BACK TO HOMEPAGE ===== -->
+    <div class="back-home">
+      <a
+        href="#"
+        class="back-btn"
+        onclick="alert('🧸 returning to your love story… (homepage)')"
+        ><i class="fas fa-heart"></i> back to our story
+        <i class="fas fa-heart"></i
+      ></a>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="footer-hearts">
+        <i class="fas fa-heart"></i><i class="fas fa-bear"></i
+        ><i class="fas fa-heart"></i><i class="fas fa-cookie"></i
+        ><i class="fas fa-heart"></i>
+      </div>
+      <div
+        class="footer-quote"
+        style="font-size: 2.2rem; font-family: var(--font-love)">
+        "you're the teddy bear my heart hugs"
+      </div>
+      <div style="font-size: 2rem; margin: 0.8rem 0">🧸🍯💕</div>
+      <div style="font-family: var(--font-love); font-size: 1.4rem">
+        cuddles are always available with me
+      </div>
+    </footer>
+
+    <!-- GLOBAL POPUP -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup-card" id="popup">
+      <span class="popup-close" id="closePopup">&times;</span>
+      <div style="font-size: 5rem; margin-bottom: 0.5rem" id="popupEmoji">
+        🧸💖
+      </div>
+      <div
+        style="font-size: 2.8rem; font-family: var(--font-love); color: #8b5a4b"
+        id="popupTitle">
+        teddy hug
+      </div>
+      <div
+        style="
+          font-size: 2rem;
+          font-family: var(--font-love);
+          margin-top: 0.8rem;
+          color: #5e403a;
+        "
+        id="popupMsg">
+        you're wrapped in a warm teddy hug.
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // --- floating teddy icons (ambient) ---
+        function createTeddyFloaties() {
+          const container = document.getElementById("teddyFloaties");
+          if (!container) return;
+          const icons = ["🧸", "🐻", "💕", "🧸", "🐼", "✨", "🤎", "🍯"];
+          for (let i = 0; i < 35; i++) {
+            const floaty = document.createElement("div");
+            floaty.classList.add("float-teddy");
+            floaty.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+            floaty.style.left = Math.random() * 100 + "%";
+            floaty.style.animationDelay = Math.random() * 8 + "s";
+            floaty.style.animationDuration =
+              Math.floor(Math.random() * 15) + 12 + "s";
+            floaty.style.fontSize = Math.floor(Math.random() * 40) + 25 + "px";
+            floaty.style.opacity = 0.35;
+            container.appendChild(floaty);
+          }
+        }
+        createTeddyFloaties();
+
+        // ---------- POPUP SYSTEM ----------
+        const popup = document.getElementById("popup");
+        const overlay = document.getElementById("overlay");
+        const closeBtn = document.getElementById("closePopup");
+        const popupEmoji = document.getElementById("popupEmoji");
+        const popupTitle = document.getElementById("popupTitle");
+        const popupMsg = document.getElementById("popupMsg");
+
+        // teddy type messages
+        const teddyMessages = {
+          classic: {
+            emoji: "🧸🤎",
+            title: "classic teddy",
+            msg: "Soft, warm, and always there — like me, waiting to hold you.",
+          },
+          panda: {
+            emoji: "🐼🖤",
+            title: "panda bear",
+            msg: "Cuddly, a little shy, but so full of love. That’s you.",
+          },
+          polar: {
+            emoji: "🐻‍❄️🤍",
+            title: "polar bear",
+            msg: "Cold outside, but a heart that melts when you hug.",
+          },
+          brown: {
+            emoji: "🐻💕",
+            title: "brown bear",
+            msg: "Big, strong, but gentle. I feel so safe in your arms.",
+          },
+        };
+
+        // teddy memory messages
+        const memoryMessages = {
+          first: {
+            emoji: "🎁🧸",
+            title: "first teddy",
+            msg: "I still remember the first teddy you gave me. I sleep with it every night.",
+          },
+          sleep: {
+            emoji: "🌙🧸",
+            title: "sleepy hugs",
+            msg: "Falling asleep on call, teddy in my arms, your voice in my ears.",
+          },
+          picnic: {
+            emoji: "🧺🧸",
+            title: "teddy picnic",
+            msg: "A picnic with teddy bears — just us, honey, and laughter.",
+          },
+          forever: {
+            emoji: "♾️🧸",
+            title: "forever bear",
+            msg: "This teddy will stay with me forever, just like you.",
+          },
+        };
+
+        // virtual plushie message
+        const plushieMessage = {
+          emoji: "🧸💖✨",
+          title: "you hugged the teddy!",
+          msg: 'The teddy bear smiled. It whispered: "They love you so much."',
+        };
+
+        function showPopup(emoji, title, msg) {
+          popupEmoji.innerHTML = emoji;
+          popupTitle.textContent = title;
+          popupMsg.textContent = msg;
+          popup.classList.add("show");
+          overlay.classList.add("show");
+        }
+
+        function hidePopup() {
+          popup.classList.remove("show");
+          overlay.classList.remove("show");
+        }
+
+        // teddy buttons (types of teddies)
+        const teddyBtns = document.querySelectorAll(".btn-teddy");
+        teddyBtns.forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const type = this.dataset.teddy;
+            const data = teddyMessages[type] || {
+              emoji: "🧸💕",
+              title: "teddy hug",
+              msg: "a warm hug from your favorite bear.",
+            };
+            showPopup(data.emoji, data.title, data.msg);
+          });
+        });
+
+        // teddy memory clicks
+        const memoryTeddies = document.querySelectorAll(".teddy-memory-3d");
+        memoryTeddies.forEach((memory) => {
+          memory.addEventListener("click", function () {
+            const type = this.dataset.memory;
+            const data = memoryMessages[type] || {
+              emoji: "🧸✨",
+              title: "teddy memory",
+              msg: "a sweet memory with your teddy bear.",
+            };
+            showPopup(data.emoji, data.title, data.msg);
+          });
+        });
+
+        // virtual plushie click
+        const teddyPlush = document.getElementById("teddyPlush");
+        if (teddyPlush) {
+          teddyPlush.addEventListener("click", function () {
+            showPopup(
+              plushieMessage.emoji,
+              plushieMessage.title,
+              plushieMessage.msg,
+            );
+          });
+        }
+
+        // close popup
+        closeBtn.addEventListener("click", hidePopup);
+        overlay.addEventListener("click", hidePopup);
+        window.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") hidePopup();
+        });
+
+        // back button
+        const backBtn = document.querySelector(".back-btn");
+        if (backBtn) {
+          backBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            alert("🧸 returning to your love story… (homepage link)");
+          });
+        }
+      })();
+    </script>
+
+    <style>
+      /* fallback icons */
+      .fa-bear:before {
+        content: "🧸";
+        font-family:
+          "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+      }
+      .fa-cookie:before {
+        content: "🍪";
+      }
+      .fa-mug-hot:before {
+        content: "☕";
+      }
+      .fa-apple-alt:before {
+        content: "🍎";
+      }
+      .fa-tree:before {
+        content: "🌳";
+      }
+      .fa-gift:before {
+        content: "🎁";
+      }
+      .fa-moon:before {
+        content: "🌙";
+      }
+      .fa-infinity:before {
+        content: "♾️";
+      }
+      .fa-star:before {
+        content: "✨";
+      }
+    </style>
+  </body>
+</html>

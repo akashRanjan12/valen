@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>🍫 chocolate day · sweeter than ever</title>
+    <!-- Google Fonts: lovy dovy & sweet -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+      /* -------------------------------
+       CHOCOLATE DAY · 3D · SWEET
+       mobile-first, interactive
+    ------------------------------- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --choco-brown: #7b3f00;
+        --choco-milk: #c07a5b;
+        --choco-pink: #f8c1c1;
+        --choco-cream: #fff3e0;
+        --choco-gold: #d4af37;
+        --choco-soft: #ffe9e9;
+        --font-love: "Dancing Script", cursive;
+        --font-clean: "Quicksand", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(145deg, #fff9f2 0%, #fff0e7 100%);
+        font-family: var(--font-clean);
+        color: #3a2a1f;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .love-font {
+        font-family: var(--font-love);
+        font-weight: 600;
+      }
+
+      /* ----- 3D CHOCOLATE HERO ----- */
+      .choco-hero {
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(circle at 50% 40%, #ffd9c0, #ffc2b0);
+        border-bottom-left-radius: 100px 50px;
+        border-bottom-right-radius: 100px 50px;
+        box-shadow: 0 20px 35px rgba(160, 80, 50, 0.15);
+      }
+
+      /* floating cocoa particles */
+      .cocoa-field {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .cocoa-particle {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: #8b4513;
+        border-radius: 50%;
+        box-shadow: 0 0 15px #d2691e;
+        opacity: 0.2;
+        animation: cocoaFloat 8s infinite linear;
+      }
+      @keyframes cocoaFloat {
+        0% {
+          transform: translateY(-10vh) rotate(0deg);
+          opacity: 0.3;
+        }
+        100% {
+          transform: translateY(110vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      .choco-3d {
+        font-size: 9rem;
+        filter: drop-shadow(0 25px 25px rgba(120, 50, 30, 0.3));
+        animation: chocoFloat 3.5s infinite alternate ease-in-out;
+        z-index: 15;
+        transform: perspective(600px) rotateX(8deg) rotateY(-8deg);
+        margin-bottom: 0.2rem;
+      }
+      @keyframes chocoFloat {
+        0% {
+          transform: perspective(600px) rotateX(8deg) rotateY(-8deg)
+            translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(14deg) rotateY(-18deg)
+            translateY(-25px);
+        }
+      }
+
+      .choco-hero h1 {
+        font-size: 5.5rem;
+        font-family: var(--font-love);
+        color: #5e2e1c;
+        text-shadow:
+          3px 3px 0 #ffdbd0,
+          6px 6px 20px rgba(160, 70, 40, 0.3);
+        z-index: 10;
+        letter-spacing: 4px;
+      }
+      .choco-hero p {
+        font-size: 2.4rem;
+        font-family: var(--font-love);
+        color: #6b3a26;
+        background: rgba(255, 245, 240, 0.8);
+        backdrop-filter: blur(12px);
+        padding: 0.8rem 2.5rem;
+        border-radius: 70px;
+        border: 3px solid white;
+        box-shadow: 0 15px 25px rgba(200, 110, 70, 0.25);
+        z-index: 10;
+        margin-top: 1rem;
+      }
+      .sweet-tagline {
+        font-size: 2rem;
+        background: rgba(255, 235, 220, 0.7);
+        padding: 0.7rem 2.2rem;
+        border-radius: 50px;
+        margin-top: 2rem;
+        backdrop-filter: blur(8px);
+        border: 2px solid #ffd7b3;
+      }
+
+      /* ----- 3D CHOCOLATE COLLECTION ----- */
+      .choco-collection {
+        padding: 4rem 0 3rem;
+        background: white;
+        margin-top: -25px;
+        border-radius: 80px 80px 0 0;
+        z-index: 20;
+        position: relative;
+      }
+
+      .section-title {
+        font-size: 3.2rem;
+        font-family: var(--font-love);
+        color: #7b3f00;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .section-title i {
+        color: #c07a5b;
+        margin: 0 12px;
+      }
+
+      .choco-grid-3d {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5rem;
+      }
+      .choco-card {
+        width: 230px;
+        background: #fffbf7;
+        border-radius: 50px 12px 50px 12px;
+        padding: 2rem 1.2rem;
+        box-shadow:
+          0 30px 35px -10px rgba(140, 70, 40, 0.2),
+          inset 0 -4px 0 rgba(0, 0, 0, 0.02),
+          0 0 0 3px white,
+          0 0 0 8px #ffefe3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transform: perspective(600px) rotateX(4deg) rotateY(7deg)
+          translateZ(8px);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+        animation: chocoCardFloat 6s infinite alternate;
+      }
+      .choco-card:hover {
+        transform: perspective(600px) rotateX(6deg) rotateY(15deg)
+          translateZ(30px) scale(1.05);
+        box-shadow: 0 45px 50px -10px #b67e63;
+      }
+      @keyframes chocoCardFloat {
+        0% {
+          transform: perspective(600px) rotateX(4deg) rotateY(5deg)
+            translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(8deg) rotateY(15deg)
+            translateY(-20px);
+        }
+      }
+
+      .choco-emoji {
+        font-size: 5rem;
+        filter: drop-shadow(0 15px 12px rgba(140, 70, 30, 0.2));
+        margin-bottom: 0.8rem;
+        animation: chocoGlow 3s infinite;
+      }
+      @keyframes chocoGlow {
+        0% {
+          transform: scale(1);
+          text-shadow: 0 0 5px #ffc09f;
+        }
+        50% {
+          transform: scale(1.1);
+          text-shadow: 0 0 25px #d48c6a;
+        }
+      }
+      .choco-card h3 {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        color: #7b3f00;
+        margin-bottom: 0.5rem;
+      }
+      .choco-card p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: #5e2e1c;
+      }
+      .btn-choco {
+        background: #d9b08c;
+        border: none;
+        padding: 0.7rem 2rem;
+        border-radius: 60px;
+        font-weight: 600;
+        color: white;
+        border: 2px solid #fff3e0;
+        box-shadow: 0 8px 0 #7b3f00;
+        transition: 0.07s;
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-family: var(--font-love);
+      }
+      .btn-choco:active {
+        transform: translateY(8px);
+        box-shadow: 0 2px 0 #7b3f00;
+      }
+
+      /* ----- LOVE LETTER · chocolate edition ----- */
+      .choco-letter-section {
+        background: #ffefe7;
+        background-image: radial-gradient(
+          circle at 20% 40%,
+          rgba(216, 142, 98, 0.15) 8%,
+          transparent 35%
+        );
+        padding: 4rem 0;
+        border-top: 5px dotted #d49b7b;
+        border-bottom: 5px dotted #d49b7b;
+      }
+      .choco-letter-card {
+        max-width: 750px;
+        margin: 0 auto;
+        background: rgba(255, 245, 235, 0.85);
+        backdrop-filter: blur(15px);
+        padding: 2.8rem 2.5rem;
+        border-radius: 90px 12px 90px 12px;
+        box-shadow: 0 40px 60px rgba(150, 80, 50, 0.2);
+        border: 4px solid white;
+        position: relative;
+        text-align: center;
+      }
+      .choco-letter-card:before {
+        content: "🍫💌";
+        position: absolute;
+        font-size: 3rem;
+        top: -25px;
+        left: -20px;
+        background: white;
+        border-radius: 50%;
+        padding: 12px 15px;
+        box-shadow: 0 10px 0 #d9b08c;
+      }
+      .choco-letter-title {
+        font-size: 3.2rem;
+        font-family: var(--font-love);
+        color: #7b3f00;
+        border-bottom: 4px dashed #d49b7b;
+        padding-bottom: 0.7rem;
+        margin-bottom: 1.5rem;
+      }
+      .choco-letter-content {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        color: #4a2e22;
+        line-height: 1.5;
+      }
+      .choco-signature {
+        font-size: 2.2rem;
+        font-family: var(--font-love);
+        text-align: right;
+        margin-top: 2rem;
+        color: #b34167;
+      }
+
+      /* ----- INTERACTIVE CHOCOLATE BOX (3D) ----- */
+      .choco-box-section {
+        padding: 4rem 0;
+        background: #ffe3d6;
+        text-align: center;
+      }
+      .chocolate-box-3d {
+        width: 240px;
+        height: 240px;
+        background: linear-gradient(145deg, #8b4513, #5e2e1c);
+        border-radius: 30% 30% 20% 20% / 40% 40% 30% 30%;
+        margin: 0 auto 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+          0 45px 55px rgba(100, 50, 30, 0.5),
+          inset 0 -15px 20px rgba(0, 0, 0, 0.2);
+        transform: perspective(600px) rotateX(15deg) rotateY(20deg);
+        animation: boxChocoFloat 5s infinite alternate;
+        border: 8px solid #c07a5b;
+        cursor: pointer;
+        position: relative;
+      }
+      .chocolate-box-3d i,
+      .chocolate-box-3d span {
+        font-size: 5.5rem;
+        color: #ffdbaf;
+        text-shadow: 0 15px 25px #3a1e12;
+      }
+      .chocolate-box-3d span {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        background: rgba(255, 235, 200, 0.2);
+        padding: 0.3rem 1.5rem;
+        border-radius: 60px;
+        margin-top: 0.8rem;
+        color: #ffefd5;
+      }
+      @keyframes boxChocoFloat {
+        0% {
+          transform: perspective(600px) rotateX(12deg) rotateY(15deg)
+            translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(22deg) rotateY(30deg)
+            translateY(-30px);
+        }
+      }
+
+      /* ----- SWEET MEMORIES (3D floating candies) ----- */
+      .candy-memories {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+      .candy-3d {
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle at 30% 25%, #ffdab9, #f4c3b8);
+        border-radius: 60% 40% 50% 50% / 40% 50% 60% 50%;
+        box-shadow:
+          0 30px 35px rgba(180, 100, 70, 0.3),
+          inset 0 -12px 15px rgba(0, 0, 0, 0.03);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: perspective(600px) rotateX(6deg) rotateY(12deg);
+        animation: candyFloat 5s infinite alternate;
+        border: 6px solid white;
+        cursor: pointer;
+      }
+      .candy-3d:hover {
+        transform: perspective(600px) rotateX(10deg) rotateY(22deg) scale(1.1);
+        box-shadow: 0 45px 50px #c28b7a;
+      }
+      .candy-3d i,
+      .candy-3d span {
+        font-size: 4rem;
+        color: #7b3f00;
+        text-shadow: 0 8px 10px #ffcfb0;
+      }
+      .candy-3d span {
+        font-size: 1.4rem;
+        font-family: var(--font-love);
+        background: rgba(255, 255, 255, 0.5);
+        padding: 0.2rem 1.2rem;
+        border-radius: 40px;
+      }
+      @keyframes candyFloat {
+        0% {
+          transform: perspective(600px) rotateX(5deg) rotateY(8deg)
+            translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(12deg) rotateY(22deg)
+            translateY(-25px);
+        }
+      }
+
+      /* POPUP (chocolate style) */
+      .popup-card {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        width: 350px;
+        max-width: 85vw;
+        background: #fff9f2;
+        border-radius: 80px 12px 80px 12px;
+        padding: 2.8rem 2rem;
+        box-shadow:
+          0 60px 80px rgba(100, 50, 30, 0.4),
+          0 0 0 6px white,
+          0 0 0 16px #ffd7b3;
+        text-align: center;
+        z-index: 9999;
+        display: none;
+        opacity: 0;
+        transition:
+          opacity 0.2s,
+          transform 0.25s;
+        border: 4px solid #d9b08c;
+      }
+      .popup-card.show {
+        display: block;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .popup-close {
+        position: absolute;
+        top: 12px;
+        right: 18px;
+        font-size: 3rem;
+        cursor: pointer;
+        color: #7b3f00;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        line-height: 1;
+        padding: 0 12px;
+      }
+      .popup-close:hover {
+        background: #ffdbd0;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(70, 30, 20, 0.3);
+        backdrop-filter: blur(6px);
+        z-index: 9998;
+        display: none;
+      }
+      .overlay.show {
+        display: block;
+      }
+
+      /* ----- BACK TO HOMEPAGE ----- */
+      .back-home {
+        text-align: center;
+        padding: 2rem 0 2.5rem;
+      }
+      .back-btn {
+        background: white;
+        padding: 1rem 3rem;
+        border-radius: 80px;
+        text-decoration: none;
+        color: #7b3f00;
+        font-size: 1.6rem;
+        font-family: var(--font-love);
+        border: 3px solid #d9b08c;
+        box-shadow: 0 14px 0 #b38063;
+        transition: 0.06s;
+        display: inline-block;
+      }
+      .back-btn:active {
+        transform: translateY(14px);
+        box-shadow: 0 3px 0 #b38063;
+      }
+
+      /* ----- FOOTER (sweet) ----- */
+      footer {
+        background: #d9b08c;
+        padding: 2.5rem 0.5rem;
+        color: #2c1a0f;
+        text-align: center;
+        border-top-left-radius: 100px 50px;
+        border-top-right-radius: 100px 50px;
+        font-family: var(--font-love);
+      }
+      .footer-hearts i {
+        color: #5e2e1c;
+        margin: 0 8px;
+        font-size: 2rem;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .choco-hero h1 {
+          font-size: 4.2rem;
+        }
+        .choco-3d {
+          font-size: 7rem;
+        }
+        .choco-card {
+          width: 180px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== CHOCOLATE DAY HERO · 3D CHOCOLATE BAR ===== -->
+    <section class="choco-hero">
+      <div class="cocoa-field" id="cocoaContainer"></div>
+      <div class="choco-3d">🍫</div>
+      <h1>Chocolate Day</h1>
+      <p>9th February · you're sweeter than any chocolate</p>
+      <div class="sweet-tagline love-font">
+        <i class="fas fa-candy-cane"></i> a bite of happiness
+        <i class="fas fa-candy-cane"></i>
+      </div>
+    </section>
+
+    <!-- ===== 3D CHOCOLATE COLLECTION ===== -->
+    <section class="choco-collection">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="fas fa-candy-cane"></i> chocolates for my sweetheart
+          <i class="fas fa-candy-cane"></i>
+        </h2>
+        <div class="choco-grid-3d">
+          <!-- dark chocolate -->
+          <div class="choco-card">
+            <div class="choco-emoji">🍫🖤</div>
+            <h3>dark chocolate</h3>
+            <p>intense & pure, like my love</p>
+            <button class="btn-choco" data-choco="dark">savor</button>
+          </div>
+          <!-- milk chocolate -->
+          <div class="choco-card">
+            <div class="choco-emoji">🍫🥛</div>
+            <h3>milk chocolate</h3>
+            <p>smooth & comforting, like your hug</p>
+            <button class="btn-choco" data-choco="milk">savor</button>
+          </div>
+          <!-- white chocolate -->
+          <div class="choco-card">
+            <div class="choco-emoji">🍫🤍</div>
+            <h3>white chocolate</h3>
+            <p>sweet & dreamy, like your smile</p>
+            <button class="btn-choco" data-choco="white">savor</button>
+          </div>
+          <!-- hazelnut chocolate -->
+          <div class="choco-card">
+            <div class="choco-emoji">🍫🌰</div>
+            <h3>hazelnut</h3>
+            <p>crunchy surprise, like our laughter</p>
+            <button class="btn-choco" data-choco="hazelnut">savor</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LOVE LETTER · chocolate edition ===== -->
+    <section class="choco-letter-section">
+      <div class="container">
+        <div class="choco-letter-card">
+          <div class="choco-letter-title">🍬 sweetest love letter 🍬</div>
+          <div class="choco-letter-content">
+            “If you are a chocolate, <br />
+            you're the finest, rarest, sweetest one. <br />
+            And I don't want just a bite — <br />
+            I want the whole bar, forever.”
+          </div>
+          <div class="choco-signature">
+            — forever hungry for you, <br />
+            [your valentine] 🍫
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INTERACTIVE CHOCOLATE BOX (3D) ===== -->
+    <section class="choco-box-section">
+      <h2
+        style="
+          font-family: var(--font-love);
+          font-size: 3rem;
+          color: #5e2e1c;
+          margin-bottom: 1.5rem;
+        ">
+        🍬 surprise chocolate box 🍬
+      </h2>
+      <div class="chocolate-box-3d" id="chocoBox">
+        <i class="fas fa-gift"></i>
+        <span>open for sweetness</span>
+      </div>
+      <p style="font-family: var(--font-love); font-size: 2rem">
+        ✨ tap the box, taste the love ✨
+      </p>
+    </section>
+
+    <!-- ===== SWEET MEMORIES (3D floating candies) ===== -->
+    <section style="padding: 2rem 0 5rem; background: white">
+      <div class="container">
+        <h2
+          style="
+            font-family: var(--font-love);
+            font-size: 3rem;
+            color: #7b3f00;
+            text-align: center;
+            margin-bottom: 2rem;
+          ">
+          <i class="fas fa-heart"></i> sweet moments
+          <i class="fas fa-heart"></i>
+        </h2>
+        <div class="candy-memories">
+          <div class="candy-3d" data-candy="first">
+            <i class="fas fa-candy-cane"></i>
+            <span>first sweet</span>
+          </div>
+          <div class="candy-3d" data-candy="date">
+            <i class="fas fa-ice-cream"></i>
+            <span>sweet date</span>
+          </div>
+          <div class="candy-3d" data-candy="words">
+            <i class="fas fa-heart"></i>
+            <span>sweet words</span>
+          </div>
+          <div class="candy-3d" data-candy="forever">
+            <i class="fas fa-infinity"></i>
+            <span>sweet forever</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BACK TO HOMEPAGE ===== -->
+    <div class="back-home">
+      <a
+        href="#"
+        class="back-btn"
+        onclick="alert('🍫 returning to your love story… (homepage)')"
+        ><i class="fas fa-heart"></i> back to our story
+        <i class="fas fa-heart"></i
+      ></a>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="footer-hearts">
+        <i class="fas fa-heart"></i><i class="fas fa-candy-cane"></i
+        ><i class="fas fa-heart"></i><i class="fas fa-chocolate"></i
+        ><i class="fas fa-heart"></i>
+      </div>
+      <div
+        class="footer-quote"
+        style="font-size: 2.2rem; font-family: var(--font-love)">
+        "you are the chocolate to my life"
+      </div>
+      <div style="font-size: 2rem; margin: 0.8rem 0">🍫🍬🍭</div>
+      <div style="font-family: var(--font-love); font-size: 1.4rem">
+        sweetness never tasted like you
+      </div>
+    </footer>
+
+    <!-- GLOBAL POPUP -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup-card" id="popup">
+      <span class="popup-close" id="closePopup">&times;</span>
+      <div style="font-size: 5rem; margin-bottom: 0.5rem" id="popupEmoji">
+        🍫
+      </div>
+      <div
+        style="font-size: 2.6rem; font-family: var(--font-love); color: #7b3f00"
+        id="popupTitle">
+        chocolate memory
+      </div>
+      <div
+        style="
+          font-size: 1.9rem;
+          font-family: var(--font-love);
+          margin-top: 0.8rem;
+          color: #5e2e1c;
+        "
+        id="popupMsg">
+        you are the sweetest part of my day.
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // --- floating cocoa particles ---
+        function createCocoa() {
+          const field = document.getElementById("cocoaContainer");
+          if (!field) return;
+          for (let i = 0; i < 40; i++) {
+            const particle = document.createElement("div");
+            particle.classList.add("cocoa-particle");
+            particle.style.left = Math.random() * 100 + "%";
+            particle.style.top = Math.random() * 100 + "%";
+            particle.style.animationDelay = Math.random() * 7 + "s";
+            particle.style.animationDuration =
+              Math.floor(Math.random() * 10) + 8 + "s";
+            particle.style.width = Math.floor(Math.random() * 18) + 8 + "px";
+            particle.style.height = particle.style.width;
+            particle.style.background = [
+              "#8b4513",
+              "#a0522d",
+              "#5e2e1c",
+              "#7b3f00",
+            ][Math.floor(Math.random() * 4)];
+            field.appendChild(particle);
+          }
+        }
+        createCocoa();
+
+        // ---------- POPUP SYSTEM ----------
+        const popup = document.getElementById("popup");
+        const overlay = document.getElementById("overlay");
+        const closeBtn = document.getElementById("closePopup");
+        const popupEmoji = document.getElementById("popupEmoji");
+        const popupTitle = document.getElementById("popupTitle");
+        const popupMsg = document.getElementById("popupMsg");
+
+        // chocolate messages
+        const chocoMessages = {
+          dark: {
+            emoji: "🍫🖤",
+            title: "dark chocolate",
+            msg: "intense & pure — like the way i love you. no additives, just you.",
+          },
+          milk: {
+            emoji: "🍫🥛",
+            title: "milk chocolate",
+            msg: "smooth, gentle, comforting. that’s how you make me feel.",
+          },
+          white: {
+            emoji: "🍫🤍",
+            title: "white chocolate",
+            msg: "dreamy, sweet, a little rare — just like your smile.",
+          },
+          hazelnut: {
+            emoji: "🍫🌰",
+            title: "hazelnut",
+            msg: "a crunchy surprise, like the way you make me laugh.",
+          },
+        };
+
+        // candy memory messages
+        const candyMessages = {
+          first: {
+            emoji: "🍬✨",
+            title: "first sweet",
+            msg: "the first time we shared dessert — i knew i wanted a lifetime of sweetness with you.",
+          },
+          date: {
+            emoji: "🍦💕",
+            title: "sweet date",
+            msg: "ice cream under the stars. you were sweeter than any flavor.",
+          },
+          words: {
+            emoji: "💖🍫",
+            title: "sweet words",
+            msg: 'every "i miss you" from you tastes like chocolate.',
+          },
+          forever: {
+            emoji: "♾️🍬",
+            title: "sweet forever",
+            msg: "a lifetime of chocolates, candies, and you. that’s all i need.",
+          },
+        };
+
+        // chocolate box secret
+        const boxSecret = {
+          emoji: "🍫🎁💖",
+          title: "a message from the box",
+          msg: "inside this box: one heart, fully yours. and a promise to make every day sweet.",
+        };
+
+        function showPopup(emoji, title, msg) {
+          popupEmoji.innerHTML = emoji;
+          popupTitle.textContent = title;
+          popupMsg.textContent = msg;
+          popup.classList.add("show");
+          overlay.classList.add("show");
+        }
+
+        function hidePopup() {
+          popup.classList.remove("show");
+          overlay.classList.remove("show");
+        }
+
+        // chocolate buttons
+        const chocoBtns = document.querySelectorAll(".btn-choco");
+        chocoBtns.forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const type = this.dataset.choco;
+            const data = chocoMessages[type] || {
+              emoji: "🍫",
+              title: "chocolate",
+              msg: "you are my favorite flavor.",
+            };
+            showPopup(data.emoji, data.title, data.msg);
+          });
+        });
+
+        // candy 3d memories
+        const candyEls = document.querySelectorAll(".candy-3d");
+        candyEls.forEach((candy) => {
+          candy.addEventListener("click", function () {
+            const type = this.dataset.candy;
+            const data = candyMessages[type] || {
+              emoji: "🍬",
+              title: "sweet memory",
+              msg: "every moment with you is sweet.",
+            };
+            showPopup(data.emoji, data.title, data.msg);
+          });
+        });
+
+        // chocolate box click
+        const chocoBox = document.getElementById("chocoBox");
+        if (chocoBox) {
+          chocoBox.addEventListener("click", function () {
+            showPopup(boxSecret.emoji, boxSecret.title, boxSecret.msg);
+          });
+        }
+
+        // close popup
+        closeBtn.addEventListener("click", hidePopup);
+        overlay.addEventListener("click", hidePopup);
+        window.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") hidePopup();
+        });
+
+        // back button
+        const backBtn = document.querySelector(".back-btn");
+        if (backBtn) {
+          backBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            alert("🍫 returning to your love story… (homepage link)");
+          });
+        }
+      })();
+    </script>
+
+    <style>
+      /* fallback icons */
+      .fa-candy-cane:before {
+        content: "🍬";
+        font-family:
+          "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+      }
+      .fa-gift:before {
+        content: "🎁";
+      }
+      .fa-chocolate:before {
+        content: "🍫";
+      }
+      .fa-ice-cream:before {
+        content: "🍦";
+      }
+      .fa-infinity:before {
+        content: "♾️";
+      }
+    </style>
+  </body>
+</html>

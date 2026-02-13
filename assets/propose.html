@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>💍 propose day · forever yes</title>
+    <!-- Google Fonts: lovy dovy & elegant -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+      /* -------------------------------
+       PROPOSE DAY · 3D · INTERACTIVE
+       mobile-first, pure romance
+    ------------------------------- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --propose-gold: #ffb347;
+        --propose-rose: #ff8c9e;
+        --propose-deep: #b34167;
+        --propose-velvet: #590d22;
+        --propose-blush: #ffe9f0;
+        --font-love: "Dancing Script", cursive;
+        --font-clean: "Quicksand", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(145deg, #fff9fb 0%, #ffeef4 100%);
+        font-family: var(--font-clean);
+        color: #3a0a1f;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .love-font {
+        font-family: var(--font-love);
+        font-weight: 600;
+      }
+
+      /* ----- 3D PROPOSE HERO (ring spotlight) ----- */
+      .propose-hero {
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(circle at 50% 40%, #ffe4eb, #ffd4df);
+        border-bottom-left-radius: 90px 40px;
+        border-bottom-right-radius: 90px 40px;
+        box-shadow: 0 20px 35px rgba(200, 80, 110, 0.15);
+      }
+
+      /* sparkling stars / confetti */
+      .sparkle-field {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .sparkle {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 0 0 20px #ffb3c1;
+        animation: sparkleFloat 6s infinite alternate;
+        opacity: 0.7;
+      }
+      @keyframes sparkleFloat {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: 0.4;
+        }
+        100% {
+          transform: translateY(-80px) scale(1.4);
+          opacity: 0.9;
+        }
+      }
+
+      .ring-3d {
+        font-size: 8rem;
+        filter: drop-shadow(0 25px 20px rgba(212, 85, 110, 0.3));
+        animation: ringFloat 3.5s infinite alternate ease-in-out;
+        z-index: 15;
+        transform: perspective(600px) rotateX(6deg) rotateY(-10deg);
+        margin-bottom: 0.5rem;
+      }
+      @keyframes ringFloat {
+        0% {
+          transform: perspective(600px) rotateX(6deg) rotateY(-10deg)
+            translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(12deg) rotateY(-20deg)
+            translateY(-20px);
+        }
+      }
+
+      .propose-hero h1 {
+        font-size: 5rem;
+        font-family: var(--font-love);
+        color: #a4133c;
+        text-shadow:
+          3px 3px 0 #ffe6ed,
+          6px 6px 20px rgba(255, 108, 138, 0.4);
+        z-index: 10;
+        letter-spacing: 4px;
+      }
+      .propose-hero p {
+        font-size: 2.2rem;
+        font-family: var(--font-love);
+        color: #800f2f;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        padding: 0.8rem 2.5rem;
+        border-radius: 70px;
+        border: 3px solid white;
+        box-shadow: 0 15px 25px rgba(255, 128, 138, 0.3);
+        z-index: 10;
+        margin-top: 1rem;
+      }
+      .floating-question {
+        font-size: 2rem;
+        background: rgba(255, 255, 240, 0.6);
+        padding: 0.7rem 2rem;
+        border-radius: 50px;
+        margin-top: 2rem;
+        backdrop-filter: blur(8px);
+        border: 2px solid white;
+      }
+
+      /* ----- PROPOSAL MEMORIES (3D floating cards) ----- */
+      .memories-section {
+        padding: 4rem 0 3rem;
+        background: white;
+        margin-top: -20px;
+        border-radius: 70px 70px 0 0;
+        z-index: 20;
+        position: relative;
+      }
+
+      .section-title {
+        font-size: 3rem;
+        font-family: var(--font-love);
+        color: #b23b4c;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .section-title i {
+        color: #ff8c9e;
+        margin: 0 10px;
+      }
+
+      .memory-grid-3d {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5rem;
+      }
+      .memory-card {
+        width: 230px;
+        background: white;
+        border-radius: 40px 12px 40px 12px;
+        padding: 2rem 1rem;
+        box-shadow:
+          0 30px 35px -10px rgba(190, 70, 100, 0.2),
+          inset 0 -4px 0 rgba(0, 0, 0, 0.02),
+          0 0 0 3px white,
+          0 0 0 7px #ffe9ef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transform: perspective(600px) rotateX(3deg) rotateY(8deg)
+          translateZ(8px);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+        animation: memoryFloat 6s infinite alternate;
+      }
+      .memory-card:hover {
+        transform: perspective(600px) rotateX(5deg) rotateY(16deg)
+          translateZ(28px) scale(1.04);
+        box-shadow: 0 45px 50px -10px #d46b81;
+      }
+      @keyframes memoryFloat {
+        0% {
+          transform: perspective(600px) rotateX(3deg) rotateY(4deg)
+            translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(7deg) rotateY(16deg)
+            translateY(-18px);
+        }
+      }
+
+      .memory-emoji {
+        font-size: 4.5rem;
+        filter: drop-shadow(0 15px 10px rgba(200, 70, 90, 0.2));
+        margin-bottom: 0.6rem;
+        animation: emojiGlow 3s infinite;
+      }
+      @keyframes emojiGlow {
+        0% {
+          transform: scale(1);
+          text-shadow: 0 0 5px #ffb7c5;
+        }
+        50% {
+          transform: scale(1.08);
+          text-shadow: 0 0 25px #ff8da1;
+        }
+      }
+      .memory-card h3 {
+        font-size: 2rem;
+        font-family: var(--font-love);
+        color: #a4133c;
+        margin-bottom: 0.5rem;
+      }
+      .memory-card p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: #800f2f;
+      }
+      .btn-memory {
+        background: #ffccd5;
+        border: none;
+        padding: 0.7rem 1.8rem;
+        border-radius: 50px;
+        font-weight: 600;
+        color: #9d1f3c;
+        border: 2px solid white;
+        box-shadow: 0 7px 0 #c9718d;
+        transition: 0.07s;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-family: var(--font-love);
+      }
+      .btn-memory:active {
+        transform: translateY(7px);
+        box-shadow: 0 2px 0 #c9718d;
+      }
+
+      /* ----- THE BIG PROPOSAL CARD (will you be mine?) ----- */
+      .proposal-card-section {
+        background: #fff1f5;
+        background-image: radial-gradient(
+          circle at 80% 30%,
+          rgba(255, 183, 197, 0.3) 10%,
+          transparent 40%
+        );
+        padding: 4rem 0;
+        border-top: 5px dotted #ff9aae;
+        border-bottom: 5px dotted #ff9aae;
+      }
+      .proposal-card {
+        max-width: 750px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(15px);
+        padding: 2.8rem 2.2rem;
+        border-radius: 80px 12px 80px 12px;
+        box-shadow: 0 40px 60px rgba(180, 60, 90, 0.25);
+        border: 4px solid white;
+        position: relative;
+        text-align: center;
+      }
+      .proposal-card:before {
+        content: "💍💘";
+        position: absolute;
+        font-size: 3rem;
+        top: -25px;
+        left: -20px;
+        background: white;
+        border-radius: 50%;
+        padding: 12px 15px;
+        box-shadow: 0 10px 0 #ffb3c1;
+      }
+      .proposal-title {
+        font-size: 3.8rem;
+        font-family: var(--font-love);
+        color: #b23b4c;
+        border-bottom: 4px dashed #ffa5b9;
+        padding-bottom: 0.7rem;
+        margin-bottom: 1.5rem;
+      }
+      .proposal-question {
+        font-size: 3.2rem;
+        font-family: var(--font-love);
+        color: #4a1f2c;
+        line-height: 1.4;
+      }
+      .proposal-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2.5rem;
+        flex-wrap: wrap;
+      }
+      .btn-yes {
+        background: #ff8c9e;
+        border: none;
+        padding: 1rem 3rem;
+        border-radius: 60px;
+        font-size: 2rem;
+        font-family: var(--font-love);
+        color: white;
+        box-shadow: 0 12px 0 #b34167;
+        transition: 0.06s;
+        cursor: pointer;
+        border: 3px solid white;
+      }
+      .btn-yes:active {
+        transform: translateY(12px);
+        box-shadow: 0 3px 0 #b34167;
+      }
+      .btn-yes:hover {
+        background: #ff7a8f;
+      }
+      .btn-no {
+        background: #ffe3e3;
+        border: 3px solid #ffb3c1;
+        padding: 1rem 2.5rem;
+        border-radius: 60px;
+        font-size: 2rem;
+        font-family: var(--font-love);
+        color: #9e1e40;
+        box-shadow: 0 12px 0 #dbb3b9;
+        transition: 0.06s;
+        cursor: pointer;
+      }
+      .btn-no:active {
+        transform: translateY(12px);
+        box-shadow: 0 3px 0 #dbb3b9;
+      }
+
+      /* ----- INTERACTIVE RING BOX (click to reveal) ----- */
+      .ring-box-section {
+        padding: 4rem 0;
+        background: #ffe9ef;
+        text-align: center;
+      }
+      .ring-box {
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle at 30% 20%, #ffd9e2, #ffb3c1);
+        border-radius: 50% 50% 40% 40% / 60% 60% 30% 30%;
+        margin: 0 auto 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+          0 35px 45px rgba(200, 70, 100, 0.4),
+          inset 0 -15px 20px rgba(0, 0, 0, 0.05);
+        transform: perspective(600px) rotateX(10deg) rotateY(15deg);
+        animation: boxFloat 5s infinite alternate;
+        border: 8px solid white;
+        cursor: pointer;
+      }
+      .ring-box i,
+      .ring-box span {
+        font-size: 5rem;
+        color: white;
+        text-shadow: 0 10px 20px #a01030;
+      }
+      .ring-box span {
+        font-size: 1.8rem;
+        font-family: var(--font-love);
+        background: rgba(255, 255, 255, 0.3);
+        padding: 0.3rem 1.5rem;
+        border-radius: 50px;
+        margin-top: 0.5rem;
+      }
+      @keyframes boxFloat {
+        0% {
+          transform: perspective(600px) rotateX(8deg) rotateY(10deg)
+            translateY(0);
+        }
+        100% {
+          transform: perspective(600px) rotateX(16deg) rotateY(25deg)
+            translateY(-25px);
+        }
+      }
+
+      /* POPUP (propose edition) */
+      .popup-card {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        width: 340px;
+        max-width: 85vw;
+        background: white;
+        border-radius: 70px 12px 70px 12px;
+        padding: 2.5rem 1.8rem;
+        box-shadow:
+          0 50px 70px rgba(150, 40, 70, 0.4),
+          0 0 0 6px white,
+          0 0 0 14px #ffccd5;
+        text-align: center;
+        z-index: 9999;
+        display: none;
+        opacity: 0;
+        transition:
+          opacity 0.2s,
+          transform 0.25s;
+        border: 3px solid #ffb3c1;
+      }
+      .popup-card.show {
+        display: block;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .popup-close {
+        position: absolute;
+        top: 12px;
+        right: 18px;
+        font-size: 2.8rem;
+        cursor: pointer;
+        color: #b23b4c;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        line-height: 1;
+        padding: 0 10px;
+      }
+      .popup-close:hover {
+        background: #ffccd5;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(50, 10, 20, 0.35);
+        backdrop-filter: blur(6px);
+        z-index: 9998;
+        display: none;
+      }
+      .overlay.show {
+        display: block;
+      }
+
+      /* ----- BACK TO LOVE HOMEPAGE ----- */
+      .back-home {
+        text-align: center;
+        padding: 2rem 0 2.5rem;
+      }
+      .back-btn {
+        background: white;
+        padding: 0.9rem 2.8rem;
+        border-radius: 70px;
+        text-decoration: none;
+        color: #a4133c;
+        font-size: 1.5rem;
+        font-family: var(--font-love);
+        border: 3px solid #ffb3c1;
+        box-shadow: 0 12px 0 #c45a6a;
+        transition: 0.06s;
+        display: inline-block;
+      }
+      .back-btn:active {
+        transform: translateY(12px);
+        box-shadow: 0 3px 0 #c45a6a;
+      }
+
+      /* ----- FOOTER (propose touch) ----- */
+      footer {
+        background: #ffccd5;
+        padding: 2.5rem 0.5rem;
+        color: #5e1b34;
+        text-align: center;
+        border-top-left-radius: 90px 40px;
+        border-top-right-radius: 90px 40px;
+        font-family: var(--font-love);
+      }
+      .footer-hearts i {
+        color: #a4133c;
+        margin: 0 8px;
+        font-size: 2rem;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .propose-hero h1 {
+          font-size: 3.8rem;
+        }
+        .ring-3d {
+          font-size: 6rem;
+        }
+        .proposal-title {
+          font-size: 2.8rem;
+        }
+        .proposal-question {
+          font-size: 2.5rem;
+        }
+        .btn-yes,
+        .btn-no {
+          font-size: 1.6rem;
+          padding: 0.8rem 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== PROPOSE DAY HERO · 3D RING ===== -->
+    <section class="propose-hero">
+      <div class="sparkle-field" id="sparkleContainer"></div>
+      <div class="ring-3d">💍</div>
+      <h1>Propose Day</h1>
+      <p>8th February · the day I ask forever</p>
+      <div class="floating-question love-font">
+        <i class="fas fa-heart"></i> one question changes everything
+        <i class="fas fa-heart"></i>
+      </div>
+    </section>
+
+    <!-- ===== MEMORIES THAT LEAD TO YES (3D floating cards) ===== -->
+    <section class="memories-section">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="fas fa-ring"></i> moments before 'yes'
+          <i class="fas fa-ring"></i>
+        </h2>
+        <div class="memory-grid-3d">
+          <!-- memory 1: first meeting -->
+          <div class="memory-card">
+            <div class="memory-emoji">👋✨</div>
+            <h3>first hello</h3>
+            <p>the day our story began</p>
+            <button class="btn-memory" data-memory="first">relive</button>
+          </div>
+          <!-- memory 2: first date -->
+          <div class="memory-card">
+            <div class="memory-emoji">🍜💕</div>
+            <h3>first date</h3>
+            <p>you stole my heart</p>
+            <button class="btn-memory" data-memory="date">relive</button>
+          </div>
+          <!-- memory 3: first laugh -->
+          <div class="memory-card">
+            <div class="memory-emoji">😂🌹</div>
+            <h3>first laugh</h3>
+            <p>i knew i loved you</p>
+            <button class="btn-memory" data-memory="laugh">relive</button>
+          </div>
+          <!-- memory 4: holding hands -->
+          <div class="memory-card">
+            <div class="memory-emoji">🤝💖</div>
+            <h3>first touch</h3>
+            <p>hand in hand, heart to heart</p>
+            <button class="btn-memory" data-memory="touch">relive</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== THE BIG PROPOSAL CARD · will you be mine? ===== -->
+    <section class="proposal-card-section">
+      <div class="container">
+        <div class="proposal-card">
+          <div class="proposal-title">💘 my love, my best friend 💘</div>
+          <div class="proposal-question">
+            from the moment i met you, <br />
+            i knew i never wanted to let go. <br />
+            so today, under this sky of promises…
+          </div>
+          <div
+            style="
+              font-size: 3rem;
+              margin: 1.8rem 0;
+              font-family: var(--font-love);
+              color: #b34167;
+            ">
+            will you be mine? forever?
+          </div>
+          <div class="proposal-buttons">
+            <button class="btn-yes" id="yesBtn">YES 💍</button>
+            <button class="btn-no" id="noBtn">YES (i mean yes)</button>
+          </div>
+          <p
+            style="
+              margin-top: 2rem;
+              font-family: var(--font-love);
+              font-size: 1.4rem;
+              color: #800f2f;
+            ">
+            (there's only one right answer, my love)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INTERACTIVE RING BOX · click to reveal secret ===== -->
+    <section class="ring-box-section">
+      <h2
+        style="
+          font-family: var(--font-love);
+          font-size: 2.8rem;
+          color: #800f2f;
+          margin-bottom: 1rem;
+        ">
+        💝 the ring box 💝
+      </h2>
+      <div class="ring-box" id="ringBox">
+        <i class="fas fa-gift"></i>
+        <span>open me</span>
+      </div>
+      <p style="font-family: var(--font-love); font-size: 1.8rem">
+        ✨ tap the box, read my heart ✨
+      </p>
+    </section>
+
+    <!-- ===== BACK TO HOMEPAGE ===== -->
+    <div class="back-home">
+      <a
+        href="#"
+        class="back-btn"
+        onclick="alert('💍 returning to your love story… (homepage)')"
+        ><i class="fas fa-heart"></i> back to our story
+        <i class="fas fa-heart"></i
+      ></a>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="footer-hearts">
+        <i class="fas fa-heart"></i><i class="fas fa-ring"></i
+        ><i class="fas fa-heart"></i><i class="fas fa-heart"></i
+        ><i class="fas fa-ring"></i>
+      </div>
+      <div
+        class="footer-quote"
+        style="font-size: 2rem; font-family: var(--font-love)">
+        "and i said yes, a thousand times yes"
+      </div>
+      <div style="font-size: 1.8rem; margin: 0.8rem 0">💍✨💍</div>
+      <div style="font-family: var(--font-love); font-size: 1.3rem">
+        forever starts with a yes
+      </div>
+    </footer>
+
+    <!-- GLOBAL POPUP (memories, ring secret, proposal answer) -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup-card" id="popup">
+      <span class="popup-close" id="closePopup">&times;</span>
+      <div style="font-size: 4.5rem; margin-bottom: 0.2rem" id="popupEmoji">
+        💍
+      </div>
+      <div
+        style="font-size: 2.5rem; font-family: var(--font-love); color: #a4133c"
+        id="popupTitle">
+        propose memory
+      </div>
+      <div
+        style="
+          font-size: 1.8rem;
+          font-family: var(--font-love);
+          margin-top: 0.8rem;
+          color: #590d22;
+        "
+        id="popupMsg">
+        you are my always.
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // --- sparkling stars (ambient) ---
+        function createSparkles() {
+          const sparkleField = document.getElementById("sparkleContainer");
+          if (!sparkleField) return;
+          for (let i = 0; i < 50; i++) {
+            const spark = document.createElement("div");
+            spark.classList.add("sparkle");
+            spark.style.left = Math.random() * 100 + "%";
+            spark.style.top = Math.random() * 100 + "%";
+            spark.style.animationDelay = Math.random() * 5 + "s";
+            spark.style.animationDuration =
+              Math.floor(Math.random() * 6) + 4 + "s";
+            spark.style.width = Math.floor(Math.random() * 12) + 5 + "px";
+            spark.style.height = spark.style.width;
+            spark.style.background = [
+              "#ffb3c6",
+              "#ffe6f0",
+              "#ffd9e8",
+              "#ffffff",
+            ][Math.floor(Math.random() * 4)];
+            sparkleField.appendChild(spark);
+          }
+        }
+        createSparkles();
+
+        // ---------- POPUP SYSTEM ----------
+        const popup = document.getElementById("popup");
+        const overlay = document.getElementById("overlay");
+        const closeBtn = document.getElementById("closePopup");
+        const popupEmoji = document.getElementById("popupEmoji");
+        const popupTitle = document.getElementById("popupTitle");
+        const popupMsg = document.getElementById("popupMsg");
+
+        // memory data
+        const memoryMessages = {
+          first: {
+            emoji: "👋✨",
+            title: "first hello",
+            msg: "the moment you said “hi”, my heart whispered “forever”.",
+          },
+          date: {
+            emoji: "🍜💕",
+            title: "first date",
+            msg: "you laughed at my jokes. i fell a little more.",
+          },
+          laugh: {
+            emoji: "😂🌹",
+            title: "first laugh",
+            msg: "that sound — i want to hear it every day.",
+          },
+          touch: {
+            emoji: "🤝💖",
+            title: "first touch",
+            msg: "when our hands met, the world disappeared.",
+          },
+        };
+
+        // ring box secret
+        const ringSecret = {
+          emoji: "💍✨❤️",
+          title: "the ring box",
+          msg: "this box holds my heart — and a question. but you already know my answer: YOU. forever you.",
+        };
+
+        function showPopup(emoji, title, msg) {
+          popupEmoji.innerHTML = emoji;
+          popupTitle.textContent = title;
+          popupMsg.textContent = msg;
+          popup.classList.add("show");
+          overlay.classList.add("show");
+        }
+
+        function hidePopup() {
+          popup.classList.remove("show");
+          overlay.classList.remove("show");
+        }
+
+        // attach memory buttons
+        const memoryBtns = document.querySelectorAll(".btn-memory");
+        memoryBtns.forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const type = this.dataset.memory;
+            const data = memoryMessages[type] || {
+              emoji: "💖",
+              title: "memory",
+              msg: "you are my favorite memory.",
+            };
+            showPopup(data.emoji, data.title, data.msg);
+          });
+        });
+
+        // ring box click
+        const ringBox = document.getElementById("ringBox");
+        if (ringBox) {
+          ringBox.addEventListener("click", function () {
+            showPopup(ringSecret.emoji, ringSecret.title, ringSecret.msg);
+          });
+        }
+
+        // YES button proposal
+        const yesBtn = document.getElementById("yesBtn");
+        if (yesBtn) {
+          yesBtn.addEventListener("click", function () {
+            showPopup(
+              "💍❤️✨",
+              "she said YES!",
+              "my heart just grew ten sizes. you’ve made me the happiest. forever begins now.",
+            );
+          });
+        }
+
+        // NO button (playful)
+        const noBtn = document.getElementById("noBtn");
+        if (noBtn) {
+          noBtn.addEventListener("click", function () {
+            showPopup(
+              "💖🥹💖",
+              "you said YES (i knew it!)",
+              "there was never any other answer. i love you!",
+            );
+          });
+        }
+
+        // close popup
+        closeBtn.addEventListener("click", hidePopup);
+        overlay.addEventListener("click", hidePopup);
+        window.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") hidePopup();
+        });
+
+        // back button
+        const backBtn = document.querySelector(".back-btn");
+        if (backBtn) {
+          backBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            alert("💍 returning to your love story… (homepage link)");
+          });
+        }
+      })();
+    </script>
+
+    <style>
+      /* fallback emoji */
+      .fa-ring:before {
+        content: "💍";
+        font-family:
+          "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+      }
+      .fa-gift:before {
+        content: "🎁";
+      }
+    </style>
+  </body>
+</html>
