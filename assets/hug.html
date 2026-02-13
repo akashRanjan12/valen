@@ -132,7 +132,7 @@
         letter-spacing: 4px;
       }
       .hug-hero p {
-        font-size: 2.4rem;
+        font-size: 1.5rem;
         font-family: var(--font-love);
         color: #8a5a52;
         background: rgba(255, 255, 255, 0.8);
@@ -145,7 +145,7 @@
         margin-top: 1rem;
       }
       .hug-tagline {
-        font-size: 2rem;
+        font-size: 1.8rem;
         background: rgba(255, 245, 240, 0.7);
         padding: 0.7rem 2.2rem;
         border-radius: 50px;
@@ -239,7 +239,7 @@
         gap: 2.5rem;
       }
       .hug-card {
-        width: 230px;
+        width: 400px;
         background: #fffaf8;
         border-radius: 60px 12px 60px 12px;
         padding: 2rem 1.2rem;
@@ -405,17 +405,6 @@
         position: relative;
         text-align: center;
       }
-      .hug-letter-card:before {
-        content: "🤗💌";
-        position: absolute;
-        font-size: 3rem;
-        top: -25px;
-        left: -20px;
-        background: white;
-        border-radius: 50%;
-        padding: 12px 15px;
-        box-shadow: 0 10px 0 #ffcfc0;
-      }
       .hug-letter-title {
         font-size: 3.2rem;
         font-family: var(--font-love);
@@ -553,7 +542,7 @@
           font-size: 7rem;
         }
         .hug-card {
-          width: 190px;
+          width: 300px;
         }
       }
     </style>
@@ -566,7 +555,8 @@
       <h1>Hug Day</h1>
       <p>12th February · wrapping you in love</p>
       <div class="hug-tagline love-font">
-        <i class="fas fa-heart"></i> a hug is a silent "i love you"
+        <i class="fas fa-heart"></i> A warm and tight hug of love for you Radhe,
+        "i love you"
         <i class="fas fa-heart"></i>
       </div>
     </section>
@@ -581,7 +571,7 @@
             color: #a75d54;
             margin-bottom: 0.5rem;
           ">
-          🤗 send a virtual hug 🤗
+          Hug you virtually, but with all my heart
         </h2>
         <div class="hug-button-3d" id="hugButton">
           <i class="fas fa-heart"></i>
@@ -602,8 +592,7 @@
     <section class="hug-collection">
       <div class="container">
         <h2 class="section-title">
-          <i class="fas fa-heart"></i> hugs for every moment
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart"></i> Hugs for every moment -
         </h2>
         <div class="hug-grid-3d">
           <!-- bear hug -->
@@ -638,41 +627,6 @@
       </div>
     </section>
 
-    <!-- ===== COZY PLUSHIES (3D floating) ===== -->
-    <section class="plushie-section">
-      <div class="container">
-        <h2
-          style="
-            font-family: var(--font-love);
-            font-size: 3rem;
-            color: #a75d54;
-            text-align: center;
-            margin-bottom: 1.5rem;
-          ">
-          <i class="fas fa-gift"></i> plushies to hug
-          <i class="fas fa-gift"></i>
-        </h2>
-        <div class="plushie-grid">
-          <div class="plushie-3d" data-plushie="bear">
-            <i class="fas fa-bear"></i>
-            <span>teddy bear</span>
-          </div>
-          <div class="plushie-3d" data-plushie="bunny">
-            <i class="fas fa-rabbit"></i>
-            <span>cozy bunny</span>
-          </div>
-          <div class="plushie-3d" data-plushie="panda">
-            <i class="fas fa-panda"></i>
-            <span>panda</span>
-          </div>
-          <div class="plushie-3d" data-plushie="heart">
-            <i class="fas fa-heart"></i>
-            <span>heart plush</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ===== LOVE LETTER · hug edition ===== -->
     <section class="hug-letter-section">
       <div class="container">
@@ -682,11 +636,13 @@
             “Sometimes words aren't enough. <br />
             So here's a hug that says everything — <br />
             I'm here, I care, I'm not letting go. <br />
-            You are my safe place.”
+            You are my safe place. I'm missing you so much, i want to hug you
+            but i can't. Every night i imagine you in my arms hug you tightly
+            and sleep. Mis you so much baccha.”
           </div>
           <div class="hug-signature">
             — wrapping you in love, <br />
-            [your valentine] 🤗💌
+            Aku 🤗💌
           </div>
         </div>
       </div>
@@ -783,7 +739,7 @@
           bear: {
             emoji: "🧸🤗",
             title: "bear hug",
-            msg: 'A tight, warm bear hug — the kind that says "I’ve got you, always."',
+            msg: '"I’ve got you, always Radhe."',
           },
           back: {
             emoji: "🤗💕",
@@ -798,39 +754,15 @@
           comfort: {
             emoji: "🕊️🤗",
             title: "comfort hug",
-            msg: "When words fail, a hug speaks. I’m here, and I’m not leaving.",
-          },
-        };
-
-        // plushie messages
-        const plushieMessages = {
-          bear: {
-            emoji: "🧸🤎",
-            title: "teddy bear",
-            msg: "Soft, warm, always ready for a hug — just like me for you.",
-          },
-          bunny: {
-            emoji: "🐇🤍",
-            title: "cozy bunny",
-            msg: "Hop into my arms anytime. This bunny loves cuddles.",
-          },
-          panda: {
-            emoji: "🐼🖤",
-            title: "panda",
-            msg: "Rare, gentle, and absolutely huggable. That’s you.",
-          },
-          heart: {
-            emoji: "❤️🧸",
-            title: "heart plush",
-            msg: "A plush heart that beats only for you. Squeeze it and feel my love.",
+            msg: "When words fail, a hug speaks. I’m here, and I’m not leaving you okay baccha.",
           },
         };
 
         // virtual hug button secret
         const virtualHugMessage = {
-          emoji: "🤗💖✨",
+          emoji: "",
           title: "virtual hug delivered!",
-          msg: "You’ve just received the warmest, tightest, most heartfelt hug. Save it for a rainy day.",
+          msg: "You’ve just received the warmest, tightest, most heartfelt hug, feel me in your arms. I love you so much 💕.",
         };
 
         function showPopup(emoji, title, msg) {

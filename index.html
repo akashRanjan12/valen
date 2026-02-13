@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -229,7 +229,7 @@
         border-bottom: 3px dashed #ff8da1;
       }
       .letter-card {
-        max-width: 800px;
+        max-width: 700px;
         margin: 0 auto;
         background: rgba(255, 255, 255, 0.7);
         backdrop-filter: blur(10px);
@@ -540,7 +540,380 @@
         right: 18%;
         animation-delay: 1.9s;
       }
+      /* === NEW VALENTINE HERO — fully animated, responsive, with pic division === */
+      .valentine-hero {
+        min-height: 100vh;
+        width: 100%;
+        background: linear-gradient(
+          145deg,
+          var(--petal) 0%,
+          var(--blush-pink) 45%,
+          var(--deep-rose) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1.5rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: inset 0 0 0 1px var(--shadow); /* subtle love glow */
+      }
 
+      /* floating animated shapes (hearts & sparkles) */
+      .hero-bg-shapes {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .shape {
+        position: absolute;
+        opacity: 0.5;
+        filter: drop-shadow(0 4px 8px var(--shadow));
+        animation: floatShape 8s infinite ease-in-out;
+      }
+
+      .shape.heart {
+        color: var(--romantic-red);
+        font-size: 2.5rem;
+        transform-origin: center;
+      }
+
+      .shape.sparkle {
+        color: var(--golden);
+        font-size: 1.8rem;
+        animation:
+          twinkle 5s infinite alternate,
+          floatShape 12s infinite;
+      }
+
+      /* positions */
+      .shape-1 {
+        top: 8%;
+        left: 5%;
+        animation-delay: 0s;
+      }
+      .shape-2 {
+        top: 15%;
+        right: 8%;
+        animation-delay: 1s;
+        font-size: 3rem;
+      }
+      .shape-3 {
+        bottom: 12%;
+        left: 12%;
+        animation-delay: 2.5s;
+        opacity: 0.6;
+      }
+      .shape-4 {
+        bottom: 20%;
+        right: 15%;
+        animation-delay: 0.7s;
+      }
+      .shape-5 {
+        top: 30%;
+        left: 20%;
+        animation-delay: 1.8s;
+        font-size: 2rem;
+      }
+      .shape-6 {
+        bottom: 30%;
+        right: 5%;
+        animation-delay: 3s;
+      }
+
+      @keyframes floatShape {
+        0% {
+          transform: translateY(0px) rotate(0deg) scale(1);
+        }
+        50% {
+          transform: translateY(-25px) rotate(8deg) scale(1.05);
+        }
+        100% {
+          transform: translateY(0px) rotate(0deg) scale(1);
+        }
+      }
+
+      @keyframes twinkle {
+        0% {
+          opacity: 0.3;
+          transform: scale(0.9);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+
+      /* main content card — frosted glass, responsive */
+      .hero-card {
+        position: relative;
+        z-index: 10;
+        max-width: 1200px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 48px 48px 48px 48px;
+        box-shadow:
+          0 25px 50px -8px var(--shadow),
+          0 0 0 2px rgba(255, 180, 200, 0.3);
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        align-items: center;
+        gap: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        animation: cardGlow 4s infinite alternate;
+      }
+
+      @keyframes cardGlow {
+        0% {
+          box-shadow:
+            0 25px 40px -10px var(--shadow),
+            0 0 0 2px rgba(255, 200, 220, 0.5);
+        }
+        100% {
+          box-shadow:
+            0 35px 65px -8px rgba(251, 111, 146, 0.4),
+            0 0 0 4px rgba(255, 210, 230, 0.8);
+        }
+      }
+
+      /* left side: text & cta */
+      .hero-text {
+        flex: 1 1 300px;
+        padding: 0.5rem;
+        animation: slideFadeIn 1.2s ease;
+      }
+
+      @keyframes slideFadeIn {
+        0% {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .hero-pre {
+        font-family: var(--font-love);
+        font-size: 2rem;
+        color: var(--velvet);
+        letter-spacing: 2px;
+        margin-bottom: 0.25rem;
+        text-shadow: 2px 2px 0px var(--blush-pink);
+        animation: pulseText 3s infinite;
+      }
+
+      @keyframes pulseText {
+        0% {
+          text-shadow: 2px 2px 0 var(--blush-pink);
+        }
+        50% {
+          text-shadow: 4px 4px 0 var(--deep-rose);
+        }
+        100% {
+          text-shadow: 2px 2px 0 var(--blush-pink);
+        }
+      }
+
+      .hero-title {
+        font-family: var(--font-love);
+        font-size: clamp(3rem, 10vw, 5.2rem);
+        font-weight: 700;
+        line-height: 1.1;
+        color: var(--passion);
+        margin-bottom: 1rem;
+        text-shadow:
+          3px 3px 0 var(--soft-white),
+          5px 5px 0 rgba(255, 180, 200, 0.5);
+        animation: titlePop 2s infinite alternate;
+      }
+
+      @keyframes titlePop {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.02);
+          letter-spacing: 0.5px;
+        }
+      }
+
+      .hero-desc {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        color: #4a1f2e;
+        font-weight: 500;
+        border-left: 6px solid var(--romantic-red);
+        padding-left: 1.2rem;
+        background: linear-gradient(
+          to right,
+          transparent,
+          rgba(255, 220, 240, 0.5)
+        );
+        border-radius: 0 20px 20px 0;
+        max-width: 500px;
+      }
+      /* RIGHT SIDE — YOUR PIC DIVISION (just drop your image later) */
+      .hero-pic {
+        flex: 1 1 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: picFloat 5s infinite alternate ease-in-out;
+      }
+
+      @keyframes picFloat {
+        0% {
+          transform: translateY(0px);
+        }
+        100% {
+          transform: translateY(-15px);
+        }
+      }
+
+      .image-frame {
+        width: 100%;
+        max-width: 380px;
+        aspect-ratio: 1/1.1;
+        border-radius: 40% 60% 30% 70% / 50% 40% 60% 50%;
+        background: linear-gradient(
+          145deg,
+          var(--deep-rose),
+          var(--blush-pink)
+        );
+        padding: 1rem;
+        box-shadow:
+          0 35px 60px -15px rgba(251, 111, 146, 0.5),
+          0 0 0 4px var(--soft-white),
+          0 0 0 8px var(--petal);
+        transition: all 0.4s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        /* your image placeholder */
+      }
+
+      .image-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+        display: block;
+        background: var(--soft-white); /* fallback while empty */
+        transition: transform 0.3s;
+      }
+
+      /* since you'll add image later: placeholder with icon & text */
+      .image-frame .placeholder-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background: var(--petal);
+        border-radius: inherit;
+        color: var(--velvet);
+        font-size: 1.5rem;
+        font-family: var(--font-love);
+        text-align: center;
+        gap: 0.5rem;
+        background-image: url("assets/WhatsApp\ Image\ 2026-02-14\ at\ 00.08.51.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .placeholder-content span {
+        font-size: 4rem;
+        line-height: 1;
+        filter: drop-shadow(2px 4px 4px var(--shadow));
+      }
+
+      .placeholder-content p {
+        background: rgba(255, 255, 255, 0.7);
+        padding: 0.5rem 1rem;
+        border-radius: 60px;
+        font-size: 1.2rem;
+      }
+
+      /* small hearts divider */
+      .floating-hearts {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        font-size: 1.8rem;
+        color: var(--romantic-red);
+        opacity: 0.5;
+        z-index: 5;
+        animation: bottomSlide 6s infinite;
+      }
+
+      @keyframes bottomSlide {
+        0% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.8;
+          transform: scale(1.1);
+        }
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+      }
+
+      /* responsive adjustments */
+      @media (max-width: 750px) {
+        .hero-card {
+          padding: 2rem 1.5rem;
+          border-radius: 32px;
+          gap: 1rem;
+        }
+        .hero-pre {
+          font-size: 1.8rem;
+        }
+        .btn {
+          padding: 0.7rem 1.8rem;
+          font-size: 1rem;
+        }
+        .shape {
+          opacity: 0.3;
+        } /* softer on mobile */
+      }
+
+      @media (max-width: 480px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        .hero-desc {
+          font-size: 1.1rem;
+        }
+        .image-frame {
+          max-width: 280px;
+        }
+      }
+
+      /* link to show smoothness */
+      .footer-credit {
+        text-align: center;
+        font-family: var(--font-love);
+        padding: 1rem;
+        color: var(--deep-rose);
+        background: var(--soft-white);
+      }
       @media (max-width: 600px) {
         .float-icon-3d {
           width: 70px;
@@ -730,12 +1103,53 @@
           <i class="fas fa-heart"></i>
           <h3>Valentine's Day</h3>
           <p>14 Feb</p>
-          <a href="assets/valen.html" class="day-link" data-page="valentine"
-            ><i class="fas fa-champagne-glasses"></i> open</a
-          >
         </div>
       </div>
     </div>
+
+    <!-- HERO SECTION — paste this block into your existing code -->
+    <section class="valentine-hero">
+      <!-- background floating shapes (love confetti) -->
+      <div class="hero-bg-shapes">
+        <div class="shape heart shape-1">❤️</div>
+        <div class="shape sparkle shape-2">✨</div>
+        <div class="shape heart shape-3">🧡</div>
+        <div class="shape sparkle shape-4">💖</div>
+        <div class="shape heart shape-5">💘</div>
+        <div class="shape sparkle shape-6">🌸</div>
+      </div>
+
+      <!-- main hero card with text & pic division -->
+      <div class="hero-card">
+        <!-- left text area -->
+        <div class="hero-text">
+          <div class="hero-pre">Be my Valentine?</div>
+          <h1 class="hero-title">Sweetest surprise</h1>
+          <p class="hero-desc">
+            Every love story is beautiful — let’s make ours sparkle with joy,
+            chocolate, and endless roses.
+          </p>
+        </div>
+
+        <!-- === YOUR PIC DIVISION === -->
+        <div class="hero-pic">
+          <div class="image-frame">
+            <div class="placeholder-content"></div>
+          </div>
+        </div>
+      </div>
+      <!-- tiny floating hearts at bottom (extra animation) -->
+      <div class="floating-hearts">
+        <span>❤️</span>
+        <span>💕</span>
+        <span>💞</span>
+        <span>💓</span>
+        <span>💗</span>
+      </div>
+    </section>
+
+    <!-- minimal footnote (just to indicate end) -->
+    <div class="footer-credit">⋆｡°✩ always yours ˗ˋˏ ♡ ˎˊ˗</div>
 
     <!-- LOVE LETTER (you write manually) -->
     <section class="love-letter-section">
@@ -743,14 +1157,25 @@
         <div class="letter-card">
           <div class="letter-title">💖 My Dearest Love 💖</div>
           <div class="letter-content">
-            From the moment you came into my life, <br />
-            every day has been Valentine's. <br />
-            You are the poetry my heart always wanted to speak. <br />
+            my love, I miss you in all the quiet ways- In the silence before I
+            fall asleep, In the morning light that touches my face without you
+            next to me. Every part of my day somehow leads back to you. A song
+            that i love to listen continus to remind me of you, a smell of the
+            perfume that you gave me, a memory of when we both spend time
+            together- And suddenly your smile is dancing in my mind. I carry
+            your voice in my heart like a favorite melody, playing softty
+            through everything i do. The distance may stretch between us, but it
+            has only made my love for you grow deeper, steadier, stronger.
+            you're not just the person I miss - you're the one I pray for, the
+            one I dream with, The one I see at the end of every road. One day
+            soon, All these " miss you's" will turn into "I'm here now." And
+            I'll hold you - really hold you - The way my heart has been doing
+            this whole time. With all my love.
             <span style="font-size: 2rem">🌹</span>
           </div>
           <div class="letter-signature">
-            forever yours, <br />
-            [Your name] 🕊️
+            Your life partner, <br />
+            Aku 🕊️
           </div>
         </div>
       </div>
@@ -1056,7 +1481,7 @@
           promise: {
             icon: "💖",
             title: "Promise Day",
-            msg: "I promise to love you, today & always. 💖🤞",
+            msg: "I promise to love you and take care of you, today & always. 💖🤞",
           },
           hug: {
             icon: "🤗",
@@ -1071,7 +1496,7 @@
           valentine: {
             icon: "❤️",
             title: "Valentine’s Day",
-            msg: "You + me = infinite love. Happy Valentine’s! ❤️",
+            msg: "You + me = infinite love. Happy Valentine’s Day my love. ❤️",
           },
         };
 

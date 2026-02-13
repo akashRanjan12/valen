@@ -184,7 +184,7 @@
         gap: 2.5rem;
       }
       .memory-card {
-        width: 230px;
+        width: 400px;
         background: white;
         border-radius: 40px 12px 40px 12px;
         padding: 2rem 1rem;
@@ -289,17 +289,6 @@
         border: 4px solid white;
         position: relative;
         text-align: center;
-      }
-      .proposal-card:before {
-        content: "💍💘";
-        position: absolute;
-        font-size: 3rem;
-        top: -25px;
-        left: -20px;
-        background: white;
-        border-radius: 50%;
-        padding: 12px 15px;
-        box-shadow: 0 10px 0 #ffb3c1;
       }
       .proposal-title {
         font-size: 3.8rem;
@@ -523,15 +512,18 @@
           font-size: 6rem;
         }
         .proposal-title {
-          font-size: 2.8rem;
+          font-size: 2rem;
         }
         .proposal-question {
-          font-size: 2.5rem;
+          font-size: 1.7rem;
         }
         .btn-yes,
         .btn-no {
-          font-size: 1.6rem;
+          font-size: 1rem;
           padding: 0.8rem 2rem;
+        }
+        .memory-card {
+          width: 300px;
         }
       }
     </style>
@@ -544,7 +536,7 @@
       <h1>Propose Day</h1>
       <p>8th February · the day I ask forever</p>
       <div class="floating-question love-font">
-        <i class="fas fa-heart"></i> one question changes everything
+        <i class="fas fa-heart"></i> Happy Propose Day, Meri pyari Radhe.
         <i class="fas fa-heart"></i>
       </div>
     </section>
@@ -761,8 +753,7 @@
 
         // ring box secret
         const ringSecret = {
-          emoji: "💍✨❤️",
-          title: "the ring box",
+          emoji: "💍❤️",
           msg: "this box holds my heart — and a question. but you already know my answer: YOU. forever you.",
         };
 
@@ -807,9 +798,9 @@
         if (yesBtn) {
           yesBtn.addEventListener("click", function () {
             showPopup(
-              "💍❤️✨",
+              "💍❤️",
               "she said YES!",
-              "my heart just grew ten sizes. you’ve made me the happiest. forever begins now.",
+              "my heart just grew ten sizes. you’ve made me the happiest. forever begins now. I love you endlessly, with all my heart, my baccha.",
             );
           });
         }
@@ -819,9 +810,9 @@
         if (noBtn) {
           noBtn.addEventListener("click", function () {
             showPopup(
-              "💖🥹💖",
+              "💖🥹",
               "you said YES (i knew it!)",
-              "there was never any other answer. i love you!",
+              "there was never any other answer. i love you forever my baccha",
             );
           });
         }

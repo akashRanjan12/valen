@@ -239,7 +239,7 @@
         gap: 2.5rem;
       }
       .teddy-card {
-        width: 230px;
+        width: 400px;
         background: #fffaf7;
         border-radius: 60px 12px 60px 12px;
         padding: 2rem 1.2rem;
@@ -344,17 +344,6 @@
         border: 4px solid white;
         position: relative;
         text-align: center;
-      }
-      .teddy-letter-card:before {
-        content: "🧸💌";
-        position: absolute;
-        font-size: 3rem;
-        top: -25px;
-        left: -20px;
-        background: white;
-        border-radius: 50%;
-        padding: 12px 15px;
-        box-shadow: 0 10px 0 #e6b89c;
       }
       .teddy-letter-title {
         font-size: 3.2rem;
@@ -602,7 +591,7 @@
           font-size: 7rem;
         }
         .teddy-card {
-          width: 190px;
+          width: 300px;
         }
       }
     </style>
@@ -630,7 +619,7 @@
             color: #8b5a4b;
             margin-bottom: 0.5rem;
           ">
-          🧸 hug this teddy 🧸
+          🧸 Hug me 🧸
         </h2>
         <div class="teddy-plush-3d" id="teddyPlush">
           <i class="fas fa-bear"></i>
@@ -641,19 +630,14 @@
             font-family: var(--font-love);
             font-size: 1.8rem;
             color: #6b4b3e;
-          ">
-          squeeze tight — i'll always be here
-        </p>
+          "></p>
       </div>
     </section>
 
     <!-- ===== 3D TEDDY COLLECTION (types of teddy hugs) ===== -->
     <section class="teddy-collection">
       <div class="container">
-        <h2 class="section-title">
-          <i class="fas fa-heart"></i> teddy bear hugs
-          <i class="fas fa-heart"></i>
-        </h2>
+        <h2 class="section-title"><i class="fas fa-heart"></i> Hugs for you</h2>
         <div class="teddy-grid-3d">
           <!-- classic teddy -->
           <div class="teddy-card">
@@ -696,45 +680,12 @@
             “You are the teddy bear I never had as a child — <br />
             except you're real, and you hug back. <br />
             You make me feel safe, warm, and loved. <br />
-            Thank you for being my comfort.”
+            Thank you for being my comfort. Please always be with me like that,
+            i love you forever my teddy”
           </div>
           <div class="teddy-signature">
             — cuddling you forever, <br />
-            [your valentine] 🧸💌
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== TEDDY BEAR MEMORIES (3D floating) ===== -->
-    <section class="teddy-memories">
-      <div class="container">
-        <h2
-          style="
-            font-family: var(--font-love);
-            font-size: 3rem;
-            color: #8b5a4b;
-            text-align: center;
-            margin-bottom: 1.5rem;
-          ">
-          <i class="fas fa-star"></i> teddy memories <i class="fas fa-star"></i>
-        </h2>
-        <div class="teddy-memories-grid">
-          <div class="teddy-memory-3d" data-memory="first">
-            <i class="fas fa-gift"></i>
-            <span>first teddy</span>
-          </div>
-          <div class="teddy-memory-3d" data-memory="sleep">
-            <i class="fas fa-moon"></i>
-            <span>sleepy hugs</span>
-          </div>
-          <div class="teddy-memory-3d" data-memory="picnic">
-            <i class="fas fa-tree"></i>
-            <span>teddy picnic</span>
-          </div>
-          <div class="teddy-memory-3d" data-memory="forever">
-            <i class="fas fa-infinity"></i>
-            <span>forever bear</span>
+            Aku 🧸💌
           </div>
         </div>
       </div>
@@ -872,54 +823,29 @@
           classic: {
             emoji: "🧸🤎",
             title: "classic teddy",
-            msg: "Soft, warm, and always there — like me, waiting to hold you.",
+            msg: "Soft, warm, and always there — like me, waiting to hold you in my arms.",
           },
           panda: {
             emoji: "🐼🖤",
             title: "panda bear",
-            msg: "Cuddly, a little shy, but so full of love. That’s you.",
+            msg: "Cuddly, a little shy, but so full of love. Like me loving you forever meri pyari radhe.",
           },
           polar: {
             emoji: "🐻‍❄️🤍",
             title: "polar bear",
-            msg: "Cold outside, but a heart that melts when you hug.",
+            msg: "Cold outside, but a heart that melts when you hug me baccha.",
           },
           brown: {
             emoji: "🐻💕",
             title: "brown bear",
-            msg: "Big, strong, but gentle. I feel so safe in your arms.",
-          },
-        };
-
-        // teddy memory messages
-        const memoryMessages = {
-          first: {
-            emoji: "🎁🧸",
-            title: "first teddy",
-            msg: "I still remember the first teddy you gave me. I sleep with it every night.",
-          },
-          sleep: {
-            emoji: "🌙🧸",
-            title: "sleepy hugs",
-            msg: "Falling asleep on call, teddy in my arms, your voice in my ears.",
-          },
-          picnic: {
-            emoji: "🧺🧸",
-            title: "teddy picnic",
-            msg: "A picnic with teddy bears — just us, honey, and laughter.",
-          },
-          forever: {
-            emoji: "♾️🧸",
-            title: "forever bear",
-            msg: "This teddy will stay with me forever, just like you.",
+            msg: "Big, strong, but gentle. I feel so safe in your arms bubun.",
           },
         };
 
         // virtual plushie message
         const plushieMessage = {
-          emoji: "🧸💖✨",
-          title: "you hugged the teddy!",
-          msg: 'The teddy bear smiled. It whispered: "They love you so much."',
+          emoji: "🧸💖",
+          msg: 'The teddy whispered: "I love you so much. A tight hug and always will be here for you."',
         };
 
         function showPopup(emoji, title, msg) {

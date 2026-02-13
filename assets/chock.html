@@ -185,7 +185,7 @@
         gap: 2.5rem;
       }
       .choco-card {
-        width: 230px;
+        width: 400px;
         background: #fffbf7;
         border-radius: 50px 12px 50px 12px;
         padding: 2rem 1.2rem;
@@ -291,17 +291,7 @@
         position: relative;
         text-align: center;
       }
-      .choco-letter-card:before {
-        content: "🍫💌";
-        position: absolute;
-        font-size: 3rem;
-        top: -25px;
-        left: -20px;
-        background: white;
-        border-radius: 50%;
-        padding: 12px 15px;
-        box-shadow: 0 10px 0 #d9b08c;
-      }
+
       .choco-letter-title {
         font-size: 3.2rem;
         font-family: var(--font-love);
@@ -543,7 +533,7 @@
           font-size: 7rem;
         }
         .choco-card {
-          width: 180px;
+          width: 300px;
         }
       }
     </style>
@@ -557,7 +547,6 @@
       <p>9th February · you're sweeter than any chocolate</p>
       <div class="sweet-tagline love-font">
         <i class="fas fa-candy-cane"></i> a bite of happiness
-        <i class="fas fa-candy-cane"></i>
       </div>
     </section>
 
@@ -566,33 +555,32 @@
       <div class="container">
         <h2 class="section-title">
           <i class="fas fa-candy-cane"></i> chocolates for my sweetheart
-          <i class="fas fa-candy-cane"></i>
         </h2>
         <div class="choco-grid-3d">
           <!-- dark chocolate -->
           <div class="choco-card">
-            <div class="choco-emoji">🍫🖤</div>
+            <div class="choco-emoji">🍫</div>
             <h3>dark chocolate</h3>
             <p>intense & pure, like my love</p>
             <button class="btn-choco" data-choco="dark">savor</button>
           </div>
           <!-- milk chocolate -->
           <div class="choco-card">
-            <div class="choco-emoji">🍫🥛</div>
+            <div class="choco-emoji">🍫</div>
             <h3>milk chocolate</h3>
             <p>smooth & comforting, like your hug</p>
             <button class="btn-choco" data-choco="milk">savor</button>
           </div>
           <!-- white chocolate -->
           <div class="choco-card">
-            <div class="choco-emoji">🍫🤍</div>
+            <div class="choco-emoji">🍫</div>
             <h3>white chocolate</h3>
             <p>sweet & dreamy, like your smile</p>
             <button class="btn-choco" data-choco="white">savor</button>
           </div>
           <!-- hazelnut chocolate -->
           <div class="choco-card">
-            <div class="choco-emoji">🍫🌰</div>
+            <div class="choco-emoji">🍫</div>
             <h3>hazelnut</h3>
             <p>crunchy surprise, like our laughter</p>
             <button class="btn-choco" data-choco="hazelnut">savor</button>
@@ -610,11 +598,11 @@
             “If you are a chocolate, <br />
             you're the finest, rarest, sweetest one. <br />
             And I don't want just a bite — <br />
-            I want the whole bar, forever.”
+            I want the whole bar, forever. I wanna eat you.”
           </div>
           <div class="choco-signature">
             — forever hungry for you, <br />
-            [your valentine] 🍫
+            Aku 🍫
           </div>
         </div>
       </div>
@@ -669,7 +657,7 @@
           </div>
           <div class="candy-3d" data-candy="forever">
             <i class="fas fa-infinity"></i>
-            <span>sweet forever</span>
+            <span>forever</span>
           </div>
         </div>
       </div>
@@ -794,12 +782,12 @@
           first: {
             emoji: "🍬✨",
             title: "first sweet",
-            msg: "the first time we shared dessert — i knew i wanted a lifetime of sweetness with you.",
+            msg: "I want to share dessert — that will be lifetime of sweetness with you.",
           },
           date: {
             emoji: "🍦💕",
             title: "sweet date",
-            msg: "ice cream under the stars. you were sweeter than any flavor.",
+            msg: "I want ice cream under the stars.",
           },
           words: {
             emoji: "💖🍫",
@@ -815,9 +803,8 @@
 
         // chocolate box secret
         const boxSecret = {
-          emoji: "🍫🎁💖",
-          title: "a message from the box",
-          msg: "inside this box: one heart, fully yours. and a promise to make every day sweet.",
+          emoji: "🍫💖",
+          msg: "one heart, fully yours. and a promise to make every day sweet.",
         };
 
         function showPopup(emoji, title, msg) {
